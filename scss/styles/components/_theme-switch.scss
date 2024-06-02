@@ -1,5 +1,6 @@
 //  ------------------------------------------------------------
 //  Theme switch button
+//  Requires theme.js [assets/js] loaded prior to CSS in head.
 //  ------------------------------------------------------------
 
 @if $enable-theme-manual and $enable-theme-switch {

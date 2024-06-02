@@ -1,9 +1,6 @@
 // ---------------------------------------------------------- 
 // Properties
 // ----------------------------------------------------------
-// ---------------------------------------------------------- 
-// Core
-// ----------------------------------------------------------
 
 // Theme color-scheme hue and saturation levels
 $theme-hs:            0 0% !default;
@@ -80,10 +77,7 @@ $table-py:            0.313rem !default;
 $table-px:            0.75rem !default;
 $table-mb:            1rem !default;
 
-
-// ---------------------------------------------------------- 
 // Primary colors
-// ----------------------------------------------------------
 $blue:            #264d73 !default;
 $blue-light:      color-mix(in srgb, var(--blue) 93%, white) !default;
 $blue-lighter:    color-mix(in srgb, var(--blue) 85%, white) !default;
@@ -109,10 +103,6 @@ $cyan-light:      color-mix(in srgb, var(--cyan) 75%, white) !default;
 $cyan-lighter:    color-mix(in srgb, var(--cyan) 60%, white) !default;
 $cyan-dark:       color-mix(in srgb, var(--cyan) 90%, black) !default;
 $cyan-darker:     color-mix(in srgb, var(--cyan) 80%, black) !default;
-
-// ---------------------------------------------------------- 
-// Components
-// ----------------------------------------------------------
 
 // Accordions
 $summary-txt:         var(--text) !default;
@@ -173,10 +163,6 @@ $badge-py:            0.375em;
 $badge-px:            0.65em;
 $badge-radius:        0.25em;
 $badge-bg:            var(--surf-2);
-
-// ---------------------------------------------------------- 
-// Layout, spacing and display
-// ----------------------------------------------------------
 
 // Spacing
 $auto: auto;
@@ -278,10 +264,7 @@ $overflow-auto:     auto;
 $overflow-scroll:   scroll;
 $scroll-stable:     stable;
 
-// ---------------------------------------------------------- 
-// Icon SVG paths
-// ----------------------------------------------------------
-
+// SVG icon paths
 $logo:              url("data:image/svg+xml,<svg viewBox='0 0 192 192' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m36 0c-36 0-36 36-36 36v120c0 36 36 36 36 36h120c36 0 36-36 36-36v-120c0-36-36-36-36-36zm12 42h96v24h-36v84h-24v-84h-36z'/></svg>") !default;
 
 // Theme switch button
