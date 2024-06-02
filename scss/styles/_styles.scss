@@ -1,0 +1,557 @@
+//  ------------------------------------------------------------
+//  Styles
+//  1. Resets
+//  2. Typography
+//  3. Forms and buttons (if enabled)
+//  4. Tables (if enabled)
+//  ------------------------------------------------------------
+
+//  ------------------------------------------------------------
+//  1. Resets
+//  ------------------------------------------------------------
+
+* { 
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+//  ------------------------------------------------------------
+//  2. Typography
+//  ------------------------------------------------------------
+
+:where(html, body, h1, h2, h3, h4, h5, h6) {
+  color: var(--color);
+  font-size: var(--fs);
+  font-weight: var(--fw);
+  line-height: var(--lh);
+}
+
+:where(html) {
+  font-family: var(--font);
+  background-color: var(--body-bg);
+  height: 100%;
+}
+
+:where(body) {
+  --fs: var(--body);
+  --fw: normal;
+  --lh: var(--lh-body);
+}
+
+:where(a) {
+  --color: var(--link);
+  --hover: var(--link-hover);
+  --visited: var(--link-visited);
+  @if $enable-icon-mixins or $enable-icon-styles {
+  --ico: var(--color);
+  }
+  color: var(--color);
+  overflow-wrap: break-word;
+  text-decoration-color: color-mix(in srgb, var(--color) 75%, var(--body-bg));
+  text-decoration-thickness: 1px;
+  text-underline-offset: .1175em;
+}
+
+:where(a:visited) {
+  color: var(--visited);
+  text-decoration-color: color-mix(in srgb, var(--link) 35%, var(--body-bg)); 
+}
+
+:where(a:hover) {
+  @if $enable-icon-mixins or $enable-icon-styles {
+  --ico: var(--hover);
+  }
+  color: var(--hover);
+  text-decoration: none;
+}
+
+:where(a:focus-visible) {
+  outline: .094rem solid var(--link-hover);
+  outline-offset: .1175rem;
+  border-radius: .15em;
+}
+
+:where(h1, h2, h3, h4, h5, h6) a {
+  text-decoration: none;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ol, ul, dl, address) {
+  text-wrap: var(--tw);
+  margin-block-end: var(--mb);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  --fw: 700;
+  --lh: var(--lh-header);
+  --tw: pretty;
+  --mb: .75rem;
+}
+
+:where(h1) {
+  --fs: var(--h1);
+}
+
+:where(h2) {
+  --fs: var(--h2);
+}
+
+:where(h3) {
+  --fs: var(--h3);
+}
+
+:where(h4) {
+  --fs: var(--h4);
+}
+
+:where(h5) {
+  --fs: var(--h5);
+}
+
+:where(h6) {
+  --fs: var(--h6);
+  --lh: 1.25;
+}
+
+:where(small) {
+  --fs: var(--fs-sm);
+  font-size: var(--fs);
+}
+
+:where(bold, strong) {
+  --fw: bold;
+  font-weight: var(--fw);
+}
+
+:where(p, ol, ul, dl, address) {
+  --tw: pretty;
+  --mb: 1rem;
+  line-height: var(--lh);
+}
+
+:where(ol, ul) {
+  --pl: 1.75rem;
+  padding-inline-start: var(--pl);
+}
+
+:where(ol ol, ul ul, ol ul, ul ol, dl dl) {
+  --mb: 0;
+}
+
+:where(dl) {
+  --fw: bold;
+  --dd-ml: 1rem;
+}
+
+:where(dt) {
+  font-weight: var(--fw);
+}
+
+:where(dd) {
+  margin-inline-start: var(--dd-ml);
+}
+
+:where(abbr[title]) {
+  border: none;
+  cursor: help;
+}
+
+:where(sup, sub) {
+  font-size: var(--fs-xxs);
+}
+
+:where(mark) {
+  color: marktext;
+}
+
+:where(code) {
+  color: var(--link);
+  word-wrap: break-word;
+}
+
+a > :where(code) {
+  color: inherit;
+}
+
+:where(pre, code, kbd, samp) {
+  font-family: Consolas, SFMono-Regular, monospace;
+}
+
+:where(kbd) {
+  padding-block: .1em;
+  padding-inline: .35em;
+  background-color: var(--surf-2);
+  border-radius: .25rem;
+}
+
+:where(pre) {
+  overflow: auto;
+  border: 1px solid var(--surf-2);
+  padding: 1rem;
+  margin-block-end: 1rem;
+}
+
+:where(pre code) {
+  color: revert;
+  word-break: normal;
+}
+
+:where(address) {
+  font-style: normal;
+}
+
+:where(blockquote) {
+  border: 1px solid var(--surf-1);
+  border-inline-start-width: 10px;
+  padding-block: .75rem;
+  padding-inline: 1rem;
+  margin-block-end: 1rem;
+}
+
+:where(blockquote p) {
+  --mb: 0;
+}
+
+:where(blockquote p:first-of-type) {
+  --fs: var(--fs-lg);
+  --mb: .25rem;
+  font-size: var(--fs);
+}
+
+:where(details) {
+  margin-block-end: 1rem;
+}
+
+:where(summary) {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+:where(details[open] summary) {
+  margin-block-end: .5rem;
+}
+
+:where(hr) {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border: none;
+  border-block-start: 1px solid var(--surf-2);
+  margin-block-end: 1rem;
+}
+
+:where(figure) {
+  margin: 0;
+  margin-block-end: 1rem;
+}
+
+:where(figcaption) {
+  font-size: var(--fs-xs);
+  padding-block-start: .5rem;
+}
+
+:where(img, svg, video, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(img, svg) { 
+  max-width: 100%;
+}
+
+:where(iframe) {
+  border: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) { 
+  :where(html) { scroll-behavior: smooth; }
+}
+
+.vis-hidden {
+  position: absolute;
+  width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+}
+
+.hidden {
+  display: none;
+}
+
+//  ------------------------------------------------------------
+//  3. Forms and buttons (if enabled)
+//  ------------------------------------------------------------
+
+@if $enable-forms-buttons {
+
+:where(input, button, select, optgroup, textarea, .btn),
+::file-selector-button {
+  --color: inherit;
+  --fs: inherit;
+  --lh: var(--lh-btn-forms);
+  @if $enable-icon-mixins or $enable-icon-styles {
+  --ico: var(--color);  
+  }
+  color: var(--color);
+  font-size: var(--fs);
+  font-family: inherit;
+  line-height: var(--lh);
+  vertical-align: middle;
+}
+
+:where(button, [type=button], [type=submit], [type=reset], .btn),
+::file-selector-button {
+  padding-block: var(--btn-py);
+  padding-inline: var(--btn-px);
+  background-color: var(--btn-bg); 
+  border: var(--btn-bd-width) solid var(--btn-bd-color);
+  border-radius: var(--btn-radius);
+  -webkit-appearance: button;
+}
+
+:where(select, optgroup, textarea, input:not([type=button], [type=submit], [type=reset])) {
+  padding-block: var(--form-py);
+  padding-inline: var(--form-px);
+  background-color: var(--form-bg); 
+  border: var(--form-bd-width) solid var(--form-bd-color);
+  border-radius: var(--form-radius);
+}
+
+:where(input, button, select, optgroup, textarea):disabled,
+:where([aria-disabled=true]) {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+:where(button, select, optgroup, [type=button], [type=submit], [type=reset]),
+::file-selector-button {
+  cursor: pointer;
+}
+
+:where([type="file"]) {
+  --form-bg: transparent;
+  --form-py: 0;
+  --form-px: 0;
+  border: none;
+}
+
+::file-selector-button {
+  margin-inline-end: .5rem;
+}
+
+:where(.btn) {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+:where(.btn):is(:hover,:focus, :active) {
+  --color: inherit;
+}
+
+:where(input, button, select, optgroup, textarea, .btn):focus {
+  outline: none;
+  box-shadow: var(--input-focus) var(--input-focus-color);
+}
+
+:where(input, button, select, optgroup, textarea, .btn):focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:hover, :focus) {  
+  background-color: var(--btn-hover);
+}
+
+:where(button, [type=button], [type=submit], [type=reset], .btn):focus:not(:focus-visible) {  
+  background-color: var(--btn-bg);
+}
+  
+:where(button, [type=button], [type=submit], [type=reset], .btn):focus:not(:focus-visible):hover,
+::file-selector-button:hover {
+  background-color: var(--btn-hover);
+}
+
+@if $enable-primary-colors {
+:where([type=submit]) {
+  --color: #fff;
+  --btn-bg: var(--blue);  
+  --btn-hover: var(--blue-light);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--blue-dark);
+}
+
+:where([type=reset]) {
+  --color: #fff;
+  --btn-bg: var(--red);
+  --btn-hover: var(--red-light);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--red-dark);
+}
+
+} // END [if/primary-colors]
+@else {
+
+:where([type=submit]) {
+  --color: #fff;
+  --btn-bg: #{$blue};  
+  --btn-hover: color-mix(in srgb, var(--btn-bg) 93%, white);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: color-mix(in srgb, var(--btn-bg) 90%, black);
+}
+
+:where([type=reset]) {
+  --color: #fff;
+  --btn-bg: #{$red};
+  --btn-hover: color-mix(in srgb, var(--btn-bg) 93%, white);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: color-mix(in srgb, var(--btn-bg) 90%, black);
+}
+
+} // END [else]
+
+:where(textarea) {
+  display: block;
+  resize: vertical;
+}
+
+::-webkit-input-placeholder {
+  color: var(--color);
+  opacity: .5;
+}
+
+:where([type=radio], [type=checkbox], [type=range], [progress]) {
+  accent-color: var(--link);
+}
+
+:where([type="checkbox"], [type="radio"]) {
+  block-size: var(--fs);
+  inline-size: var(--fs);
+}
+
+:where([type="checkbox"], [type="radio"]):has(+ label) {
+  margin-block-start: -.22rem;
+  margin-inline-end: .2rem;
+}
+
+:where(select) {
+  word-wrap: normal;
+}
+
+:where(fieldset, legend) {
+  border: var(--form-bd-width) solid var(--form-bd-color);
+  border-radius: .125em;
+}
+
+:where(fieldset) {
+  margin-block-end: 1.25rem;
+  padding-inline: 1.25rem;  
+}
+
+:where(legend) {
+  margin-block-end: .25rem;
+  padding-block: var(--form-py);
+  padding-inline: .75rem;
+  background-color: var(--btn-bg);
+}
+
+:where([type=color]) {
+  cursor: pointer;
+  padding: 0;
+}
+
+:where(input[type=color])::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+:where(input[type=color i])::-webkit-color-swatch {
+  border-color: var(--form-bd-color);
+}
+
+:where(input):autofill,
+:where(input):-webkit-autofill {
+  border: var(--form-bd-width) solid var(--form-bd-color);
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0 1.5rem var(--form-bg) inset;
+}
+
+} // END [if/forms-buttons]
+
+//  ------------------------------------------------------------
+//  4. Tables (if enabled)
+//  ------------------------------------------------------------
+
+@if $enable-tables {
+
+:where(table) {
+  caption-side: top;
+  border-collapse: collapse;
+  width: 100%;
+  margin-block-end: var(--table-mb);
+  font-variant-numeric: tabular-nums;
+}
+
+:where(caption) {
+  font-weight: bold;
+  text-align: left;
+  padding-block-end: .5rem;
+}
+
+:where(thead) th {
+  color: var(--table-thead-txt);
+  background-color: var(--table-thead-bg);
+}
+
+:where(thead) th:last-child {
+  border-inline-end-color: var(--table-bd-color);
+}
+
+:where(th) {
+  font-weight: bold;
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+:where(thead, tbody, tfoot, tr, td, th) {
+  border: var(--table-bd-width) solid var(--table-bd-color);
+  vertical-align: top;
+}
+
+:where(tbody, thead) th, td {
+  padding-block: var(--table-py);
+  padding-inline: var(--table-px);
+  white-space: nowrap;
+}
+
+//  Table striped and hover utilities
+
+:where(.table-striped tr):nth-child(even),
+:where(.table-combo tr):nth-child(even) {
+  background-color: var(--table-stripes);
+}
+
+:where(.table-hover tbody tr):hover,
+:where(.table-combo tbody tr):hover {
+  background-color: var(--table-hover);
+}
+
+//  Table overflow wrapper
+
+:where(.table-wrap) {
+  --margin-bottom: 1rem;
+  overflow-x: auto;
+  margin-block-end: var(--margin-bottom);
+}
+
+:where(.table-wrap):focus {
+  outline: 0.188rem solid var(--surf-3);
+}
+
+:where(.table-wrap table) {
+  --table-mb: 0;
+}
+
+} // END [if/enable-tables]

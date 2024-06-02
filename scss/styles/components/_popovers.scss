@@ -1,0 +1,80 @@
+//  ------------------------------------------------------------
+//  Popover element
+//  ------------------------------------------------------------
+
+@if $enable-popovers {
+
+:where([popover]) {
+  width: fit-content;
+  height: fit-content;
+  color: var(--pop-txt);
+  background-color: var(--pop-bg);
+  margin-block: var(--pop-my);
+  margin-inline: var(--pop-mx);
+  padding-block: var(--pop-py);
+  padding-inline: var(--pop-px);
+  border-width: var(--pop-bd-width);
+  border-color: var(--pop-bd-color);
+  border-radius: var(--pop-radius);   
+  overflow: auto;
+}
+
+:where([popover] *:last-child) {
+   --mb: 0;
+}
+
+.pop-dark {
+  --ico: var(--pop-txt);
+  --pop-txt: #fff;
+  --pop-bg: hsl(var(--theme-hs) 18%);
+  --pop-bd-color: var(--pop-bg);
+}
+
+.pop-light {
+  --ico: var(--pop-txt);
+  --pop-txt: #000;
+  --pop-bg: hsl(var(--theme-hs) 94%);
+  --pop-bd-color: var(--pop-bg);
+}
+
+@if $enable-primary-colors {
+
+.pop-blue {
+  --ico: var(--pop-txt);
+  --pop-txt: #fff;
+  --pop-bg: var(--blue);
+  --pop-bd-color: var(--blue);
+}
+
+
+.pop-red {
+  --ico: var(--pop-txt);
+  --pop-txt: #fff;
+  --pop-bg: var(--red);
+  --pop-bd-color: var(--red);
+}
+
+.pop-green {
+  --ico: var(--pop-txt);
+  --pop-txt: #fff;
+  --pop-bg: var(--green);
+  --pop-bd-color: var(--green);
+}
+
+.pop-orange {
+  --ico: var(--pop-txt);
+  --pop-txt: #000;
+  --pop-bg: var(--orange);
+  --pop-bd-color: var(--orange);
+}
+
+.pop-cyan {
+  --ico: var(--pop-txt);
+  --pop-txt: #000;
+  --pop-bg: var(--cyan);
+  --pop-bd-color: var(--cyan);
+}
+
+} // END [if/primary-colors]
+
+} // END [@if/popovers]

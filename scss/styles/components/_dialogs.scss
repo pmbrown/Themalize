@@ -1,0 +1,229 @@
+//  ------------------------------------------------------------
+//  Dialog element modals
+//  ------------------------------------------------------------
+
+@if $enable-dialogs {
+
+:where(html) {
+  @if $enable-close-svg {
+    --dialog-close: var(--close);
+  }
+  @else {
+    --dialog-close: #{$close};
+  }
+}
+
+:where(dialog) {
+  color: var(--dialog-txt);
+  margin: auto;
+  margin-block-start: var(--dialog-top);  
+  padding: 0;
+  width: var(--dialog-width);
+  max-width: var(--dialog-max-width); 
+  border-width: var(--dialog-bd-width);
+  border-color: var(--dialog-bd-color);
+  border-radius: var(--dialog-radius); 
+  background-color: var(--dialog-bg);
+}
+
+:where(dialog :is(header, .dialog-header)) {
+  --ico: var(--dialog-header-txt); 
+  color: var(--dialog-header-txt);
+  position: sticky;
+  align-self: start;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
+  background-color: var(--dialog-header-bg);
+  padding-block: .5rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: .5rem;
+  border-start-start-radius: 0;
+}
+
+:where(dialog :is(header, .dialog-header) *) {
+  --ico: var(--dialog-header-txt);
+  color: var(--dialog-header-txt);
+}
+
+:where(dialog :is(header, .dialog-header) *:is(h1, h2, h3, h4, h5, h6, p)) {
+  --mb: 0;
+}
+
+// Heading block-padding will vary with font-family selection.
+:where(dialog :is(header, .dialog-header) *:is(h1, h2, h3, h4, h5, h6)) {
+  padding-block-start: .2rem;
+  padding-block-end: .4rem;
+}
+
+// Header close button
+:where(dialog :is(header, .dialog-header) [data-close]) {
+  --svg: var(--dialog-close);
+  --btn-bg: transparent;
+  --btn-hover: transparent;
+  border: none;
+  margin-inline-start: 1rem;
+}
+
+:where(dialog :is(header, .dialog-header) [data-close]:is(:focus, :active)) {
+  outline: none;
+  box-shadow: none;
+}
+
+// @extend %icon-mask chains all icon styles together to minimise code.
+// @include icon-mask can be used to duplicate icon styles.
+// Alternatively, if icon-styles are enabled [class="ico"] can be added 
+// to the button element and the [:before] style can be disabled.
+:where(dialog :is(header, .dialog-header) [data-close]):before {
+  @extend %icon-mask;
+}
+
+// Internal wrapper
+:where(.dialog-body) {
+  padding-block: var(--dialog-body-py);
+  padding-inline: var(--dialog-body-px);
+  background-color: var(--dialog-body-bg);
+}
+
+:where(.dialog-body :last-child) {
+  --mb: 0;
+}
+
+:where(.dialog-basic) {
+  padding-block: var(--dialog-body-py);
+  padding-inline: var(--dialog-body-px);
+}
+
+:where(.dialog-basic:has(h1:first-child, h2:first-child, h3:first-child, h4:first-child, h4:first-child, h4:first-child)) {
+  padding-block-end: 1rem;
+}
+
+:where(.dialog-basic *:has(+ .backdrop)) {
+  --mb: 0;
+}
+
+// Image dialog
+
+:where(.dialog-img) {
+  --dialog-body-py: 0;
+  --dialog-body-px: 0;
+  --dialog-max-width: fit-content;
+}
+  
+:where(.dialog-img img) {
+  margin-inline: auto;
+  object-fit: cover;
+}
+
+:where(.dialog-img figure) {
+  margin-block-end: 0;
+}
+
+:where(.dialog-img figcaption) {
+  padding-block: .5rem;
+  padding-inline: 1rem;
+}
+  
+:where(.dialog-img-close) {
+  --btn-radius: 0;
+  --svg: var(--dialog-close);
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  z-index: 1500;
+  border-end-start-radius: inherit;
+  border-block-start: none;
+  border-inline-end: none;
+}
+
+:where(.dialog-img-close):before {
+  @extend %icon-mask;
+}
+  
+:where(.dialog-img-btn) {
+  --fs: var(--fs-xxs);
+  --btn-py: 0;
+  --btn-px: 0;
+}
+
+:where(.dialog-img-btn:hover) {
+  cursor: zoom-in;
+}
+
+// Backdrop
+
+:where(.backdrop) {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  content: "";
+}
+
+::backdrop {
+  background: #00000099;
+}
+
+} // END [if/dialogs]
+
+// Colors
+
+@mixin dialog-props {
+  --dialog-header-bg: var(--dialog-bg);
+  --dialog-bd-color: var(--dialog-bg);
+}
+
+@if $enable-dialogs {
+
+@if $enable-primary-colors {
+  .dialog-blue, .dialog-red, .dialog-green, .dialog-orange, .dialog-cyan, .dialog-dark, .dialog-light {
+    @include dialog-props;
+  }
+}
+@else {
+  .dialog-dark, .dialog-light {
+    @include dialog-props;
+  }
+}
+
+.dialog-dark {
+  --dialog-header-txt: #fff;
+  --dialog-bg: hsl(var(--theme-hs) 31%);
+}
+
+.dialog-light {
+  --dialog-header-txt: #000;
+  --dialog-bg: hsl(var(--theme-hs) 87%);
+}
+
+@if $enable-primary-colors {
+.dialog-blue {
+  --dialog-header-txt: #fff;
+  --dialog-bg: var(--blue);
+}
+
+.dialog-red { 
+  --dialog-header-txt: #fff;
+  --dialog-bg: var(--red);
+}
+
+.dialog-green {
+  --dialog-header-txt: #fff;
+  --dialog-bg: var(--green);
+}
+
+.dialog-orange {
+  --dialog-header-txt: #000;
+  --dialog-bg: var(--orange);
+}
+
+.dialog-cyan {
+  --dialog-header-txt: #000;
+  --dialog-bg: var(--cyan);
+}
+
+} // END [if/primary-colors]
+
+} // END [if/dialogs]

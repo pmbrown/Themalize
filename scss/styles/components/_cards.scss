@@ -1,0 +1,151 @@
+//  ------------------------------------------------------------
+//  Cards
+//  ------------------------------------------------------------
+
+@if $enable-cards {
+
+:where(.card-basic, .card-link) {
+  position: relative;
+  max-inline-size: var(--card-max-width); 
+  padding-block-start: var(--card-pt);
+  padding-block-end: var(--card-pb);
+  padding-inline: var(--card-px);
+  border: var(--card-bd-width) solid var(--card-bd-color);
+  border-radius: var(--card-radius);
+  background-color: var(--card-bg);
+}
+
+:where(.card-basic :last-child, .card-link :last-child)  {
+  --mb: 0;
+}
+
+:where(.card-link a:afte) {
+  content: "";
+  display: block;
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+}
+
+:where(.card-link :focus-visible) {
+  outline: none;
+}
+
+:where(.card-link:is(:focus-within, :hover)) {
+  background-color: var(--card-hover);
+  cursor: pointer;
+}
+
+:where(.card-link:focus-within) {
+  outline: var(--card-focus);
+}
+
+// Cards with headers
+
+:where(.card, .card-sm) {
+  max-inline-size: var(--card-max-width);
+  background-color: var(--card-bg);
+}
+
+.card-sm {
+  --card-px: .75rem;
+  --card-title-h-py: .65rem;  
+  --card-pt: .5rem;
+  --card-pb: .75rem;
+}
+
+.card-sm * {
+  font-size: var(--fs-sml);
+}
+
+.card-sm .card-body *:is(p, ul, ol, dl):not(:last-child) { 
+  --mb: .5rem;
+}
+
+:where(.card-title) {
+--ico: var(--card-title-txt);
+  color: var(--card-title-txt);
+  display: block;
+  padding-block: var(--card-title-py);
+  padding-inline: var(--card-px);
+  border-start-start-radius: var(--card-radius);
+  border-start-end-radius: var(--card-radius);
+  background-color: var(--card-title-bg);
+}
+
+:where(.card-title:is(h1, h2, h3, h4, h5, h6, p)) {
+  --mb: 0;
+}
+
+:where(.card-title:is(h1, h2, h3, h4, h5, h6)) {
+  padding-block: var(--card-title-h-py);
+}
+
+:where(.card-body) {
+  padding-block-start: var(--card-pt);
+  padding-block-end: var(--card-pb);
+  padding-inline: var(--card-px);
+  border: var(--card-bd-width) solid var(--card-bd-color);
+  border-block-start: none;
+  border-end-start-radius: var(--card-radius);
+  border-end-end-radius: var(--card-radius);
+}
+
+:where(.card-body :last-child) {
+  --mb: 0;
+}
+
+:where(.card-list) {
+  --pl: 1rem;
+}
+
+// Card colors
+
+.card-dark {
+  --card-title-txt: #fff;
+  --card-title-bg: hsl(var(--theme-hs) 24%);
+  --card-bd-color: var(--card-title-bg);
+}
+
+.card-light {
+  --card-title-txt: #000;
+  --card-title-bg: hsl(var(--theme-hs) 87%);
+  --card-bd-color: var(--card-title-bg);
+}
+
+@if $enable-primary-colors {
+.card-blue {
+  --card-title-txt: #fff;
+  --card-title-bg: var(--blue);
+  --card-bd-color: var(--card-title-bg);
+}
+
+.card-red {
+  --card-title-txt: #fff;
+  --card-title-bg: var(--red);
+  --card-bd-color: var(--card-title-bg);
+}
+
+.card-green {
+  --card-title-txt: #fff;
+  --card-title-bg: var(--green);
+  --card-bd-color: var(--card-title-bg);
+}
+
+.card-orange {
+  --card-title-txt: #000;
+  --card-title-bg: var(--orange);
+  --card-bd-color: var(--card-title-bg);
+}
+
+.card-cyan {
+  --card-title-txt: #000;
+  --card-title-bg: var(--cyan);
+  --card-bd-color: var(--card-title-bg);
+}
+
+} // END [if/primary-colors]
+
+} // END [if/cards]

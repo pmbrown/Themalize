@@ -1,0 +1,136 @@
+// ---------------------------------------------------------- 
+// CSS variables
+// ----------------------------------------------------------
+@import "maps";
+@import "mixins/copyright-license";
+@include copyright-license;
+
+:where(html) { 
+  @each $theme-colors, $value in $theme-colors {
+    --#{$theme-colors}: #{$value};       
+  }
+  
+  @if $enable-theme-colors {
+    @each $light-scheme-colors, $value in $light-scheme-colors {
+      --#{$light-scheme-colors}: #{$value};       
+    }
+    
+    @each $dark-scheme-colors, $value in $dark-scheme-colors {
+      --#{$dark-scheme-colors}: #{$value};       
+    }
+  }  
+   
+  @if $enable-primary-colors {
+  @each $primary-colors, $value in $primary-colors {
+      --#{$primary-colors}: #{$value};       
+    }
+  }
+}
+
+:where(html) {
+  color-scheme: light;
+    
+  @if $enable-theme-colors {
+    @each $light-scheme, $value in $light-scheme {
+      --#{$light-scheme}: #{$value};       
+    }
+  }
+  @else {
+    @each $light-scheme-only, $value in $light-scheme-only {
+      --#{$light-scheme-only}: #{$value};       
+    }
+  }
+  
+  @if $enable-theme-manual and $enable-theme-switch {
+    --switch-ico: var(--switch-off);
+  }
+}
+
+@if $enable-theme-manual {
+  :where([data-prefers-dark=true]) {
+    color-scheme: dark;
+    
+    @if $enable-theme-colors {
+      @each $dark-scheme, $value in $dark-scheme {
+        --#{$dark-scheme}: #{$value};       
+      }
+    }
+    @else {
+      @each $dark-scheme-only, $value in $dark-scheme-only {
+        --#{$dark-scheme-only}: #{$value};       
+      }
+    }
+    
+    @if $enable-theme-switch {
+      --switch-ico: var(--switch-on);
+    }   
+  } 
+}
+@else {
+  @media (prefers-color-scheme: dark) {
+    :where(html) {
+      color-scheme: dark;
+      
+      @if $enable-theme-colors {
+        @each $dark-scheme, $value in $dark-scheme {
+          --#{$dark-scheme}: #{$value};       
+        }
+      }
+      @else {
+        @each $dark-scheme-only, $value in $dark-scheme-only {
+          --#{$dark-scheme-only}: #{$value};       
+        }
+      }
+    }
+  }
+}
+
+:where(html) {
+  @each $typography, $value in $typography {
+    --#{$typography}: #{$value};       
+  }
+  
+  @if $enable-forms-buttons {
+    @each $forms-buttons, $value in $forms-buttons {
+      --#{$forms-buttons}: #{$value};       
+    }
+  }  
+  
+  @if $enable-tables {
+    @each $tables, $value in $tables {
+      --#{$tables}: #{$value};       
+    }
+  }
+}
+
+:where(html) {
+  @if $enable-accordions {
+    @each $accordions, $value in $accordions {
+      --#{$accordions}: #{$value};       
+    }
+  }
+  
+  @if $enable-cards {
+    @each $cards, $value in $cards {
+      --#{$cards}: #{$value};       
+    }
+  }
+
+  @if $enable-dialogs {
+    @each $dialogs, $value in $dialogs {
+      --#{$dialogs}: #{$value};       
+    }
+  }
+  
+  @if $enable-popovers {
+    @each $popovers, $value in $popovers {
+      --#{$popovers}: #{$value};       
+    }
+  }
+
+  @if $enable-badges {
+    @each $badges, $value in $badges {
+      --#{$badges}: #{$value};       
+    }
+  }
+}

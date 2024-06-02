@@ -1,0 +1,27 @@
+//  ------------------------------------------------------------
+//  Badges
+//  ------------------------------------------------------------
+
+@if $enable-badges {
+
+:where(.badge) {
+  font-size: var(--badge-fs);
+  font-weight: var(--badge-fw);
+  text-align: center;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: baseline;
+  padding-block: var(--badge-py);
+  padding-inline: var(--badge-px);
+  border-radius: var(--badge-radius);
+  background-color: var(--badge-bg);
+}
+
+:where(button, [type=button], .btn) .badge {
+  --badge-bg: var(--surf-3);
+  position: relative;
+  top: -1px;
+}
+
+
+} // END [@if/badges]

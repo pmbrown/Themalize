@@ -1,0 +1,49 @@
+//  ------------------------------------------------------------
+//  Spacing
+//  ------------------------------------------------------------
+
+@if $enable-spacing {
+
+@include margins;
+@include padding;
+
+@if $enable-spacing-queries {
+
+@if $enable-breakpoint-xl {
+  @media (max-width: #{$breakpoint-xl}) {
+    @include margins-xl;
+    @include padding-xl;
+  }
+}
+
+@if $enable-breakpoint-lg {
+  @media (max-width: #{$breakpoint-lg}) {
+    @include margins-lg;
+    @include padding-lg;
+  }
+}
+
+@if $enable-breakpoint-md {
+  @media (max-width: #{$breakpoint-md}) {
+    @include margins-md;
+    @include padding-md;
+  }
+}
+
+@if $enable-breakpoint-sm {
+  @media (max-width: #{$breakpoint-sm}) {
+    @include margins-sm;
+    @include padding-sm;
+  }
+}
+
+@if $enable-breakpoint-xs {
+  @media (max-width: #{$breakpoint-xs}) {
+    @include margins-xs;
+    @include padding-xs;
+  }
+}
+
+}
+
+} // END [if/spacing]

@@ -1,0 +1,167 @@
+//  ------------------------------------------------------------
+//  Position mixins
+//  ------------------------------------------------------------
+
+
+@mixin position {
+
+  @each $name, $value in $position {
+    .#{$name} {
+      position: #{$value};
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name} {
+      --#{$name}: 0;
+      #{$value}: var(--#{$name});
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-unset {
+      #{$value}: unset;
+    }
+  }
+  
+  @each $name, $value in $z-index {
+    .#{$name} {
+      z-index: #{$value};
+    }
+  }
+}
+
+@mixin position-xl {
+  @each $name, $value in $position {
+    .#{$name}-xl {
+      position: #{$value};
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-xl {
+      --#{$name}: 0;
+      #{$value}: var(--#{$name});
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-unset-xl {
+      #{$value}: unset;
+    }
+  }
+  
+  @each $name, $value in $z-index {
+    .#{$name}-xl {
+      z-index: #{$value};
+    }
+  }
+}
+
+@mixin position-lg {
+  @each $name, $value in $position {
+    .#{$name}-lg {
+      position: #{$value};
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-lg {
+      --#{$name}: 0;
+      #{$value}: var(--#{$name});
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-unset-lg {
+      #{$value}: unset;
+    }
+  }
+  
+  @each $name, $value in $z-index {
+    .#{$name}-lg {
+      z-index: #{$value};
+    }
+  }
+}
+
+@mixin position-md {
+  @each $name, $value in $position {
+    .#{$name}-md {
+      position: #{$value};
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-md {
+      --#{$name}: 0;
+      #{$value}: var(--#{$name});
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-unset-md {
+      #{$value}: unset;
+    }
+  }
+  
+  @each $name, $value in $z-index {
+    .#{$name}-md {
+      z-index: #{$value};
+    }
+  }
+}
+
+@mixin position-sm {
+  @each $name, $value in $position {
+    .#{$name}-sm {
+      position: #{$value};
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-sm {
+      --#{$name}: 0;
+      #{$value}: var(--#{$name});
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-unset-sm {
+      #{$value}: unset;
+    }
+  }
+  
+  @each $name, $value in $z-index {
+    .#{$name}-sm {
+      z-index: #{$value};
+    }
+  }
+}
+
+@mixin position-xs {
+  @each $name, $value in $position {
+    .#{$name}-xs {
+      position: #{$value};
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-xs {
+      --#{$name}: 0;
+      #{$value}: var(--#{$name});
+    }
+  }
+  
+  @each $name, $value in $inset {
+    .#{$name}-unset-xs {
+      #{$value}: unset;
+    }
+  }
+  
+  @each $name, $value in $z-index {
+    .#{$name}-xs {
+      z-index: #{$value};
+    }
+  }
+}

@@ -1,0 +1,106 @@
+//  ------------------------------------------------------------
+//  Gradients
+//  ------------------------------------------------------------
+
+@if $enable-gradients {
+
+:where(html) {
+  --deg: 180deg;
+  --grad-1: var(--surf-1);
+  --grad-2: var(--surf-2);
+  --grad-3: var(--surf-3);
+  --grad-txt: var(--text);
+}
+
+@if $enable-primary-colors {
+  :where(.gradient, .gradient-dark, .gradient-light, .gradient-blue, .gradient-red, .gradient-green, .gradient-orange, .gradient-cyan) {
+    --ico: var(--grad-txt);
+    color: var(--grad-txt);
+    background-image: linear-gradient(var(--deg), var(--grad-1), var(--grad-2), var(--grad-3));
+  }
+}
+@else {
+  :where(.gradient, .gradient-dark, .gradient-light) {
+    --ico: var(--grad-txt);
+    color: var(--grad-txt);
+    background-image: linear-gradient(var(--deg), var(--grad-1), var(--grad-2), var(--grad-3));
+  }
+}
+
+// Default .gradient [dark-schemes] degree reversal.
+@if $enable-theme-manual {
+  :where([data-prefers-dark=true]) {
+    .gradient {
+      --deg: 0deg;
+    }    
+  }
+}
+@else {
+   @media (prefers-color-scheme: dark) {
+    :where(html) {
+      .gradient {
+        --deg: 0deg;
+      }       
+    }
+  }  
+}
+
+.gradient-dark {
+  --deg: 0deg;
+  --grad-1: var(--surf-1-dark);
+  --grad-2: var(--surf-2-dark);
+  --grad-3: var(--surf-3-dark);
+  --grad-txt: var(--text-dark);
+}
+
+.gradient-light {
+  --deg: 180deg;
+  --grad-1: var(--surf-1-light);
+  --grad-2: var(--surf-2-light);
+  --grad-3: var(--surf-3-light);
+  --grad-txt: var(--text-light);
+}
+
+@if $enable-primary-colors { 
+  .gradient-blue {
+    --deg: 0deg;
+    --grad-1: var(--blue);
+    --grad-2: var(--blue-light);
+    --grad-3: var(--blue-lighter);
+    --grad-txt: var(--text-dark);    
+  }
+
+  .gradient-red {
+    --deg: 0deg;
+    --grad-1: var(--red);
+    --grad-2: var(--red-light);
+    --grad-3: var(--red-lighter);
+    --grad-txt: var(--text-dark);
+  }
+
+  .gradient-green {
+    --deg: 0deg;
+    --grad-1: var(--green);
+    --grad-2: var(--green-light);
+    --grad-3: var(--green-lighter);
+    --grad-txt: var(--text-dark);
+  }
+
+  .gradient-orange {
+    --deg: 0deg;
+    --grad-1: var(--orange-dark);
+    --grad-2: var(--orange);
+    --grad-3: var(--orange-light);
+    --grad-txt: var(--text-light);
+  }
+
+  .gradient-cyan {
+    --deg: 0deg;
+    --grad-1: var(--cyan-dark);
+    --grad-2: var(--cyan);
+    --grad-3: var(--cyan-light);
+    --grad-txt: var(--text-light);
+  }
+}
+
+} // END [if/gradients]

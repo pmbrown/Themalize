@@ -1,0 +1,368 @@
+//  ------------------------------------------------------------
+//  Margin mixins
+//  ------------------------------------------------------------
+
+@mixin margins {
+  // Modifiers
+  @if $enable-spacing-queries {
+  
+  .m-auto, .m-0, .m-1, .m-2, .m-3, .m-4, .m-5,
+  .m-auto-xl, .m-0-xl, .m-1-xl, .m-2-xl, .m-3-xl, .m-4-xl, .m-5-xl,
+  .m-auto-lg, .m-0-lg, .m-1-lg, .m-2-lg, .m-3-lg, .m-4-lg, .m-5-lg,
+  .m-auto-md, .m-0-md, .m-1-md, .m-2-md, .m-3-md, .m-4-md, .m-5-md,
+  .m-auto-sm, .m-0-sm, .m-1-sm, .m-2-sm, .m-3-sm, .m-4-sm, .m-5-sm,
+  .m-auto-xs, .m-0-xs, .m-1-xs, .m-2-xs, .m-3-xs, .m-4-xs, .m-5-xs {
+    margin: var(--m);
+  }
+  
+  .mt-auto, .mt-0, .mt-1, .mt-2, .mt-3, .mt-4, .mt-5,
+  .mt-auto-xl, .mt-0-xl, .mt-1-xl, .mt-2-xl, .mt-3-xl, .mt-4-xl, .mt-5-xl,
+  .mt-auto-lg, .mt-0-lg, .mt-1-lg, .mt-2-lg, .mt-3-lg, .mt-4-lg, .mt-5-lg,
+  .mt-auto-md, .mt-0-md, .mt-1-md, .mt-2-md, .mt-3-md, .mt-4-md, .mt-5-md,
+  .mt-auto-sm, .mt-0-sm, .mt-1-sm, .mt-2-sm, .mt-3-sm, .mt-4-sm, .mt-5-sm,
+  .mt-auto-xs, .mt-0-xs, .mt-1-xs, .mt-2-xs, .mt-3-xs, .mt-4-xs, .mt-5-xs {
+    margin-block-start: var(--mt);
+  }
+  
+  .mb-auto, .mb-0, .mb-1, .mb-2, .mb-3, .mb-4, .mb-5,
+  .mb-auto-xl, .mb-0-xl, .mb-1-xl, .mb-2-xl, .mb-3-xl, .mb-4-xl, .mb-5-xl,
+  .mb-auto-lg, .mb-0-lg, .mb-1-lg, .mb-2-lg, .mb-3-lg, .mb-4-lg, .mb-5-lg,
+  .mb-auto-md, .mb-0-md, .mb-1-md, .mb-2-md, .mb-3-md, .mb-4-md, .mb-5-md,
+  .mb-auto-sm, .mb-0-sm, .mb-1-sm, .mb-2-sm, .mb-3-sm, .mb-4-sm, .mb-5-sm,
+  .mb-auto-xs, .mb-0-xs, .mb-1-xs, .mb-2-xs, .mb-3-xs, .mb-4-xs, .mb-5-xs {
+    margin-block-end: var(--mb);
+  }
+  
+  .ms-auto, .ms-0, .ms-1, .ms-2, .ms-3, .ms-4, .ms-5,
+  .ms-auto-xl, .ms-0-xl, .ms-1-xl, .ms-2-xl, .ms-3-xl, .ms-4-xl, .ms-5-xl,
+  .ms-auto-lg, .ms-0-lg, .ms-1-lg, .ms-2-lg, .ms-3-lg, .ms-4-lg, .ms-5-lg,
+  .ms-auto-md, .ms-0-md, .ms-1-md, .ms-2-md, .ms-3-md, .ms-4-md, .ms-5-md,
+  .ms-auto-sm, .ms-0-sm, .ms-1-sm, .ms-2-sm, .ms-3-sm, .ms-4-sm, .ms-5-sm,
+  .ms-auto-xs, .ms-0-xs, .ms-1-xs, .ms-2-xs, .ms-3-xs, .ms-4-xs, .ms-5-xs {
+    margin-inline-start: var(--ms);
+  }
+  
+  .me-auto, .me-0, .me-1, .me-2, .me-3, .me-4, .me-5,
+  .me-auto-xl, .me-0-xl, .me-1-xl, .me-2-xl, .me-3-xl, .me-4-xl, .me-5-xl,
+  .me-auto-lg, .me-0-lg, .me-1-lg, .me-2-lg, .me-3-lg, .me-4-lg, .me-5-lg,
+  .me-auto-md, .me-0-md, .me-1-md, .me-2-md, .me-3-md, .me-4-md, .me-5-md,
+  .me-auto-sm, .me-0-sm, .me-1-sm, .me-2-sm, .me-3-sm, .me-4-sm, .me-5-sm,
+  .me-auto-xs, .me-0-xs, .me-1-xs, .me-2-xs, .me-3-xs, .me-4-xs, .me-5-xs {
+    margin-inline-end: var(--me);
+  }
+  
+  .my-auto, .my-0, .my-1, .my-2, .my-3, .my-4, .my-5,
+  .my-auto-xl, .my-0-xl, .my-1-xl, .my-2-xl, .my-3-xl, .my-4-xl, .my-5-xl,
+  .my-auto-lg, .my-0-lg, .my-1-lg, .my-2-lg, .my-3-lg, .my-4-lg, .my-5-lg,
+  .my-auto-md, .my-0-md, .my-1-md, .my-2-md, .my-3-md, .my-4-md, .my-5-md,
+  .my-auto-sm, .my-0-sm, .my-1-sm, .my-2-sm, .my-3-sm, .my-4-sm, .my-5-sm,
+  .my-auto-xs, .my-0-xs, .my-1-xs, .my-2-xs, .my-3-xs, .my-4-xs, .my-5-xs {
+    margin-block: var(--my);
+  }  
+  
+  .mx-auto, .mx-0, .mx-1, .mx-2, .mx-3, .mx-4, .mx-5,
+  .mx-auto-xl, .mx-0-xl, .mx-1-xl, .mx-2-xl, .mx-3-xl, .mx-4-xl, .mx-5-xl,
+  .mx-auto-lg, .mx-0-lg, .mx-1-lg, .mx-2-lg, .mx-3-lg, .mx-4-lg, .mx-5-lg,
+  .mx-auto-md, .mx-0-md, .mx-1-md, .mx-2-md, .mx-3-md, .mx-4-md, .mx-5-md,
+  .mx-auto-sm, .mx-0-sm, .mx-1-sm, .mx-2-sm, .mx-3-sm, .mx-4-sm, .mx-5-sm,
+  .mx-auto-xs, .mx-0-xs, .mx-1-xs, .mx-2-xs, .mx-3-xs, .mx-4-xs, .mx-5-xs {
+    margin-inline: var(--mx);
+  }
+    
+  }
+  @else {
+  
+    .m-auto, .m-0, .m-1, .m-2, .m-3, .m-4, .m-5 {
+      margin: var(--m)
+    }
+  
+    .mt-auto, .mt-0, .mt-1, .mt-2, .mt-3, .mt-4, .mt-5 {
+      margin-block-start: var(--mt);
+    }
+    
+    .mb-auto, .mb-0, .mb-1, .mb-2, .mb-3, .mb-4, .mb-5 {
+      margin-block-end: var(--mb);
+    }
+    
+    .ms-auto, .ms-0, .ms-1, .ms-2, .ms-3, .ms-4, .ms-5 {
+      margin-inline-start: var(--ms);
+    }
+    
+    .me-auto, .me-0, .me-1, .me-2, .me-3, .me-4, .me-5 {
+      margin-inline-end: var(--me);
+    }
+    
+    .my-auto, .my-0, .my-1, .my-2, .my-3, .my-4, .my-5 {
+      margin-block: var(--my);
+    }
+    
+    .mx-auto, .mx-0, .mx-1, .mx-2, .mx-3, .mx-4, .mx-5 {
+      margin-inline: var(--mx);
+    }
+    
+  } //
+  
+  // Sizes
+  @each $name, $value in $spacing-auto {
+    .m-#{$name} {
+      --m: #{$value};        
+    }
+  }  
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name} {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name} {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name} {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name} {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name} {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name} {
+      --mx: #{$value};        
+    }
+  }
+} // End margins
+
+@mixin margins-xl {
+
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-xl {
+      --m: #{$value};        
+    }
+  }  
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-xl {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-xl {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-xl {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-xl {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-xl {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-xl {
+      --mx: #{$value};        
+    }
+  }
+} // End margins-xl
+
+@mixin margins-lg {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-lg {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-lg {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-lg {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-lg {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-lg {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-lg {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-lg {
+      --mx: #{$value};        
+    }
+  }
+}  // End margins-lg
+
+@mixin margins-md {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-md {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-md {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-md {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-md {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-md {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-md {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-md {
+      --mx: #{$value};        
+    }
+  }
+} // End margins-md
+
+@mixin margins-sm {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-sm {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-sm {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-sm {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-sm {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-sm {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-sm {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-sm {
+      --mx: #{$value};        
+    }
+  }
+} // End margins-sm
+
+@mixin margins-xs {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-xs {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-xs {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-xs {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-xs {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-xs {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-xs {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-xs {
+      --mx: #{$value};        
+    }
+  }  
+} // End margins-xs

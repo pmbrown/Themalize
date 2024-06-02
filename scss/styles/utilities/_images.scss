@@ -1,0 +1,47 @@
+//  ------------------------------------------------------------
+//  Images
+//  ------------------------------------------------------------
+
+@if $enable-images {
+
+.auto, .passport, .landscape, .landscape-sm, .landscape-xs, .portrait, .portrait-sm {
+  display: grid;
+  grid-template-columns: var(--gtc);
+  max-inline-size: var(--width);
+}
+
+:where(.auto, .passport, .landscape, .landscape-sm, .landscape-xs, .portrait, .portrait-sm) img {
+  object-fit: cover;
+  aspect-ratio: var(--aspect-ratio);
+  height: 100%;
+}
+
+.auto {
+  --aspect-ratio: auto;
+}
+
+.passport {
+  --aspect-ratio: 1 / 1;
+}
+
+.landscape {
+  --aspect-ratio: 16 / 9;
+}
+
+.landscape-sm {
+  --aspect-ratio: 3 / 1;
+}
+
+.landscape-xs {
+  --aspect-ratio: 4 / 1;
+}
+
+.portrait {
+  --aspect-ratio: 4 / 6;
+}
+
+.portrait-sm {
+  --aspect-ratio: 3 / 4;
+}
+
+} // END [if/images]

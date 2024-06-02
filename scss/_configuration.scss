@@ -1,0 +1,83 @@
+// ------------------------------------------------------------
+// Configuration
+// ------------------------------------------------------------
+$enable-forms-buttons:    true;
+$enable-tables:           true;
+
+// Color variable palettes
+$enable-primary-colors:   false;
+$enable-theme-colors:     false;
+
+// Manual theme switch
+$enable-theme-manual:     false;
+
+// Theme switch button
+$enable-theme-switch:     false;
+$enable-theme-celestial:  false;
+$enable-theme-radio:      false;
+
+// Components
+$enable-accordions:       false;
+$enable-cards:            false;
+$enable-dialogs:          false;
+$enable-popovers:         false;
+$enable-badges:           false;
+$enable-syntax:           false;
+
+// Utilities
+$enable-backgrounds:      false;
+$enable-gradients:        false;
+$enable-borders:          false;
+$enable-buttons:          false;
+$enable-images:           false;
+$enable-shadows:          false;
+$enable-text:             false;
+
+// Layout
+$enable-layout-grid:      false;
+$enable-fraction-grid:    false;
+$enable-gaps:             false;
+$enable-display:          false;
+$enable-display-queries:  false;
+$enable-wrappers:         false;
+$enable-spacing:          false;
+$enable-spacing-queries:  false;
+
+// Breakpoints
+$enable-breakpoint-xl:    false; // 1601px
+$enable-breakpoint-lg:    false; // 1281px
+$enable-breakpoint-md:    false; // 1025px
+$enable-breakpoint-sm:    false; // 769px
+$enable-breakpoint-xs:    false; // 481px
+
+// Icon utilities
+$enable-icon-mixins:      false;
+$enable-icon-styles:      false;
+
+// Icons SVG
+// All enabled = 10kb minified
+$enable-logo-svg:             false;
+$enable-house-svg:            false;
+$enable-email-svg:            false;
+$enable-plus-svg:             false;
+$enable-minus-svg:            false;
+$enable-bars-svg:             false;
+$enable-caret-down-svg:       false;
+$enable-caret-up-svg:         false;
+$enable-caret-right-svg:      false;
+$enable-caret-left-svg:       false;
+$enable-close-svg:            false;
+$enable-close-box-svg:        false;
+$enable-close-box-fill-svg:   false;
+$enable-box-svg:              false;
+$enable-tick-box-svg:         false;
+$enable-ext-link-svg:         false;
+$enable-pg-link-svg:          false;
+$enable-search-svg:           false;
+$enable-download-svg:         false;
+$enable-user-svg:             false;
+$enable-question-svg:         false;
+$enable-sun-svg:              false;
+$enable-moon-svg:             false;
+$enable-radio-on-svg:         false;
+$enable-radio-off-svg:        false;

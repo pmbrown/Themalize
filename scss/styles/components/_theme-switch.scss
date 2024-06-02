@@ -1,0 +1,106 @@
+//  ------------------------------------------------------------
+//  Theme switch button
+//  ------------------------------------------------------------
+
+@if $enable-theme-manual and $enable-theme-switch {
+
+@if $enable-theme-celestial {
+  @if $enable-sun-svg and $enable-moon-svg {
+    :where(html) {
+      --switch-off: var(--sun);
+      --switch-on: var(--moon);
+    }
+  }
+  @else {
+    :where(html) {
+      --switch-off: #{$sun};
+      --switch-on: #{$moon};
+    }
+  }
+}
+
+@if $enable-theme-radio {
+  @if $enable-radio-off-svg and $enable-radio-on-svg {
+    :where(html) {
+      --switch-off: var(--radio-off);
+      --switch-on: var(--radio-on);
+    }
+  }
+  @else {
+    :where(html) {
+      --switch-off: #{$radio-off};
+      --switch-on: #{$radio-on};
+    }
+  }
+}
+
+@if $enable-theme-celestial {
+  #themes {
+    --ico: var(--color);
+    --svg: var(--switch-ico);
+    --btn-px: .5rem;
+    --ico-va: -.12em;
+  }
+  
+  #themes:before {
+    @extend %icon-mask;
+  }
+  
+  :where(html) {
+    #themes:after {
+      content: "" / "off";
+    }
+  }
+  
+  :where([data-prefers-dark=true]) {
+    #themes:after {
+      content: "" / "on";
+    }  
+  }
+  
+} // END [if/celestial]
+
+@if $enable-theme-radio {
+  #themes {
+    --btn-bg: transparent;
+    --btn-hover: transparent;
+    --btn-bd-color: transparent;
+    --btn-py: 0;
+    --btn-px: 0;
+    --ico: var(--color);
+    --svg: var(--switch-ico);
+  }
+  
+  #themes:before {
+    @extend %icon-mask;
+  }
+  
+  #themes:hover {
+    --color: var(--link-hover);
+  }
+  
+  #themes:hover:after {
+    color: var(--text);
+  }
+  
+  #themes:after {
+    margin-inline-start: .075rem;
+    word-spacing: -.15em;
+  }
+  
+  :where(html) {
+    #themes:after {
+      content: "Dark off"; // Firefox fallback
+      content: "Dark off" / "off";
+    }
+  }
+  
+  :where([data-prefers-dark=true]) {
+    #themes:after {
+      content: "Dark on"; // Firefox fallback
+      content: "Dark on" / "on";
+    }
+  }  
+} // END [if/radio]
+
+} // END [if/theme-switch]

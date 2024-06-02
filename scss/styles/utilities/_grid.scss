@@ -1,0 +1,133 @@
+//  ------------------------------------------------------------
+//  Grid
+//  ------------------------------------------------------------
+
+@if $enable-fraction-grid {
+  :where(html) {
+    @include fraction-grid-variables;
+  }
+}
+
+@if $enable-layout-grid {
+  .grid {
+  	@include layout-grid-props;
+  }
+}
+
+@if $enable-fraction-grid {
+  .grid-auto {
+  	@include fraction-grid-props;
+  }
+}
+
+@if $enable-layout-grid {
+  @include layout-grid;
+}
+
+@if $enable-fraction-grid {
+  @include fraction-grid;  
+}
+
+@if $enable-gaps {
+  @include gaps;
+}
+
+//  ------------------------------------------------------------
+// Breakpoint - XL
+@if $enable-breakpoint-xl {
+
+@media (max-width: #{$breakpoint-xl}) {
+  @if $enable-fraction-grid {
+    @include fraction-grid-xl;   
+  }
+  
+  @if $enable-layout-grid {
+    @include layout-grid-xl;
+  }
+    
+  @if $enable-gaps {
+    @include gaps-xl;
+  }
+}
+
+}
+
+//  ------------------------------------------------------------
+//  Breakpoint - LG
+@if $enable-breakpoint-lg {
+
+@media (max-width: #{$breakpoint-lg}) {
+  @if $enable-fraction-grid {
+    @include fraction-grid-lg;
+  }
+
+  @if $enable-layout-grid {
+    @include layout-grid-lg;
+  }
+
+  @if $enable-gaps {
+    @include gaps-lg;
+  }
+}
+
+}
+
+//  ------------------------------------------------------------
+//  Breakpoint - MD
+@if $enable-breakpoint-md {
+
+@media (max-width: #{$breakpoint-md}) {
+  @if $enable-fraction-grid {
+    @include fraction-grid-md;
+  }
+
+  @if $enable-layout-grid {
+    @include layout-grid-md;
+  }
+  
+  @if $enable-gaps {
+    @include gaps-md;
+  }
+}
+
+}
+
+//  ------------------------------------------------------------
+//  Breakpoint - SM
+@if $enable-breakpoint-sm {
+
+@media (max-width: #{$breakpoint-sm}) {
+  @if $enable-fraction-grid {
+    @include fraction-grid-sm;
+  }
+
+  @if $enable-layout-grid {
+    @include layout-grid-sm;
+  }
+  
+  @if $enable-gaps {
+    @include gaps-sm;
+  }
+}
+
+}
+
+//  ------------------------------------------------------------
+//  Breakpoint - XS
+@if $enable-breakpoint-xs {
+
+@media (max-width: #{$breakpoint-xs}) {
+  @if $enable-fraction-grid {
+    @include fraction-grid-xs;
+  }
+
+  @if $enable-layout-grid {
+    @include layout-grid-xs;
+  }
+   
+  @if $enable-gaps {
+    @include gaps-xs;
+  }
+}
+
+}

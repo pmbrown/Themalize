@@ -1,0 +1,190 @@
+//  ------------------------------------------------------------
+//  Text
+//  ------------------------------------------------------------
+
+@mixin ul-none {
+  --pl: 0;
+  list-style-type: "";
+}
+
+@if $enable-text {
+
+.lh-body, .lh-header, .lh-forms {
+  line-height: var(--lh);
+}
+
+.lh-body {
+  --lh: var(--lh-body);
+}
+
+.lh-header {
+  --lh: var(--lh-header);
+}
+
+.lh-btn-forms {
+  --lh: var(--lh-btn-forms);
+}
+
+.fs-body, .fs-xl, .fs-lg, .fs-sm, .fs-xs, .fs-xxs, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-size: var(--fs);
+}
+
+.fs-body {
+  --fs: var(--body);
+}
+
+.fs-xl {
+  --fs: var(--fs-xl);
+}
+
+.fs-lg {
+  --fs: var(--fs-lg);
+}
+
+.fs-sm {
+  --fs: var(--fs-sm);
+}
+
+.fs-xs {
+  --fs: var(--fs-xs);
+}
+
+.fs-xxs {
+  --fs: var(--fs-xxs);
+}
+
+:where(.h1, .h2, .h3, .h4, .h5, .h6) {
+  --lh: var(--lh-header);
+  --tw: pretty;
+  line-height: var(--lh);
+  text-wrap: var(--tw);
+}
+
+.h1 {
+  --fs: var(--h1);
+}
+
+.h2 {
+  --fs: var(--h2);
+}
+
+.h3 {
+  --fs: var(--h3);
+}
+
+.h4 {
+  --fs: var(--h4);
+}
+
+.h5 {
+  --fs: var(--h5);
+}
+
+.h6 {
+  --fs: var(--h6);
+}
+
+.fw-normal, .fw-bold, .fw-100, .fw-200, .fw-300, .fw-400, .fw-500, .fw-600, .fw-700, .fw-800, .fw-900 {
+  font-weight: var(--fw);
+}
+
+.fw-normal {
+  --fw: normal;
+}
+
+.fw-bold {
+  --fw: bold;
+}
+
+.fw-100 {
+  --fw: 100;
+}
+
+.fw-200 {
+  --fw: 200;
+}
+
+.fw-300 {
+  --fw: 300;
+}
+
+.fw-400 {
+  --fw: 400;
+}
+
+.fw-500 {
+  --fw: 500;
+}
+
+.fw-600 {
+  --fw: 600;
+}
+
+.fw-700 {
+  --fw: 700;
+}
+
+.fw-800 {
+  --fw: 800;
+}
+
+.fw-900 {
+  --fw: 900;
+}
+
+.no-link a, a.no-link {
+  text-decoration: none;
+}
+
+.text-link a, a.text-link {
+  --color: var(--text);
+  --visited: var(--text);
+}
+
+.link-dark a, a.link-dark {
+  --color: var(--link-dark);
+  --hover: color-mix(in srgb, var(--link-dark) 75%, white);
+  --visited: var(--link-dark);
+  text-decoration-color: color-mix(in srgb, var(--link-dark) 75%, white);
+}
+
+.link-light a, a.link-light {
+  --color: var(--link-light);
+  --hover: color-mix(in srgb, var(--link-light) 75%, white);
+  --visited: var(--link-light);
+  text-decoration-color: color-mix(in srgb, var(--link-light) 75%, white);
+}
+
+.txt-pretty {
+  text-wrap: pretty;
+}
+
+.txt-balance {
+  text-wrap: balance;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.ul-none {
+  @include ul-none;
+}
+
+.ul-circle {
+  list-style-type: circle;
+}
+
+.ul-square {
+  list-style-type: square;
+}
+
+} // END [if/text]

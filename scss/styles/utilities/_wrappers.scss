@@ -1,0 +1,36 @@
+//  ------------------------------------------------------------
+//  Wrappers
+//  ------------------------------------------------------------
+
+@if $enable-wrappers {
+
+.wrapper, .wrapper-xl, .wrapper-lg, .wrapper-md, .wrapper-sm, .wrapper-xs {
+  --wrap-mx: auto;
+  width: 100%;
+  max-inline-size: var(--wrap-size);
+  margin-inline: var(--wrap-mx);
+  padding-inline: var(--wrap-px);
+}
+
+.wrapper-xl {
+  --wrap-size: #{$breakpoint-xl};
+}
+
+
+.wrapper-lg {
+  --wrap-size: #{$breakpoint-lg};
+}
+
+.wrapper-md {
+  --wrap-size: #{$breakpoint-md};
+}
+
+.wrapper-sm {
+  --wrap-size: #{$breakpoint-sm};
+}
+
+.wrapper-xs {
+  --wrap-size: #{$breakpoint-xs};
+}
+
+} // END [if/wrappers]

@@ -1,0 +1,74 @@
+//  ------------------------------------------------------------
+//  Button utilities
+//  ------------------------------------------------------------
+
+@if $enable-buttons {
+
+.btn-outline {
+  --btn-bg: var(--body-bg);
+  --btn-hover: var(--surf-1);
+  --btn-bd-color: var(--surf-3);
+}
+
+.btn-xs {
+  --fs: var(--fs-xs);
+  --btn-py: .2rem;
+  --btn-px: .65rem;
+}
+
+.btn-sm {
+  --fs: var(--fs-sm);
+  --btn-py: .25rem;
+  --btn-px: .65rem;
+}
+
+.btn-lg {
+  --fs: var(--h6);
+  --btn-py: .35rem;
+  --btn-px: .85rem;
+}
+
+.btn-xl {
+  --fs: var(--h5);
+  --btn-py: .5rem;
+  --btn-px: 1.25rem;
+}
+
+@if $enable-theme-colors {
+
+.btn-dark {
+  @include btn-dark;
+}
+
+.btn-light {
+  @include btn-light;
+}
+
+} // END [if/theme-colors]
+
+@if $enable-primary-colors {
+
+.btn-blue {
+  @include btn-blue;
+}
+
+.btn-red {
+  @include btn-red;
+}
+
+.btn-green {
+  @include btn-green;
+}
+
+.btn-orange {
+  @include btn-orange;
+}
+
+.btn-cyan {
+  @include btn-cyan;
+}
+
+} // END [if/primary-colors]
+
+} // END [if/buttons]
+

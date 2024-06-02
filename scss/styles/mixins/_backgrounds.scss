@@ -1,0 +1,10 @@
+//  ------------------------------------------------------------
+//  Backgrounds mixins
+//  ------------------------------------------------------------
+
+@mixin background-props {
+  --color: var(--bg-txt);
+  --ico: var(--bg-txt);
+  color: var(--color);
+  background-color: var(--bg);
+}

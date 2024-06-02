@@ -1,0 +1,87 @@
+//  ------------------------------------------------------------
+//  Icon styles
+//  ------------------------------------------------------------
+
+%icon-mask {
+  @include icon-mask;
+}
+
+@if $enable-icon-mixins or $enable-icon-styles {
+  :where(html) {
+    --ico: var(--color);
+    --ico-va: -.115em;
+  }
+}
+
+@if $enable-icon-styles {
+
+.ico:before {
+  @extend %icon-mask;
+}
+
+.ico-a:after {
+  --ico-ml: calc(var(--fs) / 5);
+  @extend %icon-mask;
+  margin-inline-start: var(--ico-ml);
+}
+
+.ico-b:before {
+  --ico-mr: calc(var(--fs) / 3.75);
+  @extend %icon-mask;
+  margin-inline-end: var(--ico-mr);
+}
+
+.ico-block:before {
+  --ico-mb: .25rem;
+  @extend %icon-mask;
+  display: block;
+  margin-inline: auto;
+  margin-block-end: var(--ico-mb);
+}
+
+.ico-btn:before {
+  @extend %icon-mask;
+}
+
+.ico-btn {
+  --btn-py: .25rem;
+  --btn-px: .5rem;
+}
+
+@if $enable-primary-colors {
+  .ico-blue {
+    --ico: var(--blue);
+  }
+
+  .ico-green {
+    --ico: var(--green);
+  }
+
+  .ico-red {
+    --ico: var(--red);
+  }
+
+  .ico-orange {
+    --ico: var(--orange);
+  }
+
+  .ico-cyan {
+    --ico: var(--cyan);
+  }
+  
+  .ico-brand {
+    --ico: var(--brand);
+  }
+} // END [if/primary-colors]
+
+} // END [if/icon-styles]
+
+//  ------------------------------------------------------------
+//  Icon SVG variables and utilities
+//  ------------------------------------------------------------
+
+:where(html) {
+  @include enabled-svg;
+}
+
+@include enabled-svg-classes;

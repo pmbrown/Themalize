@@ -1,0 +1,119 @@
+//  ------------------------------------------------------------
+//  Overflow mixins
+//  ------------------------------------------------------------
+
+@mixin overflow {
+  @each $name, $value in $overflow {
+    .overflow-x-#{$name} {
+      overflow-x: #{$value};
+    }
+
+    .overflow-y-#{$name} {
+      overflow-y: #{$value};
+    }
+  }
+
+  @each $name, $value in $scroll-gutter {
+    .#{$name} {
+      scrollbar-gutter: #{$value};
+    }
+  }
+
+  .scroll-contain {
+    overscroll-behavior: contain;
+  }  
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
+
+@mixin overflow-xl {
+  @each $name, $value in $overflow {
+    .overflow-x-#{$name}-xl {
+      overflow-x: #{$value};
+    }
+
+    .overflow-y-#{$name}-xl {
+      overflow-y: #{$value};
+    }
+  }
+
+  @each $name, $value in $scroll-gutter {
+    .#{$name}-xl {
+      scrollbar-gutter: #{$value};
+    }
+  }
+}
+
+@mixin overflow-lg {
+  @each $name, $value in $overflow {
+    .overflow-x-#{$name}-lg {
+      overflow-x: #{$value};
+    }
+
+    .overflow-y-#{$name}-lg {
+      overflow-y: #{$value};
+    }
+  }
+
+  @each $name, $value in $scroll-gutter {
+    .#{$name}-lg {
+      scrollbar-gutter: #{$value};
+    }
+  }
+}
+
+@mixin overflow-md {
+  @each $name, $value in $overflow {
+    .overflow-x-#{$name}-md {
+      overflow-x: #{$value};
+    }
+  
+    .overflow-y-#{$name}-md {
+      overflow-y: #{$value};
+    }
+  }
+  
+  @each $name, $value in $scroll-gutter {
+    .#{$name}-md {
+      scrollbar-gutter: #{$value};
+    }
+  }
+}
+
+@mixin overflow-sm {
+  @each $name, $value in $overflow {
+    .overflow-x-#{$name}-sm {
+      overflow-x: #{$value};
+    }
+
+    .overflow-y-#{$name}-sm {
+      overflow-y: #{$value};
+    }
+  }
+
+  @each $name, $value in $scroll-gutter {
+    .#{$name}-sm {
+      scrollbar-gutter: #{$value};
+    }
+  }
+}
+
+@mixin overflow-xs {
+  @each $name, $value in $overflow {
+    .overflow-x-#{$name}-xs {
+      overflow-x: #{$value};
+    }
+
+    .overflow-y-#{$name}-xs {
+      overflow-y: #{$value};
+    }
+  }
+
+  @each $name, $value in $scroll-gutter {
+    .#{$name}-xs {
+      scrollbar-gutter: #{$value};
+    }
+  }
+}

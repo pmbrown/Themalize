@@ -1,0 +1,186 @@
+//  ------------------------------------------------------------
+//  Grid mixins
+//  ------------------------------------------------------------
+
+@mixin fraction-grid-variables {
+  @each $name, $value in $fraction-grid {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin layout-grid-props {
+  --rows: repeat(var(--row, 1), minmax(0, 1fr));
+  display: grid;
+  grid-template-rows: var(--rows);
+  grid-template-columns: repeat(var(--columns, 12), minmax(0, 1fr));
+}
+
+@mixin fraction-grid-props {
+  display: grid;
+  grid-template-columns: var(--gtc);
+  grid-template-rows: var(--gtr);
+}
+
+// Layout grid
+@mixin layout-grid {
+  @each $name, $value in $column-grid {
+    .#{$name} {
+      grid-column: #{$value};        
+    }
+  }
+
+  @each $name, $value in $row-grid {
+    .#{$name} {
+      grid-row: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $start-grid {
+    .col-#{$name} {
+      grid-column-start: #{$value};        
+    }
+  }
+}
+
+@mixin layout-grid-xl {
+  @each $name, $value in $column-grid {
+    .#{$name}-xl {
+      grid-column: #{$value};        
+    }
+  }
+
+  @each $name, $value in $row-grid {
+    .#{$name}-xl {
+      grid-row: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $start-grid {
+    .col-#{$name}-xl {
+      grid-column-start: #{$value};        
+    }
+  }
+}
+
+@mixin layout-grid-lg {
+  @each $name, $value in $column-grid {
+    .#{$name}-lg {
+      grid-column: #{$value};        
+    }
+  }
+
+  @each $name, $value in $row-grid {
+    .#{$name}-lg {
+      grid-row: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $start-grid {
+    .col-#{$name}-lg {
+      grid-column-start: #{$value};        
+    }
+  }
+}
+
+@mixin layout-grid-md {
+  @each $name, $value in $column-grid {
+    .#{$name}-md {
+      grid-column: #{$value};        
+    }
+  }
+
+  @each $name, $value in $row-grid {
+    .#{$name}-md {
+      grid-row: #{$value};        
+    }
+  }
+}
+
+@mixin layout-grid-sm {
+  @each $name, $value in $column-grid {
+    .#{$name}-sm {
+      grid-column: #{$value};        
+    }
+  }
+
+  @each $name, $value in $row-grid {
+    .#{$name}-sm {
+      grid-row: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $start-grid {
+    .col-#{$name}-sm {
+      grid-column-start: #{$value};        
+    }
+  }
+}
+
+@mixin layout-grid-xs {
+  @each $name, $value in $column-grid {
+    .#{$name}-xs {
+      grid-column: #{$value};        
+    }
+  }
+
+  @each $name, $value in $row-grid {
+    .#{$name}-xs {
+      grid-row: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $start-grid {
+    .col-#{$name}-xs {
+      grid-column-start: #{$value};        
+    }
+  }
+}
+
+// Fraction-width grid
+@mixin fraction-grid {
+  @each $fraction-grid, $value in $fraction-grid {
+    .#{$fraction-grid} {
+      --gtc: var(--#{$fraction-grid});        
+    }
+  }
+}
+
+@mixin fraction-grid-xl {
+  @each $fraction-grid, $value in $fraction-grid {
+    .#{$fraction-grid}-xl {
+      --gtc: var(--#{$fraction-grid});        
+    }
+  }
+}
+
+@mixin fraction-grid-lg {
+  @each $fraction-grid, $value in $fraction-grid {
+    .#{$fraction-grid}-lg {
+      --gtc: var(--#{$fraction-grid});        
+    }
+  }
+}
+
+@mixin fraction-grid-md {
+  @each $fraction-grid, $value in $fraction-grid {
+    .#{$fraction-grid}-md {
+      --gtc: var(--#{$fraction-grid});        
+    }
+  }
+}
+
+@mixin fraction-grid-sm {
+  @each $fraction-grid, $value in $fraction-grid {
+    .#{$fraction-grid}-sm {
+      --gtc: var(--#{$fraction-grid});        
+    }
+  }
+}
+
+@mixin fraction-grid-xs {
+  @each $fraction-grid, $value in $fraction-grid {
+    .#{$fraction-grid}-xs {
+      --gtc: var(--#{$fraction-grid});        
+    }
+  }
+}
