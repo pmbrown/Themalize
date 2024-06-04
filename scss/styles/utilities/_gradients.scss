@@ -45,6 +45,8 @@
   }  
 }
 
+@if $enable-theme-colors { 
+
 .gradient-dark {
   --deg: 0deg;
   --grad-1: var(--surf-1-dark);
@@ -61,46 +63,50 @@
   --grad-txt: var(--text-light);
 }
 
+} // END [if/theme-colors]
+
 @if $enable-primary-colors { 
-  .gradient-blue {
-    --deg: 0deg;
-    --grad-1: var(--blue);
-    --grad-2: var(--blue-light);
-    --grad-3: var(--blue-lighter);
-    --grad-txt: var(--text-dark);    
-  }
 
-  .gradient-red {
-    --deg: 0deg;
-    --grad-1: var(--red);
-    --grad-2: var(--red-light);
-    --grad-3: var(--red-lighter);
-    --grad-txt: var(--text-dark);
-  }
-
-  .gradient-green {
-    --deg: 0deg;
-    --grad-1: var(--green);
-    --grad-2: var(--green-light);
-    --grad-3: var(--green-lighter);
-    --grad-txt: var(--text-dark);
-  }
-
-  .gradient-orange {
-    --deg: 0deg;
-    --grad-1: var(--orange-dark);
-    --grad-2: var(--orange);
-    --grad-3: var(--orange-light);
-    --grad-txt: var(--text-light);
-  }
-
-  .gradient-cyan {
-    --deg: 0deg;
-    --grad-1: var(--cyan-dark);
-    --grad-2: var(--cyan);
-    --grad-3: var(--cyan-light);
-    --grad-txt: var(--text-light);
-  }
+.gradient-blue {
+  --deg: 0deg;
+  --grad-1: var(--blue);
+  --grad-2: var(--blue-light);
+  --grad-3: var(--blue-lighter);
+  --grad-txt: var(--text-dark);    
 }
+
+.gradient-red {
+  --deg: 0deg;
+  --grad-1: var(--red);
+  --grad-2: var(--red-light);
+  --grad-3: var(--red-lighter);
+  --grad-txt: var(--text-dark);
+}
+
+.gradient-green {
+  --deg: 0deg;
+  --grad-1: var(--green);
+  --grad-2: var(--green-light);
+  --grad-3: var(--green-lighter);
+  --grad-txt: var(--text-dark);
+}
+
+.gradient-orange {
+  --deg: 0deg;
+  --grad-1: var(--orange-dark);
+  --grad-2: var(--orange);
+  --grad-3: var(--orange-light);
+  --grad-txt: var(--text-light);
+}
+
+.gradient-cyan {
+  --deg: 0deg;
+  --grad-1: var(--cyan-dark);
+  --grad-2: var(--cyan);
+  --grad-3: var(--cyan-light);
+  --grad-txt: var(--text-light);
+}
+  
+} // END [if/primary-colors]
 
 } // END [if/gradients]

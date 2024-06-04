@@ -1,7 +1,7 @@
-/*! Themalize v1.0.0 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.1 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme-hs: 0 0%;
-  --brand-hs: 40 99%;
+  --brand-hs: 180 20%;
 }
 
 :where(html) {
@@ -11,11 +11,11 @@
   --link-hover: color-mix(in srgb, var(--link) 60%, white);
   --link-visited: color-mix(in srgb, var(--link) 70%, white);
   --body-bg: hsl(var(--theme-hs) 99%);
-  --surf-1: hsl(var(--theme-hs) 94%);
-  --surf-2: hsl(var(--theme-hs) 87%);
-  --surf-3: hsl(var(--theme-hs) 81%);
+  --surf-1: hsl(var(--theme-hs) 91%);
+  --surf-2: hsl(var(--theme-hs) 85%);
+  --surf-3: hsl(var(--theme-hs) 79%);
   --surf-4: hsl(var(--theme-hs) 71%);
-  --brand: hsl(var(--brand-hs) 42%);
+  --brand: hsl(var(--brand-hs) 40%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,7 +57,7 @@
   --btn-bg: var(--surf-1);
   --btn-hover: var(--surf-2);
   --btn-bd-width: 1px;
-  --btn-bd-color: var(--surf-2);
+  --btn-bd-color: var(--surf-3);
   --btn-radius: 0.125em;
   --form-py: 0.313rem;
   --form-px: 0.75rem;

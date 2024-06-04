@@ -133,4 +133,10 @@
       --#{$badges}: #{$value};       
     }
   }
+  
+  @if $enable-shadows {
+    @each $shadows, $value in $shadows {
+      --#{$shadows}: #{$value};       
+    }
+  }
 }

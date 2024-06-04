@@ -103,17 +103,21 @@
 
 // Card colors
 
-.card-dark {
-  --card-title-txt: #fff;
-  --card-title-bg: hsl(var(--theme-hs) 24%);
-  --card-bd-color: var(--card-title-bg);
-}
+@if $enable-theme-colors {
 
 .card-light {
   --card-title-txt: #000;
-  --card-title-bg: hsl(var(--theme-hs) 87%);
+  --card-title-bg: var(--surf-2-light);
   --card-bd-color: var(--card-title-bg);
 }
+
+.card-dark {
+  --card-title-txt: #fff;
+  --card-title-bg: var(--surf-2-dark);
+  --card-bd-color: var(--card-title-bg);
+}
+
+} // END [if/theme-colors]
 
 @if $enable-primary-colors {
 .card-blue {

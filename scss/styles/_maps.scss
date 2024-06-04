@@ -231,6 +231,12 @@ $badges: (
   "badge-bg": #{$badge-bg},
 ) !default;
 
+$shadows: (
+  "shadow": #{$shadow},
+  "shadow-sm": #{$shadow-sm},
+  "shadow-lg": #{$shadow-lg},
+) !default;
+
 $fraction-grid: (
   "g-1": #{$g-1},
   "g-2": #{$g-2},

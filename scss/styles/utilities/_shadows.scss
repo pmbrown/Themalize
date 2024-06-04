@@ -3,12 +3,6 @@
 //  ------------------------------------------------------------
 
 @if $enable-shadows {
-
-:where(html) {
-  --shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
-  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --shadow-lg: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
-}
   
 .shadow {
   box-shadow: var(--shadow);

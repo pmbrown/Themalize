@@ -23,19 +23,23 @@
    --mb: 0;
 }
 
+@if $enable-theme-colors {
+
 .pop-dark {
   --ico: var(--pop-txt);
   --pop-txt: #fff;
-  --pop-bg: hsl(var(--theme-hs) 18%);
-  --pop-bd-color: var(--pop-bg);
+  --pop-bg: var(--body-bg-dark);
+  --pop-bd-color: var(--surf-3-dark);
 }
 
 .pop-light {
   --ico: var(--pop-txt);
   --pop-txt: #000;
-  --pop-bg: hsl(var(--theme-hs) 94%);
-  --pop-bd-color: var(--pop-bg);
+  --pop-bg: var(--body-bg-light);
+  --pop-bd-color: var(--surf-2-light);
 }
+
+} // END [if/theme-colors]
 
 @if $enable-primary-colors {
 

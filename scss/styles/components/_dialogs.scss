@@ -167,62 +167,54 @@
   background: #00000099;
 }
 
-} // END [if/dialogs]
-
 // Colors
 
-@mixin dialog-props {
-  --dialog-header-bg: var(--dialog-bg);
-  --dialog-bd-color: var(--dialog-bg);
-}
-
-@if $enable-dialogs {
-
-@if $enable-primary-colors {
-  .dialog-blue, .dialog-red, .dialog-green, .dialog-orange, .dialog-cyan, .dialog-dark, .dialog-light {
-    @include dialog-props;
-  }
-}
-@else {
-  .dialog-dark, .dialog-light {
-    @include dialog-props;
-  }
-}
+@if $enable-theme-colors {
 
 .dialog-dark {
   --dialog-header-txt: #fff;
-  --dialog-bg: hsl(var(--theme-hs) 31%);
+  --dialog-header-bg: var(--surf-2-dark);
+  --dialog-bd-color: var(--surf-3-dark);
 }
 
 .dialog-light {
   --dialog-header-txt: #000;
-  --dialog-bg: hsl(var(--theme-hs) 87%);
+  --dialog-header-bg: var(--surf-2-light);
+  --dialog-bd-color: var(--surf-3-light);
 }
 
+} // END [if/theme-colors]
+
 @if $enable-primary-colors {
+
 .dialog-blue {
   --dialog-header-txt: #fff;
-  --dialog-bg: var(--blue);
+  --dialog-header-bg: var(--blue);
+  --dialog-bd-color: var(--blue);
 }
 
 .dialog-red { 
   --dialog-header-txt: #fff;
-  --dialog-bg: var(--red);
+  --dialog-header-bg: var(--red);
+  --dialog-bd-color: var(--red);
 }
 
 .dialog-green {
   --dialog-header-txt: #fff;
-  --dialog-bg: var(--green);
+  --dialog-header-bg: var(--green);
+  --dialog-bd-color: var(--green);
 }
 
 .dialog-orange {
   --dialog-header-txt: #000;
-  --dialog-bg: var(--orange);
+  --dialog-header-bg: var(--orange);
+  --dialog-bd-color: var(--orange);
 }
 
 .dialog-cyan {
   --dialog-header-txt: #000;
-  --dialog-bg: var(--cyan);
+  --dialog-header-bg: var(--cyan);
+  --dialog-bd-color: var(--cyan);
 }
 
 } // END [if/primary-colors]

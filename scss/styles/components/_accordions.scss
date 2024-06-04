@@ -105,19 +105,23 @@
   --svg: var(--details-closed);
 }
 
+@if $enable-theme-colors {
+
 .details-light {
   --summary-txt: #000;
   --summary-ico: #000;
-  --summary-bg: hsl(var(--theme-hs) 94%);
-  --details-bd-color: hsl(var(--theme-hs) 81%);
+  --summary-bg: var(--surf-1-light);
+  --details-bd-color: var(--surf-3-light);
 }
 
 .details-dark {
   --summary-txt: #fff;
   --summary-ico: #fff;
-  --summary-bg: hsl(var(--theme-hs) 18%);
-  --details-bd-color: hsl(var(--theme-hs) 31%);
+  --summary-bg: var(--surf-1-dark);
+  --details-bd-color: var(--surf-3-dark);
 }
+
+} // END [if/theme-colors]
 
 @if $enable-primary-colors {
 

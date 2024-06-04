@@ -4,18 +4,18 @@
 
 // Theme color-scheme hue and saturation levels
 $theme-hs:            0 0% !default;
-$brand-hs:            40 99% !default;
+$brand-hs:            180 20% !default;
 
 // Light color-scheme
 $text-light:          hsl(var(--theme-hs) 20%) !default;
 $link-light:          #1c3db5 !default;
 $link-hover-light:    color-mix(in srgb, var(--link) 60%, white) !default;
 $link-visited-light:  color-mix(in srgb, var(--link) 70%, white) !default;
-$brand-light:         hsl(var(--brand-hs) 42%) !default;
+$brand-light:         hsl(var(--brand-hs) 40%) !default;
 $body-bg-light:       hsl(var(--theme-hs) 99%) !default;
-$surf-1-light:        hsl(var(--theme-hs) 94%) !default;
-$surf-2-light:        hsl(var(--theme-hs) 87%) !default;
-$surf-3-light:        hsl(var(--theme-hs) 81%) !default;
+$surf-1-light:        hsl(var(--theme-hs) 91%) !default;
+$surf-2-light:        hsl(var(--theme-hs) 85%) !default;
+$surf-3-light:        hsl(var(--theme-hs) 79%) !default;
 $surf-4-light:        hsl(var(--theme-hs) 71%) !default;
 
 // Dark color-scheme
@@ -55,7 +55,7 @@ $btn-px:              0.75rem !default;
 $btn-bg:              var(--surf-1) !default;
 $btn-hover:           var(--surf-2) !default;
 $btn-bd-width:        1px !default;
-$btn-bd-color:        var(--surf-2) !default;
+$btn-bd-color:        var(--surf-3) !default;
 $btn-radius:          0.125em !default;
 $form-py:             0.313rem !default;
 $form-px:             0.75rem !default;
@@ -110,7 +110,7 @@ $summary-bg:          var(--surf-1) !default;
 $summary-ico:         var(--summary-txt) !default;
 $details-py:          0.5rem !default;
 $details-px:          0.75rem !default;
-$details-bd-color:    var(--surf-2) !default;
+$details-bd-color:    var(--surf-3) !default;
 $details-bd-width:    1px !default;
 $details-radius:      0.125em !default;
 
@@ -145,24 +145,29 @@ $dialog-width:        calc((100% - 6px) - 2em) !default;
 $dialog-max-width:    30rem !default;
 
 // Popovers
-$pop-txt:             var(--text);
-$pop-bg:              var(--body-bg);
-$pop-bd-color:        var(--surf-2);
-$pop-bd-width:        1px;
-$pop-radius:          0.125rem;
-$pop-my:              1rem;
-$pop-mx:              auto;
-$pop-py:              0.75rem;
-$pop-px:              1rem;
-$pop-width:           fit-content;
+$pop-txt:             var(--text) !default;
+$pop-bg:              var(--body-bg) !default;
+$pop-bd-color:        var(--surf-3) !default;
+$pop-bd-width:        1px !default;
+$pop-radius:          0.125rem !default;
+$pop-my:              1rem !default;
+$pop-mx:              auto !default;
+$pop-py:              0.75rem !default;
+$pop-px:              1rem !default;
+$pop-width:           fit-content !default;
 
 // Badges
-$badge-fs:            0.65em;
-$badge-fw:            600;
-$badge-py:            0.375em;
-$badge-px:            0.65em;
-$badge-radius:        0.25em;
+$badge-fs:            0.65em !default;
+$badge-fw:            600 !default;
+$badge-py:            0.375em !default;
+$badge-px:            0.65em !default;
+$badge-radius:        0.25em !default;
 $badge-bg:            var(--surf-2);
+
+// Shadows
+$shadow:        0 0.25rem 0.75rem rgba(0, 0, 0, 0.15) !default;
+$shadow-sm:     0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !default;
+$shadow-lg:     0 0.5rem 1.25rem rgba(0, 0, 0, 0.15) !default;
 
 // Spacing
 $auto: auto;
