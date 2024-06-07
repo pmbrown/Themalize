@@ -157,6 +157,7 @@ $pop-px:              1rem !default;
 $pop-width:           fit-content !default;
 
 // Badges
+$badge-txt:           var(--text) !default;
 $badge-fs:            0.65em !default;
 $badge-fw:            600 !default;
 $badge-py:            0.375em !default;
@@ -168,6 +169,15 @@ $badge-bg:            var(--surf-2);
 $shadow:        0 0.25rem 0.75rem rgba(0, 0, 0, 0.15) !default;
 $shadow-sm:     0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !default;
 $shadow-lg:     0 0.5rem 1.25rem rgba(0, 0, 0, 0.15) !default;
+
+// Gradients
+$gradient-light:    linear-gradient(180deg, var(--surf-1-light), var(--surf-2-light), var(--surf-3-light)) !default;
+$gradient-dark:     linear-gradient(0deg, var(--surf-1-dark), var(--surf-2-dark), var(--surf-3-dark)) !default;
+$gradient-blue:     linear-gradient(0deg, var(--blue), var(--blue-light), var(--blue-lighter)) !default;
+$gradient-red:      linear-gradient(0deg, var(--red), var(--red-light), var(--red-lighter)) !default;
+$gradient-green:    linear-gradient(0deg, var(--green), var(--green-light), var(--green-lighter)) !default;
+$gradient-orange:   linear-gradient(0deg, var(--orange-darker), var(--orange-dark), var(--orange)) !default;
+$gradient-cyan:     linear-gradient(0deg, var(--cyan-darker), var(--cyan-dark), var(--cyan)) !default;
 
 // Spacing
 $auto: auto;

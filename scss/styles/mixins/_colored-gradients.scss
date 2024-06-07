@@ -1,11 +1,11 @@
 //  ------------------------------------------------------------
-//  Backgrounds mixins
+//  Colored-gradient mixins
 //  ------------------------------------------------------------
 
-@mixin background-props {
+@mixin colored-gradients {
   @if $enable-icon-mixins or $enable-icon-styles {
-    --ico: var(--bg-txt);
+  --ico: var(--grad-txt);
   }
-  color: var(--bg-txt);
-  background-color: var(--bg);
+  color: var(--grad-txt);
+  background-image: var(--grad-bg);
 }

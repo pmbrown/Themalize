@@ -4,30 +4,12 @@
 
 @if $enable-gradients {
 
-:where(html) {
+.gradient {
   --deg: 180deg;
-  --grad-1: var(--surf-1);
-  --grad-2: var(--surf-2);
-  --grad-3: var(--surf-3);
-  --grad-txt: var(--text);
+  background-image: linear-gradient(var(--deg), var(--surf-1), var(--surf-2), var(--surf-3));
 }
 
-@if $enable-primary-colors {
-  :where(.gradient, .gradient-dark, .gradient-light, .gradient-blue, .gradient-red, .gradient-green, .gradient-orange, .gradient-cyan) {
-    --ico: var(--grad-txt);
-    color: var(--grad-txt);
-    background-image: linear-gradient(var(--deg), var(--grad-1), var(--grad-2), var(--grad-3));
-  }
-}
-@else {
-  :where(.gradient, .gradient-dark, .gradient-light) {
-    --ico: var(--grad-txt);
-    color: var(--grad-txt);
-    background-image: linear-gradient(var(--deg), var(--grad-1), var(--grad-2), var(--grad-3));
-  }
-}
-
-// Default .gradient [dark-schemes] degree reversal.
+// Reverse degree to keep .gradient direction consistent with alternating surface colors.
 @if $enable-theme-manual {
   :where([data-prefers-dark=true]) {
     .gradient {
@@ -45,22 +27,34 @@
   }  
 }
 
+@if $enable-theme-colors and $enable-primary-colors {
+  :where(.gradient-dark, .gradient-light, .gradient-blue, .gradient-red, .gradient-green, .gradient-orange, .gradient-cyan) {
+    @include colored-gradients;
+  }
+}
+@else {
+  @if $enable-theme-colors {
+    :where(.gradient-dark, .gradient-light) {
+      @include colored-gradients;
+    }
+  }
+  @if $enable-primary-colors {
+    :where(.gradient-blue, .gradient-red, .gradient-green, .gradient-orange, .gradient-cyan) {
+      @include colored-gradients;
+    }
+  }
+}
+
 @if $enable-theme-colors { 
 
 .gradient-dark {
-  --deg: 0deg;
-  --grad-1: var(--surf-1-dark);
-  --grad-2: var(--surf-2-dark);
-  --grad-3: var(--surf-3-dark);
   --grad-txt: var(--text-dark);
+  --grad-bg: var(--gradient-dark);
 }
 
 .gradient-light {
-  --deg: 180deg;
-  --grad-1: var(--surf-1-light);
-  --grad-2: var(--surf-2-light);
-  --grad-3: var(--surf-3-light);
   --grad-txt: var(--text-light);
+  --grad-bg: var(--gradient-light);
 }
 
 } // END [if/theme-colors]
@@ -68,43 +62,28 @@
 @if $enable-primary-colors { 
 
 .gradient-blue {
-  --deg: 0deg;
-  --grad-1: var(--blue);
-  --grad-2: var(--blue-light);
-  --grad-3: var(--blue-lighter);
-  --grad-txt: var(--text-dark);    
+  --grad-txt: var(--text-dark);
+  --grad-bg: var(--gradient-blue);    
 }
 
 .gradient-red {
-  --deg: 0deg;
-  --grad-1: var(--red);
-  --grad-2: var(--red-light);
-  --grad-3: var(--red-lighter);
   --grad-txt: var(--text-dark);
+  --grad-bg: var(--gradient-red);
 }
 
 .gradient-green {
-  --deg: 0deg;
-  --grad-1: var(--green);
-  --grad-2: var(--green-light);
-  --grad-3: var(--green-lighter);
   --grad-txt: var(--text-dark);
+  --grad-bg: var(--gradient-green);
 }
 
 .gradient-orange {
-  --deg: 0deg;
-  --grad-1: var(--orange-dark);
-  --grad-2: var(--orange);
-  --grad-3: var(--orange-light);
   --grad-txt: var(--text-light);
+  --grad-bg: var(--gradient-orange);
 }
 
 .gradient-cyan {
-  --deg: 0deg;
-  --grad-1: var(--cyan-dark);
-  --grad-2: var(--cyan);
-  --grad-3: var(--cyan-light);
   --grad-txt: var(--text-light);
+  --grad-bg: var(--gradient-cyan);
 }
   
 } // END [if/primary-colors]

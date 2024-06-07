@@ -5,15 +5,7 @@
 
 @if $enable-dialogs {
 
-:where(html) {
-  @if $enable-close-svg {
-    --dialog-close: var(--close);
-  }
-  @else {
-    --dialog-close: #{$close};
-  }
-}
-
+// Dialog
 :where(dialog) {
   color: var(--dialog-txt);
   margin: auto;
@@ -27,25 +19,30 @@
   background-color: var(--dialog-bg);
 }
 
+// Dialog header
 :where(dialog :is(header, .dialog-header)) {
-  --ico: var(--dialog-header-txt); 
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--dialog-header-txt); 
+  }
   color: var(--dialog-header-txt);
   position: sticky;
   align-self: start;
   top: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  column-gap: 1rem;
   border-block-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
   background-color: var(--dialog-header-bg);
   padding-block: .5rem;
   padding-inline-start: 1rem;
-  padding-inline-end: .5rem;
+  padding-inline-end: .75rem;
   border-start-start-radius: 0;
 }
 
 :where(dialog :is(header, .dialog-header) *) {
-  --ico: var(--dialog-header-txt);
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--dialog-header-txt); 
+  }
   color: var(--dialog-header-txt);
 }
 
@@ -53,35 +50,13 @@
   --mb: 0;
 }
 
-// Heading block-padding will vary with font-family selection.
+// Heading sizes block-padding varies with font-family selection.
 :where(dialog :is(header, .dialog-header) *:is(h1, h2, h3, h4, h5, h6)) {
   padding-block-start: .2rem;
   padding-block-end: .4rem;
 }
 
-// Header close button
-:where(dialog :is(header, .dialog-header) [data-close]) {
-  --svg: var(--dialog-close);
-  --btn-bg: transparent;
-  --btn-hover: transparent;
-  border: none;
-  margin-inline-start: 1rem;
-}
-
-:where(dialog :is(header, .dialog-header) [data-close]:is(:focus, :active)) {
-  outline: none;
-  box-shadow: none;
-}
-
-// @extend %icon-mask chains all icon styles together to minimise code.
-// @include icon-mask can be used to duplicate icon styles.
-// Alternatively, if icon-styles are enabled [class="ico"] can be added 
-// to the button element and the [:before] style can be disabled.
-:where(dialog :is(header, .dialog-header) [data-close]):before {
-  @extend %icon-mask;
-}
-
-// Internal wrapper
+// Dialog body wrapper
 :where(.dialog-body) {
   padding-block: var(--dialog-body-py);
   padding-inline: var(--dialog-body-px);
@@ -105,8 +80,20 @@
   --mb: 0;
 }
 
-// Image dialog
+// Image dialog with image button
 
+// Image button
+:where(.dialog-img-btn) {
+  --fs: var(--fs-xxs);
+  --btn-py: 0;
+  --btn-px: 0;
+}
+
+:where(.dialog-img-btn:hover) {
+  cursor: zoom-in;
+}
+
+// Image dialog
 :where(.dialog-img) {
   --dialog-body-py: 0;
   --dialog-body-px: 0;
@@ -126,45 +113,62 @@
   padding-block: .5rem;
   padding-inline: 1rem;
 }
-  
-:where(.dialog-img-close) {
+
+// Dialog close buttons
+
+// Essential icons
+:where(dialog :is(header, .dialog-header) [data-close]):before,
+:where(.dialog-img-close):before {
+  --ico: var(--dialog-header-txt);
+  @if $enable-close-svg {
+    --svg: var(--close);
+  }
+  @else {
+    --svg: #{$close};
+  }
+  @extend %icon-mask;
+}
+
+// Header close button style
+:where(dialog :is(header, .dialog-header) [data-close]) {
+  --btn-bg: transparent;
+  --btn-hover: transparent;
+  --btn-bd-color: transparent;
+  --btn-py: .25rem;
+  --btn-px: .5rem;
+  margin-inline-start: auto;
+}
+
+:where(dialog :is(header, .dialog-header) [data-close]:is(:focus, :active)) {
+  outline: none;
+  box-shadow: none;
+}
+
+// Image dialog close button style (doesn't apply to header, .dialog-header close button if used)
+.dialog-img > button[data-close] {
   --btn-radius: 0;
-  --svg: var(--dialog-close);
   position: absolute;
   inset-block-start: 0;
   inset-inline-end: 0;
-  z-index: 1500;
   border-end-start-radius: inherit;
   border-block-start: none;
   border-inline-end: none;
 }
 
-:where(.dialog-img-close):before {
-  @extend %icon-mask;
-}
-  
-:where(.dialog-img-btn) {
-  --fs: var(--fs-xxs);
-  --btn-py: 0;
-  --btn-px: 0;
+// Dialog backdrop
+
+::backdrop {
+  background: #00000099;
 }
 
-:where(.dialog-img-btn:hover) {
-  cursor: zoom-in;
-}
-
-// Backdrop
-
+// Adding <div class="backdrop" data-close></div> as last child
+// in dialog allows clicking outside element to close dialog.
 :where(.backdrop) {
   position: fixed;
   inset: 0;
   z-index: -1;
   display: block;
   content: "";
-}
-
-::backdrop {
-  background: #00000099;
 }
 
 // Colors

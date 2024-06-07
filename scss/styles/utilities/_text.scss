@@ -136,6 +136,20 @@
   text-decoration: none;
 }
 
+.text-white {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: #fff;
+  }
+  color: #fff;
+}
+
+.text-black {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: #000;
+  }
+  color: #000;
+}
+
 .text-link a, a.text-link {
   --color: var(--text);
   --visited: var(--text);

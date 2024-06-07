@@ -5,6 +5,9 @@
 @if $enable-popovers {
 
 :where([popover]) {
+  @if $enable-icon-mixins or $enable-icon-styles {
+  --ico: var(--pop-txt);
+  }
   width: fit-content;
   height: fit-content;
   color: var(--pop-txt);
@@ -26,14 +29,12 @@
 @if $enable-theme-colors {
 
 .pop-dark {
-  --ico: var(--pop-txt);
   --pop-txt: #fff;
   --pop-bg: var(--body-bg-dark);
   --pop-bd-color: var(--surf-3-dark);
 }
 
 .pop-light {
-  --ico: var(--pop-txt);
   --pop-txt: #000;
   --pop-bg: var(--body-bg-light);
   --pop-bd-color: var(--surf-2-light);
@@ -44,7 +45,6 @@
 @if $enable-primary-colors {
 
 .pop-blue {
-  --ico: var(--pop-txt);
   --pop-txt: #fff;
   --pop-bg: var(--blue);
   --pop-bd-color: var(--blue);
@@ -52,28 +52,24 @@
 
 
 .pop-red {
-  --ico: var(--pop-txt);
   --pop-txt: #fff;
   --pop-bg: var(--red);
   --pop-bd-color: var(--red);
 }
 
 .pop-green {
-  --ico: var(--pop-txt);
   --pop-txt: #fff;
   --pop-bg: var(--green);
   --pop-bd-color: var(--green);
 }
 
 .pop-orange {
-  --ico: var(--pop-txt);
   --pop-txt: #000;
   --pop-bg: var(--orange);
   --pop-bd-color: var(--orange);
 }
 
 .pop-cyan {
-  --ico: var(--pop-txt);
   --pop-txt: #000;
   --pop-bg: var(--cyan);
   --pop-bd-color: var(--cyan);

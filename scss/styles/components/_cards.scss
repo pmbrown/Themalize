@@ -65,7 +65,9 @@
 }
 
 :where(.card-title) {
---ico: var(--card-title-txt);
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--card-title-txt);
+  }
   color: var(--card-title-txt);
   display: block;
   padding-block: var(--card-title-py);

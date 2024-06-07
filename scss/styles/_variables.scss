@@ -10,6 +10,10 @@
     --#{$theme-colors}: #{$value};       
   }
   
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--color);
+  }
+  
   @if $enable-theme-colors {
     @each $light-scheme-colors, $value in $light-scheme-colors {
       --#{$light-scheme-colors}: #{$value};       
@@ -137,6 +141,18 @@
   @if $enable-shadows {
     @each $shadows, $value in $shadows {
       --#{$shadows}: #{$value};       
+    }
+  }
+  
+  @if $enable-gradients and $enable-theme-colors {
+    @each $gradients-theme, $value in $gradients-theme {
+      --#{$gradients-theme}: #{$value};       
+    }
+  }
+
+  @if $enable-gradients and $enable-primary-colors {
+    @each $gradients-primary, $value in $gradients-primary {
+      --#{$gradients-primary}: #{$value};       
     }
   }
 }

@@ -5,10 +5,17 @@
 @if $enable-badges {
 
 :where(.badge) {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--badge-txt);
+    --fs: 1em;
+  }
+  color: var(--badge-txt);
   font-size: var(--badge-fs);
   font-weight: var(--badge-fw);
   text-align: center;
   line-height: 1;
+  position: relative;
+  inset-block-start: -1px;
   display: inline-block;
   vertical-align: baseline;
   padding-block: var(--badge-py);
@@ -19,9 +26,50 @@
 
 :where(button, [type=button], .btn) .badge {
   --badge-bg: var(--surf-3);
-  position: relative;
-  top: -1px;
+  inset-block-start: -2px;
 }
+
+@if $enable-theme-colors {
+
+.badge-light {
+  --badge-txt: #000;
+  --badge-bg: var(--surf-2-light);
+}
+
+.badge-dark {
+  --badge-txt: #fff;
+  --badge-bg: var(--surf-2-dark);
+}
+
+} // END [if/theme-colors]
+
+@if $enable-primary-colors {
+
+.badge-blue {
+  --badge-txt: #fff;
+  --badge-bg: var(--blue);
+}
+
+.badge-red {
+  --badge-txt: #fff;
+  --badge-bg: var(--red);
+}
+
+.badge-green {
+  --badge-txt: #fff;
+  --badge-bg: var(--green);
+}
+
+.badge-orange {
+  --badge-txt: #000;
+  --badge-bg: var(--orange);
+}
+.badge-cyan {
+  --badge-txt: #000;
+  --badge-bg: var(--cyan);
+}
+
+} // END [@if/primary-colors]
 
 
 } // END [@if/badges]

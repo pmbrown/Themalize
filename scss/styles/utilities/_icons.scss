@@ -6,13 +6,6 @@
   @include icon-mask;
 }
 
-@if $enable-icon-mixins or $enable-icon-styles {
-  :where(html) {
-    --ico: var(--color);
-    --ico-va: -.115em;
-  }
-}
-
 @if $enable-icon-styles {
 
 .ico:before {

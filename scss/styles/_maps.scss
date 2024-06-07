@@ -223,6 +223,7 @@ $popovers: (
 ) !default;
 
 $badges: (
+  "badge-txt": #{$badge-txt},
   "badge-fs": #{$badge-fs},
   "badge-fw": #{$badge-fw},
   "badge-py": #{$badge-py},
@@ -235,6 +236,19 @@ $shadows: (
   "shadow": #{$shadow},
   "shadow-sm": #{$shadow-sm},
   "shadow-lg": #{$shadow-lg},
+) !default;
+
+$gradients-theme: (
+  "gradient-light": #{$gradient-light},
+  "gradient-dark": #{$gradient-dark},
+) !default;
+
+$gradients-primary: (
+  "gradient-blue": #{$gradient-blue},
+  "gradient-red": #{$gradient-red},
+  "gradient-green": #{$gradient-green},
+  "gradient-orange": #{$gradient-orange},
+  "gradient-cyan": #{$gradient-cyan},
 ) !default;
 
 $fraction-grid: (
