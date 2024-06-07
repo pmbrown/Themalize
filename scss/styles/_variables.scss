@@ -2,8 +2,8 @@
 // CSS variables
 // ----------------------------------------------------------
 @import "maps";
-@import "mixins/copyright-license";
-@include copyright-license;
+@import "mixins/version";
+@include version;
 
 :where(html) { 
   @each $theme-colors, $value in $theme-colors {
