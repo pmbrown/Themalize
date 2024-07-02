@@ -21,14 +21,14 @@ $enable-accordions:       false;
 $enable-cards:            false;
 $enable-dialogs:          false;
 $enable-popovers:         false;
-$enable-badges:           false;
 $enable-syntax:           false;
 
 // Utilities
 $enable-backgrounds:      false;
-$enable-gradients:        false;
+$enable-badges:           false;
 $enable-borders:          false;
-$enable-buttons:          false;
+$enable-buttons:          false; // Requires $enable-forms-buttons: true
+$enable-gradients:        false;
 $enable-images:           false;
 $enable-shadows:          false;
 $enable-text:             false;

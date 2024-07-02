@@ -133,10 +133,10 @@ $typography: (
   "h6": #{$h6},
   "lh-body": #{$lh-body},
   "lh-header": #{$lh-header},
-  "lh-btn-forms": #{$lh-btn-forms},
 ) !default;
 
 $forms-buttons: (
+  "lh-btn-forms": #{$lh-btn-forms},
   "btn-py": #{$btn-py},
   "btn-px": #{$btn-px},
   "btn-bg": #{$btn-bg},

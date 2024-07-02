@@ -362,7 +362,8 @@ a > :where(code) {
   box-shadow: none;
 }
 
-:where(button, [type=button], [type=submit], [type=reset], .btn):is(:hover, :focus) {  
+:where(button, [type=button], [type=submit], [type=reset], .btn):is(:hover, :focus) { 
+  border-color: var(--btn-hover); 
   background-color: var(--btn-hover);
 }
 

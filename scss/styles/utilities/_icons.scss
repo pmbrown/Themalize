@@ -37,8 +37,11 @@
 }
 
 .ico-btn {
-  --btn-py: .25rem;
-  --btn-px: .5rem;
+  --btn-px: .65rem;
+}
+
+.ico-brand {
+  --ico: var(--brand);
 }
 
 @if $enable-primary-colors {
@@ -60,10 +63,6 @@
 
   .ico-cyan {
     --ico: var(--cyan);
-  }
-  
-  .ico-brand {
-    --ico: var(--brand);
   }
 } // END [if/primary-colors]
 

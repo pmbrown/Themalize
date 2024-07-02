@@ -12,7 +12,7 @@
   margin-block-start: var(--dialog-top);  
   padding: 0;
   width: var(--dialog-width);
-  max-width: var(--dialog-max-width); 
+  max-inline-size: var(--dialog-max-width); 
   border-width: var(--dialog-bd-width);
   border-color: var(--dialog-bd-color);
   border-radius: var(--dialog-radius); 

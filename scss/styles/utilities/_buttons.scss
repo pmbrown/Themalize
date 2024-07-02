@@ -2,7 +2,7 @@
 //  Button utilities
 //  ------------------------------------------------------------
 
-@if $enable-buttons {
+@if $enable-forms-buttons and $enable-buttons {
 
 .btn-outline {
   --btn-bg: var(--body-bg);

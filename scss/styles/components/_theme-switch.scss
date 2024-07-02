@@ -87,7 +87,7 @@
   
   #themes:after {
     margin-inline-start: .075rem;
-    word-spacing: -.15em;
+    word-spacing: -.16em;
   }
   
   :where(html) {
@@ -101,6 +101,7 @@
     #themes:after {
       content: "Dark on"; // Firefox fallback
       content: "Dark on" / "on";
+      word-spacing: -.1em;
     }
   }  
 } // END [if/radio]

@@ -19,7 +19,7 @@
   --mb: 0;
 }
 
-:where(.card-link a:afte) {
+.card-link a:after {
   content: "";
   display: block;
   position: absolute;

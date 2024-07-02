@@ -1,4 +1,4 @@
-/*! Themalize v1.0.2 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.3 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme-hs: 0 0%;
   --brand-hs: 180 20%;
@@ -10,7 +10,7 @@
   --link: #1c3db5;
   --link-hover: color-mix(in srgb, var(--link) 60%, white);
   --link-visited: color-mix(in srgb, var(--link) 70%, white);
-  --body-bg: hsl(var(--theme-hs) 99%);
+  --body-bg: hsl(var(--theme-hs) 98%);
   --surf-1: hsl(var(--theme-hs) 91%);
   --surf-2: hsl(var(--theme-hs) 85%);
   --surf-3: hsl(var(--theme-hs) 79%);
@@ -24,13 +24,13 @@
     --text: hsl(var(--theme-hs) 99%);
     --link: #9fbfdf;
     --link-hover: color-mix(in srgb, var(--link) 75%, white);
-    --link-visited: color-mix(in srgb, var(--link) 75%, white);
+    --link-visited: color-mix(in srgb, var(--link) 65%, white);
     --body-bg: hsl(var(--theme-hs) 14%);
     --surf-1: hsl(var(--theme-hs) 18%);
     --surf-2: hsl(var(--theme-hs) 24%);
     --surf-3: hsl(var(--theme-hs) 31%);
     --surf-4: hsl(var(--theme-hs) 41%);
-    --brand: hsl(var(--brand-hs) 48%);
+    --brand: hsl(var(--brand-hs) 55%);
   }
 }
 :where(html) {
@@ -57,7 +57,7 @@
   --btn-bg: var(--surf-1);
   --btn-hover: var(--surf-2);
   --btn-bd-width: 1px;
-  --btn-bd-color: var(--surf-3);
+  --btn-bd-color: var(--surf-2);
   --btn-radius: 0.125em;
   --form-py: 0.313rem;
   --form-px: 0.75rem;
@@ -413,6 +413,7 @@ a > :where(code) {
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn):is(:hover, :focus) {
+  border-color: var(--btn-hover);
   background-color: var(--btn-hover);
 }
 
