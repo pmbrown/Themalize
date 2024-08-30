@@ -1,7 +1,6 @@
 // ---------------------------------------------------------- 
 // CSS variables
 // ----------------------------------------------------------
-@import "maps";
 @import "mixins/version";
 @include version;
 
@@ -9,11 +8,7 @@
   @each $theme-colors, $value in $theme-colors {
     --#{$theme-colors}: #{$value};       
   }
-  
-  @if $enable-icon-mixins or $enable-icon-styles {
-    --ico: var(--color);
-  }
-  
+
   @if $enable-theme-colors {
     @each $light-scheme-colors, $value in $light-scheme-colors {
       --#{$light-scheme-colors}: #{$value};       
@@ -45,12 +40,12 @@
     }
   }
   
-  @if $enable-theme-manual and $enable-theme-switch {
+  @if $enable-manual-themes and $enable-theme-switch {
     --switch-ico: var(--switch-off);
   }
 }
 
-@if $enable-theme-manual {
+@if $enable-manual-themes {
   :where([data-prefers-dark=true]) {
     color-scheme: dark;
     
@@ -104,6 +99,11 @@
     @each $tables, $value in $tables {
       --#{$tables}: #{$value};       
     }
+  }
+  
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--color);
+    --ico-va: -.115em;
   }
 }
 

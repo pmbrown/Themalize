@@ -44,6 +44,20 @@
 
 @if $enable-theme-colors {
 
+.bg-body-light {
+  --color: #000;
+  --ico: #000;
+  color: #000;
+  background-color: var(--body-bg-light);
+}
+
+.bg-body-dark {
+  --color: #fff;
+  --ico: #fff;
+  color: #fff;
+  background-color: var(--body-bg-dark);
+}
+
 .surf-1-light {
   --bg: var(--surf-1-light);
   --bg-txt: #000;

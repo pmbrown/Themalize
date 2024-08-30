@@ -3,7 +3,6 @@
 //  ------------------------------------------------------------
 
 @mixin icon-mask {
-  --ico-va: -.115em;
   display: inline-block;
   background-color: var(--ico);
   content: "";

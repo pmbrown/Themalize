@@ -9,19 +9,18 @@ $enable-primary-colors:   false;
 $enable-theme-colors:     false;
 
 // Manual theme switch
-$enable-theme-manual:     false;
+$enable-manual-themes:    false;
 
 // Theme switch button
 $enable-theme-switch:     false;
-$enable-theme-celestial:  false;
-$enable-theme-radio:      false;
+$enable-switch-celestial: false;
+$enable-switch-radio:     false;
 
 // Components
 $enable-accordions:       false;
 $enable-cards:            false;
 $enable-dialogs:          false;
 $enable-popovers:         false;
-$enable-syntax:           false;
 
 // Utilities
 $enable-backgrounds:      false;
@@ -34,14 +33,36 @@ $enable-shadows:          false;
 $enable-text:             false;
 
 // Layout
-$enable-layout-grid:      false;
-$enable-fraction-grid:    false;
+$enable-grid-auto:        false;
+$enable-grid-columns:     false;
+$enable-containers:       false;
+
+// Spacing
 $enable-gaps:             false;
-$enable-display:          false;
-$enable-display-queries:  false;
-$enable-wrappers:         false;
-$enable-spacing:          false;
-$enable-spacing-queries:  false;
+$enable-margins:          false;
+$enable-padding:          false;
+
+// Spacing breakpoints
+$enable-margins-bp:       false;
+$enable-padding-bp:       false;
+
+// Display
+$enable-block:            false;
+$enable-flex:             false;
+$enable-alignment:        false;
+$enable-sizing:           false;
+$enable-order:            false;
+$enable-position:         false;
+$enable-overflow:         false;
+
+// Display breakpoints
+$enable-block-bp:         false;
+$enable-flex-bp:          false;
+$enable-alignment-bp:     false;
+$enable-sizing-bp:        false;
+$enable-order-bp:         false;
+$enable-position-bp:      false;
+$enable-overflow-bp:      false;
 
 // Breakpoints
 $enable-breakpoint-xl:    false; // 1601px

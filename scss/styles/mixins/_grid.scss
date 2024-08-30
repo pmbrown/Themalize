@@ -1,186 +1,176 @@
 //  ------------------------------------------------------------
-//  Grid mixins
+//  Grid auto mixins
 //  ------------------------------------------------------------
 
-@mixin fraction-grid-variables {
-  @each $name, $value in $fraction-grid {
+@mixin grid-auto-variables {
+  @each $name, $value in $grid-auto {
     --#{$name}: #{$value};
   }
 }
 
-@mixin layout-grid-props {
-  --rows: repeat(var(--row, 1), minmax(0, 1fr));
-  display: grid;
-  grid-template-rows: var(--rows);
-  grid-template-columns: repeat(var(--columns, 12), minmax(0, 1fr));
+@mixin grid-auto {
+  @each $grid-auto, $value in $grid-auto {
+    .#{$grid-auto} {
+      --gtc: var(--#{$grid-auto});        
+    }
+  }
 }
 
-@mixin fraction-grid-props {
-  display: grid;
-  grid-template-columns: var(--gtc);
-  grid-template-rows: var(--gtr);
+@mixin grid-auto-xl {
+  @each $grid-auto, $value in $grid-auto {
+    .#{$grid-auto}-xl {
+      --gtc: var(--#{$grid-auto});        
+    }
+  }
 }
 
-// Layout grid
-@mixin layout-grid {
-  @each $name, $value in $column-grid {
+@mixin grid-auto-lg {
+  @each $grid-auto, $value in $grid-auto {
+    .#{$grid-auto}-lg {
+      --gtc: var(--#{$grid-auto});        
+    }
+  }
+}
+
+@mixin grid-auto-md {
+  @each $grid-auto, $value in $grid-auto {
+    .#{$grid-auto}-md {
+      --gtc: var(--#{$grid-auto});        
+    }
+  }
+}
+
+@mixin grid-auto-sm {
+  @each $grid-auto, $value in $grid-auto {
+    .#{$grid-auto}-sm {
+      --gtc: var(--#{$grid-auto});        
+    }
+  }
+}
+
+@mixin grid-auto-xs {
+  @each $grid-auto, $value in $grid-auto {
+    .#{$grid-auto}-xs {
+      --gtc: var(--#{$grid-auto});        
+    }
+  }
+}
+
+//  ------------------------------------------------------------
+//  Grid columns mixins
+//  ------------------------------------------------------------
+
+// Columns and rows
+@mixin grid-columns {
+  @each $name, $value in $grid-column {
     .#{$name} {
       grid-column: #{$value};        
     }
   }
 
-  @each $name, $value in $row-grid {
+  @each $name, $value in $grid-row {
     .#{$name} {
       grid-row: #{$value};        
     }
   }
   
-  @each $name, $value in $start-grid {
+  @each $name, $value in $grid-start {
     .col-#{$name} {
       grid-column-start: #{$value};        
     }
   }
 }
 
-@mixin layout-grid-xl {
-  @each $name, $value in $column-grid {
+@mixin grid-columns-xl {
+  @each $name, $value in $grid-column {
     .#{$name}-xl {
       grid-column: #{$value};        
     }
   }
 
-  @each $name, $value in $row-grid {
+  @each $name, $value in $grid-row {
     .#{$name}-xl {
       grid-row: #{$value};        
     }
   }
   
-  @each $name, $value in $start-grid {
+  @each $name, $value in $grid-start {
     .col-#{$name}-xl {
       grid-column-start: #{$value};        
     }
   }
 }
 
-@mixin layout-grid-lg {
-  @each $name, $value in $column-grid {
+@mixin grid-columns-lg {
+  @each $name, $value in $grid-column {
     .#{$name}-lg {
       grid-column: #{$value};        
     }
   }
 
-  @each $name, $value in $row-grid {
+  @each $name, $value in $grid-row {
     .#{$name}-lg {
       grid-row: #{$value};        
     }
   }
   
-  @each $name, $value in $start-grid {
+  @each $name, $value in $grid-start {
     .col-#{$name}-lg {
       grid-column-start: #{$value};        
     }
   }
 }
 
-@mixin layout-grid-md {
-  @each $name, $value in $column-grid {
+@mixin grid-columns-md {
+  @each $name, $value in $grid-column {
     .#{$name}-md {
       grid-column: #{$value};        
     }
   }
 
-  @each $name, $value in $row-grid {
+  @each $name, $value in $grid-row {
     .#{$name}-md {
       grid-row: #{$value};        
     }
   }
 }
 
-@mixin layout-grid-sm {
-  @each $name, $value in $column-grid {
+@mixin grid-columns-sm {
+  @each $name, $value in $grid-column {
     .#{$name}-sm {
       grid-column: #{$value};        
     }
   }
 
-  @each $name, $value in $row-grid {
+  @each $name, $value in $grid-row {
     .#{$name}-sm {
       grid-row: #{$value};        
     }
   }
   
-  @each $name, $value in $start-grid {
+  @each $name, $value in $grid-start {
     .col-#{$name}-sm {
       grid-column-start: #{$value};        
     }
   }
 }
 
-@mixin layout-grid-xs {
-  @each $name, $value in $column-grid {
+@mixin grid-columns-xs {
+  @each $name, $value in $grid-column {
     .#{$name}-xs {
       grid-column: #{$value};        
     }
   }
 
-  @each $name, $value in $row-grid {
+  @each $name, $value in $grid-row {
     .#{$name}-xs {
       grid-row: #{$value};        
     }
   }
   
-  @each $name, $value in $start-grid {
+  @each $name, $value in $grid-start {
     .col-#{$name}-xs {
       grid-column-start: #{$value};        
-    }
-  }
-}
-
-// Fraction-width grid
-@mixin fraction-grid {
-  @each $fraction-grid, $value in $fraction-grid {
-    .#{$fraction-grid} {
-      --gtc: var(--#{$fraction-grid});        
-    }
-  }
-}
-
-@mixin fraction-grid-xl {
-  @each $fraction-grid, $value in $fraction-grid {
-    .#{$fraction-grid}-xl {
-      --gtc: var(--#{$fraction-grid});        
-    }
-  }
-}
-
-@mixin fraction-grid-lg {
-  @each $fraction-grid, $value in $fraction-grid {
-    .#{$fraction-grid}-lg {
-      --gtc: var(--#{$fraction-grid});        
-    }
-  }
-}
-
-@mixin fraction-grid-md {
-  @each $fraction-grid, $value in $fraction-grid {
-    .#{$fraction-grid}-md {
-      --gtc: var(--#{$fraction-grid});        
-    }
-  }
-}
-
-@mixin fraction-grid-sm {
-  @each $fraction-grid, $value in $fraction-grid {
-    .#{$fraction-grid}-sm {
-      --gtc: var(--#{$fraction-grid});        
-    }
-  }
-}
-
-@mixin fraction-grid-xs {
-  @each $fraction-grid, $value in $fraction-grid {
-    .#{$fraction-grid}-xs {
-      --gtc: var(--#{$fraction-grid});        
     }
   }
 }

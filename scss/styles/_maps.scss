@@ -3,8 +3,8 @@
 //  ----------------------------------------------------------
 
 $theme-colors: (
-  "theme-hs": #{$theme-hs},
-  "brand-hs": #{$brand-hs},
+  "theme": #{$theme},
+  "theme-brand": #{$theme-brand},
 ) !default;
 
 $light-scheme-colors: (
@@ -69,8 +69,6 @@ $dark-scheme: (
   "surf-2": var(--surf-2-dark),
   "surf-3": var(--surf-3-dark),
   "surf-4": var(--surf-4-dark),
-  "mono-txt": #fff,
-  "mono-bg": #000,
   "brand": var(--brand-dark),
 ) !default;
 
@@ -220,6 +218,7 @@ $popovers: (
   "pop-py": #{$pop-py},
   "pop-px": #{$pop-px},
   "pop-width": #{$pop-width},
+  "pop-max-width": #{$pop-max-width},
 ) !default;
 
 $badges: (
@@ -251,7 +250,7 @@ $gradients-primary: (
   "gradient-cyan": #{$gradient-cyan},
 ) !default;
 
-$fraction-grid: (
+$grid-auto: (
   "g-1": #{$g-1},
   "g-2": #{$g-2},
   "g-3": #{$g-3},
@@ -266,7 +265,7 @@ $fraction-grid: (
   "g-12": #{$g-12},
 ) !default;
 
-$column-grid: (
+$grid-column: (
   "col-0": #{$span-0},
   "col-1": #{$span-1},
   "col-2": #{$span-2},
@@ -282,7 +281,7 @@ $column-grid: (
   "col-12": #{$span-12},
 ) !default;
 
-$row-grid: (
+$grid-row: (
   "row-0": #{$span-0},
   "row-1": #{$span-1},
   "row-2": #{$span-2},
@@ -298,7 +297,7 @@ $row-grid: (
   "row-12": #{$span-12},
 ) !default;
 
-$start-grid: (
+$grid-start: (
   "start-0": #{$start-0},
   "start-1": #{$start-1},
   "start-2": #{$start-2},
@@ -333,7 +332,7 @@ $spacing-auto: (
   "5": #{$s5},
 ) !default;
 
-$display-1: (
+$alignment-1: (
   "f-start": #{$flex-start},
   "f-end": #{$flex-end},
   "start": #{$start},
@@ -344,7 +343,7 @@ $display-1: (
   "space-evenly": #{$space-evenly},
 ) !default;
 
-$display-2: (
+$alignment-2: (
   "f-start": #{$flex-start},
   "f-end": #{$flex-end},
   "start": #{$start},

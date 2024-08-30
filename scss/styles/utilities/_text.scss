@@ -25,6 +25,11 @@
   --lh: var(--lh-btn-forms);
 }
 
+.txt-spacing {
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
+}
+
 .fs-body, .fs-xl, .fs-lg, .fs-sm, .fs-xs, .fs-xxs, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-size: var(--fs);
 }

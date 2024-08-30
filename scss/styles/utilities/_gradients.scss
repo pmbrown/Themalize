@@ -10,7 +10,7 @@
 }
 
 // Reverse degree to keep .gradient direction consistent with alternating surface colors.
-@if $enable-theme-manual {
+@if $enable-manual-themes {
   :where([data-prefers-dark=true]) {
     .gradient {
       --deg: 0deg;

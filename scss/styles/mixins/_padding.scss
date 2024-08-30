@@ -4,7 +4,7 @@
 
 @mixin padding {
   // Modifiers
-  @if $enable-spacing-queries {
+  @if $enable-padding-bp {
   
   .p-0, .p-1, .p-2, .p-3, .p-4, .p-5,
   .p-0-xl, .p-1-xl, .p-2-xl, .p-3-xl, .p-4-xl, .p-5-xl,

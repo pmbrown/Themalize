@@ -1,0 +1,35 @@
+//  ------------------------------------------------------------
+//  Containers
+//  ------------------------------------------------------------
+
+@if $enable-containers {
+
+.container, .container-xl, .container-lg, .container-md, .container-sm, .container-xs {
+  --container-mx: auto;
+  width: 100%;
+  max-inline-size: var(--container-size);
+  margin-inline: var(--container-mx);
+  padding-inline: var(--container-px);
+}
+
+.container-xl {
+  --container-size: #{$breakpoint-xl};
+}
+
+.container-lg {
+  --container-size: #{$breakpoint-lg};
+}
+
+.container-md {
+  --container-size: #{$breakpoint-md};
+}
+
+.container-sm {
+  --container-size: #{$breakpoint-sm};
+}
+
+.container-xs {
+  --container-size: #{$breakpoint-xs};
+}
+
+} // END [if/containers]

@@ -2,12 +2,11 @@
 //  Utilities
 //  ------------------------------------------------------------
 @import "mixins";
-@import "utilities/icons";
+@import "components/icons";
 @import "components/accordions";
 @import "components/cards";
 @import "components/dialogs";
 @import "components/popovers";
-@import "components/syntax";
 @import "components/theme-switch";
 @import "utilities/backgrounds";
 @import "utilities/badges";
@@ -18,6 +17,6 @@
 @import "utilities/shadows";
 @import "utilities/text";
 @import "utilities/display";
-@import "utilities/wrappers";
+@import "utilities/containers";
 @import "utilities/grid";
 @import "utilities/spacing";

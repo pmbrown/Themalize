@@ -167,7 +167,7 @@
 }
 
 :where(code) {
-  color: var(--link);
+  color: color-mix(in srgb, var(--text) 60%, var(--body-bg));
   word-wrap: break-word;
 }
 

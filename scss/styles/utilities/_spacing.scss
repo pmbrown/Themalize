@@ -2,48 +2,47 @@
 //  Spacing
 //  ------------------------------------------------------------
 
-@if $enable-spacing {
-
-@include margins;
-@include padding;
-
-@if $enable-spacing-queries {
+@if $enable-gaps {@include gaps;}
+@if $enable-margins {@include margins;}
+@if $enable-padding {@include padding;}
 
 @if $enable-breakpoint-xl {
   @media (max-width: #{$breakpoint-xl}) {
-    @include margins-xl;
-    @include padding-xl;
+    @if $enable-gaps {@include gaps-xl;}
+    @if $enable-margins-bp {@include margins-xl;}
+    @if $enable-padding-bp {@include padding-xl;}
   }
 }
 
 @if $enable-breakpoint-lg {
   @media (max-width: #{$breakpoint-lg}) {
-    @include margins-lg;
-    @include padding-lg;
+    @if $enable-gaps {@include gaps-lg;}
+    @if $enable-margins-bp {@include margins-lg;}
+    @if $enable-padding-bp {@include padding-lg;}
   }
 }
 
 @if $enable-breakpoint-md {
   @media (max-width: #{$breakpoint-md}) {
-    @include margins-md;
-    @include padding-md;
+    @if $enable-gaps {@include gaps-md;}
+    @if $enable-margins-bp {@include margins-md;}
+    @if $enable-padding-bp {@include padding-md;}
   }
 }
 
 @if $enable-breakpoint-sm {
   @media (max-width: #{$breakpoint-sm}) {
-    @include margins-sm;
-    @include padding-sm;
+    @if $enable-gaps {@include gaps-sm;}
+    @if $enable-margins-bp {@include margins-sm;}
+    @if $enable-padding-bp {@include padding-sm;}
   }
 }
 
 @if $enable-breakpoint-xs {
   @media (max-width: #{$breakpoint-xs}) {
-    @include margins-xs;
-    @include padding-xs;
+    @if $enable-gaps {@include gaps-xs;}
+    @if $enable-margins-bp {@include margins-xs;}
+    @if $enable-padding-bp {@include padding-xs;}
+    
   }
 }
-
-}
-
-} // END [if/spacing]

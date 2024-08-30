@@ -2,132 +2,63 @@
 //  Grid
 //  ------------------------------------------------------------
 
-@if $enable-fraction-grid {
+@if $enable-grid-auto {
   :where(html) {
-    @include fraction-grid-variables;
+    @include grid-auto-variables;
   }
 }
 
-@if $enable-layout-grid {
+@if $enable-grid-auto {
   .grid {
-  	@include layout-grid-props;
+    display: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
   }
 }
 
-@if $enable-fraction-grid {
-  .grid-auto {
-  	@include fraction-grid-props;
+@if $enable-grid-columns {
+  .grid-col {
+    --rows: repeat(var(--row, 1), minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(var(--columns, 12), minmax(0, 1fr));
+    grid-template-rows: var(--rows);
   }
 }
 
-@if $enable-layout-grid {
-  @include layout-grid;
-}
+@if $enable-grid-auto {@include grid-auto;}
+@if $enable-grid-columns {@include grid-columns;}
 
-@if $enable-fraction-grid {
-  @include fraction-grid;  
-}
-
-@if $enable-gaps {
-  @include gaps;
-}
-
-//  ------------------------------------------------------------
-// Breakpoint - XL
 @if $enable-breakpoint-xl {
-
-@media (max-width: #{$breakpoint-xl}) {
-  @if $enable-fraction-grid {
-    @include fraction-grid-xl;   
-  }
-  
-  @if $enable-layout-grid {
-    @include layout-grid-xl;
-  }
-    
-  @if $enable-gaps {
-    @include gaps-xl;
+  @media (max-width: #{$breakpoint-xl}) {
+    @if $enable-grid-auto {@include grid-auto-xl;}
+    @if $enable-grid-columns {@include grid-columns-xl;}
   }
 }
 
-}
-
-//  ------------------------------------------------------------
-//  Breakpoint - LG
 @if $enable-breakpoint-lg {
-
-@media (max-width: #{$breakpoint-lg}) {
-  @if $enable-fraction-grid {
-    @include fraction-grid-lg;
-  }
-
-  @if $enable-layout-grid {
-    @include layout-grid-lg;
-  }
-
-  @if $enable-gaps {
-    @include gaps-lg;
+  @media (max-width: #{$breakpoint-lg}) {
+    @if $enable-grid-auto {@include grid-auto-lg;}
+    @if $enable-grid-columns {@include grid-columns-lg;}
   }
 }
 
-}
-
-//  ------------------------------------------------------------
-//  Breakpoint - MD
 @if $enable-breakpoint-md {
-
-@media (max-width: #{$breakpoint-md}) {
-  @if $enable-fraction-grid {
-    @include fraction-grid-md;
-  }
-
-  @if $enable-layout-grid {
-    @include layout-grid-md;
-  }
-  
-  @if $enable-gaps {
-    @include gaps-md;
+  @media (max-width: #{$breakpoint-md}) {
+    @if $enable-grid-auto {@include grid-auto-md;}
+    @if $enable-grid-columns {@include grid-columns-md;}
   }
 }
 
-}
-
-//  ------------------------------------------------------------
-//  Breakpoint - SM
 @if $enable-breakpoint-sm {
-
-@media (max-width: #{$breakpoint-sm}) {
-  @if $enable-fraction-grid {
-    @include fraction-grid-sm;
-  }
-
-  @if $enable-layout-grid {
-    @include layout-grid-sm;
-  }
-  
-  @if $enable-gaps {
-    @include gaps-sm;
+  @media (max-width: #{$breakpoint-sm}) {
+    @if $enable-grid-auto {@include grid-auto-sm;}
+    @if $enable-grid-columns {@include grid-columns-sm;}
   }
 }
 
-}
-
-//  ------------------------------------------------------------
-//  Breakpoint - XS
 @if $enable-breakpoint-xs {
-
-@media (max-width: #{$breakpoint-xs}) {
-  @if $enable-fraction-grid {
-    @include fraction-grid-xs;
+  @media (max-width: #{$breakpoint-xs}) {
+    @if $enable-grid-auto {@include grid-auto-xs;}
+    @if $enable-grid-columns {@include grid-columns-xs;}
   }
-
-  @if $enable-layout-grid {
-    @include layout-grid-xs;
-  }
-   
-  @if $enable-gaps {
-    @include gaps-xs;
-  }
-}
-
 }

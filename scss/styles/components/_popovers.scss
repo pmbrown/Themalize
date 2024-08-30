@@ -8,7 +8,8 @@
   @if $enable-icon-mixins or $enable-icon-styles {
   --ico: var(--pop-txt);
   }
-  width: fit-content;
+  width: var(--pop-width);
+  max-inline-size: var(--pop-max-width); 
   height: fit-content;
   color: var(--pop-txt);
   background-color: var(--pop-bg);
@@ -49,7 +50,6 @@
   --pop-bg: var(--blue);
   --pop-bd-color: var(--blue);
 }
-
 
 .pop-red {
   --pop-txt: #fff;

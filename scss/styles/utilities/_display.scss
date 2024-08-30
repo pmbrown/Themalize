@@ -2,78 +2,70 @@
 //  Display
 //  ------------------------------------------------------------
 
-@if $enable-display {
-
-@include block;
-@include flex;
-@include display;
-@include sizing;
-@include order;
-@include position;
-@include overflow;
-
-@if $enable-display-queries {
+@if $enable-block {@include block;}
+@if $enable-flex {@include flex;}
+@if $enable-alignment {@include alignment;}
+@if $enable-sizing {@include sizing;}
+@if $enable-order {@include order;}
+@if $enable-position {@include position;}
+@if $enable-overflow {@include overflow;}
 
 @if $enable-breakpoint-xl {
   @media (max-width: #{$breakpoint-xl}) {
-    @include block-xl;
-    @include flex-xl;
-    @include display-xl;
-    @include sizing-xl;
-    @include order-xl;
-    @include position-xl;
-    @include overflow-xl;
+    @if $enable-block-bp {@include block-xl;}
+    @if $enable-flex-bp {@include flex-xl;}
+    @if $enable-alignment-bp {@include alignment-xl;}
+    @if $enable-sizing-bp {@include sizing-xl;}
+    @if $enable-order-bp {@include order-xl;}
+    @if $enable-position-bp {@include position-xl;}
+    @if $enable-overflow-bp {@include overflow-xl;}
   }
 }
 
 @if $enable-breakpoint-lg {
   @media (max-width: #{$breakpoint-lg}) {
-    @include block-lg;
-    @include flex-lg;
-    @include display-lg;
-    @include sizing-lg;
-    @include order-lg;
-    @include position-lg;
-    @include overflow-lg;
+    @if $enable-block-bp {@include block-lg;}
+    @if $enable-flex-bp {@include flex-lg;}
+    @if $enable-alignment-bp {@include alignment-lg;}
+    @if $enable-sizing-bp {@include sizing-lg;}
+    @if $enable-order-bp {@include order-lg;}
+    @if $enable-position-bp {@include position-lg;}
+    @if $enable-overflow-bp {@include overflow-lg;}
   }
 }
 
 @if $enable-breakpoint-md {
   @media (max-width: #{$breakpoint-md}) {
-    @include block-md;
-    @include flex-md;
-    @include display-md;
-    @include sizing-md;
-    @include order-md;
-    @include position-md;
-    @include overflow-md;
+    @if $enable-block-bp {@include block-md;}
+    @if $enable-flex-bp {@include flex-md;}
+    @if $enable-alignment-bp {@include alignment-md;}
+    @if $enable-sizing-bp {@include sizing-md;}
+    @if $enable-order-bp {@include order-md;}
+    @if $enable-position-bp {@include position-md;}
+    @if $enable-overflow-bp {@include overflow-md;}
   }
 }
 
 @if $enable-breakpoint-sm {
   @media (max-width: #{$breakpoint-sm}) {
-    @include block-sm;
-    @include flex-sm;
-    @include display-sm;
-    @include sizing-sm;
-    @include order-sm;
-    @include position-sm;
-    @include overflow-sm;
+    @if $enable-block-bp {@include block-sm;}
+    @if $enable-flex-bp {@include flex-sm;}
+    @if $enable-alignment-bp {@include alignment-sm;}
+    @if $enable-sizing-bp {@include sizing-sm;}
+    @if $enable-order-bp {@include order-sm;}
+    @if $enable-position-bp {@include position-sm;}
+    @if $enable-overflow-bp {@include overflow-sm;}
   }
 }
 
 @if $enable-breakpoint-xs {
   @media (max-width: #{$breakpoint-xs}) {
-    @include block-xs;
-    @include flex-xs;
-    @include display-xs;
-    @include sizing-xs;
-    @include order-xs;
-    @include position-xs;
-    @include overflow-xs;
+    @if $enable-block-bp {@include block-xs;}
+    @if $enable-flex-bp {@include flex-xs;}
+    @if $enable-alignment-bp {@include alignment-xs;}
+    @if $enable-sizing-bp {@include sizing-xs;}
+    @if $enable-order-bp {@include order-xs;}
+    @if $enable-position-bp {@include position-xs;}
+    @if $enable-overflow-bp {@include overflow-xs;}
   }
 }
-
-}
-
-} // END [if/display]

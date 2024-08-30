@@ -4,7 +4,7 @@
 
 @mixin margins {
   // Modifiers
-  @if $enable-spacing-queries {
+  @if $enable-margins-bp {
   
   .m-auto, .m-0, .m-1, .m-2, .m-3, .m-4, .m-5,
   .m-auto-xl, .m-0-xl, .m-1-xl, .m-2-xl, .m-3-xl, .m-4-xl, .m-5-xl,
@@ -73,7 +73,7 @@
   @else {
   
     .m-auto, .m-0, .m-1, .m-2, .m-3, .m-4, .m-5 {
-      margin: var(--m)
+      margin: var(--m);
     }
   
     .mt-auto, .mt-0, .mt-1, .mt-2, .mt-3, .mt-4, .mt-5 {

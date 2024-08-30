@@ -56,14 +56,6 @@
   --card-pb: .75rem;
 }
 
-.card-sm * {
-  font-size: var(--fs-sml);
-}
-
-.card-sm .card-body *:is(p, ul, ol, dl):not(:last-child) { 
-  --mb: .5rem;
-}
-
 :where(.card-title) {
   @if $enable-icon-mixins or $enable-icon-styles {
     --ico: var(--card-title-txt);
