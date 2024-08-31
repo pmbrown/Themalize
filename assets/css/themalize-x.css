@@ -908,6 +908,14 @@ a > :where(code) {
   background-color: var(--summary-bg);
 }
 
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
 :where(.accordion summary) {
   border-radius: 0;
 }
