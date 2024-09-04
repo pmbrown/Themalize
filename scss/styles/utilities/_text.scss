@@ -2,34 +2,9 @@
 //  Text
 //  ------------------------------------------------------------
 
-@mixin ul-none {
-  --pl: 0;
-  list-style-type: "";
-}
-
 @if $enable-text {
 
-.lh-body, .lh-header, .lh-forms {
-  line-height: var(--lh);
-}
-
-.lh-body {
-  --lh: var(--lh-body);
-}
-
-.lh-header {
-  --lh: var(--lh-header);
-}
-
-.lh-btn-forms {
-  --lh: var(--lh-btn-forms);
-}
-
-.txt-spacing {
-  letter-spacing: var(--ls);
-  word-spacing: var(--ws);
-}
-
+// Font sizes
 .fs-body, .fs-xl, .fs-lg, .fs-sm, .fs-xs, .fs-xxs, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-size: var(--fs);
 }
@@ -89,6 +64,7 @@
   --fs: var(--h6);
 }
 
+// Font weights
 .fw-normal, .fw-bold, .fw-100, .fw-200, .fw-300, .fw-400, .fw-500, .fw-600, .fw-700, .fw-800, .fw-900 {
   font-weight: var(--fw);
 }
@@ -137,22 +113,53 @@
   --fw: 900;
 }
 
+// Line heights
+.lh-body, .lh-header, .lh-forms {
+  line-height: var(--lh);
+}
+
+.lh-body {
+  --lh: var(--lh-body);
+}
+
+.lh-header {
+  --lh: var(--lh-header);
+}
+
+.lh-btn-forms {
+  --lh: var(--lh-btn-forms);
+}
+
+// Wrap and alignment
+.txt-pretty {
+  text-wrap: pretty;
+}
+
+.txt-balance {
+  text-wrap: balance;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+// Letter/word spacing - no preset values provided, use variable to customize inline.
+.txt-spacing {
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
+}
+
+// Links
 .no-link a, a.no-link {
   text-decoration: none;
-}
-
-.text-white {
-  @if $enable-icon-mixins or $enable-icon-styles {
-    --ico: #fff;
-  }
-  color: #fff;
-}
-
-.text-black {
-  @if $enable-icon-mixins or $enable-icon-styles {
-    --ico: #000;
-  }
-  color: #000;
 }
 
 .text-link a, a.text-link {
@@ -174,28 +181,25 @@
   text-decoration-color: color-mix(in srgb, var(--link-light) 75%, white);
 }
 
-.txt-pretty {
-  text-wrap: pretty;
+// Mono text
+.text-white {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: #fff;
+  }
+  color: #fff;
 }
 
-.txt-balance {
-  text-wrap: balance;
+.text-black {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: #000;
+  }
+  color: #000;
 }
 
-.txt-center {
-  text-align: center;
-}
-
-.txt-right {
-  text-align: right;
-}
-
-.txt-left {
-  text-align: left;
-}
-
+// Lists
 .ul-none {
-  @include ul-none;
+  --pl: 0;
+  list-style-type: "";
 }
 
 .ul-circle {
@@ -204,6 +208,10 @@
 
 .ul-square {
   list-style-type: square;
+}
+
+.dl-none {
+  --dd-ml: 0;
 }
 
 } // END [if/text]

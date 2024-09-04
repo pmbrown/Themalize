@@ -37,11 +37,19 @@
 @if $enable-theme-colors {
 
 .btn-dark {
-  @include btn-dark;
+  --color: #fff;
+  --btn-bg: var(--surf-1-dark);
+  --btn-hover: var(--surf-2-dark);
+  --btn-bd-color: var(--surf-2-dark);
+  --input-focus-color: var(--surf-4-dark);
 }
 
 .btn-light {
-  @include btn-light;
+  --color: #000;
+  --btn-bg: var(--surf-1-light);
+  --btn-hover: var(--surf-2-light);
+  --btn-bd-color: var(--surf-3-light);
+  --input-focus-color: var(--surf-4-light);
 }
 
 } // END [if/theme-colors]
@@ -49,23 +57,43 @@
 @if $enable-primary-colors {
 
 .btn-blue {
-  @include btn-blue;
+  --color: #fff;
+  --btn-bg: var(--blue);  
+  --btn-hover: var(--blue-light);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--blue-dark);
 }
 
 .btn-red {
-  @include btn-red;
+  --color: #fff;
+  --btn-bg: var(--red);
+  --btn-hover: var(--red-light);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--red-dark);
 }
 
 .btn-green {
-  @include btn-green;
+  --color: #fff;
+  --btn-bg: var(--green);
+  --btn-hover: var(--green-light);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--green-dark);
 }
 
 .btn-orange {
-  @include btn-orange;
+  --color: #000;
+  --btn-bg: var(--orange);
+  --btn-hover: var(--orange-lighter);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--orange-dark); 
 }
 
 .btn-cyan {
-  @include btn-cyan;
+  --color: #000;
+  --btn-bg: var(--cyan);
+  --btn-hover: var(--cyan-dark);
+  --btn-bd-color: var(--btn-bg);
+  --input-focus-color: var(--cyan-lighter);
 }
 
 } // END [if/primary-colors]

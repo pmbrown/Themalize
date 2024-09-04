@@ -1,0 +1,308 @@
+//  ------------------------------------------------------------
+//  Padding mixins
+//  ------------------------------------------------------------
+
+$padding-utilities: (
+  "p": padding,
+  "pt": padding-block-start,
+  "pb": padding-block-end,
+  "ps": padding-inline-start,
+  "pe": padding-inline-end,
+  "py": padding-block,
+  "px": padding-inline,
+) !default;
+
+@mixin padding {
+
+// Property utilities
+@if $enable-padding-bp {
+  @each $name, $value in $padding-utilities {
+    .#{$name}-0, .#{$name}-1, .#{$name}-2, .#{$name}-3, .#{$name}-4, .#{$name}-5,
+    .#{$name}-0-xl, .#{$name}-1-xl, .#{$name}-2-xl, .#{$name}-3-xl, .#{$name}-4-xl, .#{$name}-5-xl,
+    .#{$name}-0-lg, .#{$name}-1-lg, .#{$name}-2-lg, .#{$name}-3-lg, .#{$name}-4-lg, .#{$name}-5-lg,
+    .#{$name}-0-md, .#{$name}-1-md, .#{$name}-2-md, .#{$name}-3-md, .#{$name}-4-md, .#{$name}-5-md,
+    .#{$name}-0-sm, .#{$name}-1-sm, .#{$name}-2-sm, .#{$name}-3-sm, .#{$name}-4-sm, .#{$name}-5-sm,
+    .#{$name}-0-xs, .#{$name}-1-xs, .#{$name}-2-xs, .#{$name}-3-xs, .#{$name}-4-xs, .#{$name}-5-xs, {
+      #{$value}: var(--#{$name});        
+    }
+  }    
+}
+@else {
+  @each $name, $value in $padding-utilities {
+    .#{$name}-0, .#{$name}-1, .#{$name}-2, .#{$name}-3, .#{$name}-4, .#{$name}-5 {
+        #{$value}: var(--#{$name});        
+    }
+  }
+} //
+
+// Default classes
+@each $name, $value in $spacing {
+  .p-#{$name} {
+    --p: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing {
+  .pt-#{$name} {
+    --pt: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing {
+  .pb-#{$name} {
+    --pb: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing {
+  .ps-#{$name} {
+    --ps: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing {
+  .pe-#{$name} {
+    --pe: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing {
+  .py-#{$name} {
+    --py: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing {
+  .px-#{$name} {
+    --px: #{$value};        
+  }
+}
+
+} // End - Default classes
+
+// Breakpoints modifiers
+
+// Extra large
+@mixin padding-xl {
+  @each $name, $value in $spacing {
+    .p-#{$name}-xl {
+      --p: #{$value};        
+    }
+  }
+
+  @each $name, $value in $spacing {
+    .pt-#{$name}-xl {
+      --pt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pb-#{$name}-xl {
+      --pb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .ps-#{$name}-xl {
+      --ps: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pe-#{$name}-xl {
+      --pe: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .py-#{$name}-xl {
+      --py: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .px-#{$name}-xl {
+      --px: #{$value};        
+    }
+  }
+} // End - Extra large
+
+// Large
+@mixin padding-lg {
+  @each $name, $value in $spacing {
+    .p-#{$name}-lg {
+      --p: #{$value};        
+    }
+  }
+
+  @each $name, $value in $spacing {
+    .pt-#{$name}-lg {
+      --pt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pb-#{$name}-lg {
+      --pb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .ps-#{$name}-lg {
+      --ps: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pe-#{$name}-lg {
+      --pe: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .py-#{$name}-lg {
+      --py: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .px-#{$name}-lg {
+      --px: #{$value};        
+    }
+  }
+}  // End - Large
+
+// Medium
+@mixin padding-md {
+  @each $name, $value in $spacing {
+    .p-#{$name}-md {
+      --p: #{$value};        
+    }
+  }
+
+  @each $name, $value in $spacing {
+    .pt-#{$name}-md {
+      --pt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pb-#{$name}-md {
+      --pb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .ps-#{$name}-md {
+      --ps: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pe-#{$name}-md {
+      --pe: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .py-#{$name}-md {
+      --py: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .px-#{$name}-md {
+      --px: #{$value};        
+    }
+  }
+} // End - Medium
+
+// Small
+@mixin padding-sm {
+  @each $name, $value in $spacing {
+    .p-#{$name}-sm {
+      --p: #{$value};        
+    }
+  }
+
+  @each $name, $value in $spacing {
+    .pt-#{$name}-sm {
+      --pt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pb-#{$name}-sm {
+      --pb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .ps-#{$name}-sm {
+      --ps: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pe-#{$name}-sm {
+      --pe: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .py-#{$name}-sm {
+      --py: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .px-#{$name}-sm {
+      --px: #{$value};        
+    }
+  }
+} // End - Small
+
+// Extra small
+@mixin padding-xs {
+  @each $name, $value in $spacing {
+    .p-#{$name}-xs {
+      --p: #{$value};        
+    }
+  }
+
+  @each $name, $value in $spacing {
+    .pt-#{$name}-xs {
+      --pt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pb-#{$name}-xs {
+      --pb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .ps-#{$name}-xs {
+      --ps: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .pe-#{$name}-xs {
+      --pe: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .py-#{$name}-xs {
+      --py: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing {
+    .px-#{$name}-xs {
+      --px: #{$value};        
+    }
+  }  
+} // End - Extra small

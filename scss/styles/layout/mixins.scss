@@ -1,19 +1,15 @@
 //  ------------------------------------------------------------
-//  Mixins
+//  Layout mixins
 //  ------------------------------------------------------------
-@import "mixins/icons";
-@import "mixins/icons-svg";
 @import "mixins/grid";
 @import "mixins/gaps";
-@import "mixins/backgrounds";
-@import "mixins/buttons";
-@import "mixins/colored-gradients";
 @import "mixins/block";
 @import "mixins/flex";
 @import "mixins/alignment";
 @import "mixins/sizing";
 @import "mixins/order";
 @import "mixins/position";
+@import "mixins/overflow";
+@import "mixins/gaps";
 @import "mixins/margins";
 @import "mixins/padding";
-@import "mixins/overflow";

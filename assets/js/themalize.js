@@ -1,6 +1,5 @@
 //  ------------------------------------------------------------
-//  Adapted from Mark Otto's 'Fun with the dialog element'
-//  https://markdotto.com/2022/03/16/dialog-element/
+//  Themalize
 //  ------------------------------------------------------------
 
 let toggler = document.querySelectorAll("[data-dialog]"),
@@ -20,3 +19,19 @@ toggler &&
       e.closest("dialog").close();
     });
 }));
+
+document.querySelectorAll("details[name]").forEach(($details) => {
+  $details.addEventListener("toggle", (e) => {
+    const name = $details.getAttribute("name");
+
+    if (e.newState == "open") {
+      document
+        .querySelectorAll(`details[name=${name}][open]`)
+        .forEach(($openDetails) => {
+          if (!($openDetails == $details)) {
+            $openDetails.removeAttribute("open");
+          }
+        });
+    }
+  });
+});

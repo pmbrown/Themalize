@@ -2,6 +2,14 @@
 //  Backgrounds
 //  ------------------------------------------------------------
 
+@mixin background-props {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--bg-txt);
+  }
+  color: var(--bg-txt);
+  background-color: var(--bg);
+}
+
 @if $enable-backgrounds {
 
 @if $enable-theme-colors and $enable-primary-colors {

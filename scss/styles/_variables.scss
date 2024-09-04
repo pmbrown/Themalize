@@ -1,8 +1,7 @@
 // ---------------------------------------------------------- 
 // CSS variables
 // ----------------------------------------------------------
-@import "mixins/version";
-@include version;
+/*! Themalize v1.0.5 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 
 :where(html) { 
   @each $theme-colors, $value in $theme-colors {

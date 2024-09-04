@@ -1,4 +1,4 @@
-/*! Themalize v1.0.4 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.5 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --theme-brand: cadetblue;
@@ -687,7 +687,7 @@ a > :where(code) {
   --table-mb: 0;
 }
 
-#themes:before, :where(dialog :is(header, .dialog-header) [data-close]):before,
+#themes:before, :where(dialog :is(header, .dialog-header) button.close-dialog):before,
 :where(.dialog-img-close):before, :where(.details summary, .accordion summary):after, .ico-btn:before, .ico-block:before, .ico-b:before, .ico-a:after, .ico:before {
   display: inline-block;
   background-color: var(--ico);
@@ -1265,13 +1265,13 @@ a > :where(code) {
   padding-inline: 1rem;
 }
 
-:where(dialog :is(header, .dialog-header) [data-close]):before,
+:where(dialog :is(header, .dialog-header) button.close-dialog):before,
 :where(.dialog-img-close):before {
   --ico: var(--dialog-header-txt);
   --svg: var(--close);
 }
 
-:where(dialog :is(header, .dialog-header) [data-close]) {
+:where(dialog :is(header, .dialog-header) button.close-dialog) {
   --btn-bg: transparent;
   --btn-hover: transparent;
   --btn-bd-color: transparent;
@@ -1280,12 +1280,12 @@ a > :where(code) {
   margin-inline-start: auto;
 }
 
-:where(dialog :is(header, .dialog-header) [data-close]:is(:focus, :active)) {
+:where(dialog :is(header, .dialog-header) button.close-dialog:is(:focus, :active)) {
   outline: none;
   box-shadow: none;
 }
 
-.dialog-img > button[data-close] {
+.dialog-img > button.close-dialog {
   --btn-radius: 0;
   position: absolute;
   inset-block-start: 0;
@@ -1892,27 +1892,6 @@ a > :where(code) {
   box-shadow: var(--shadow-lg);
 }
 
-.lh-body, .lh-header, .lh-forms {
-  line-height: var(--lh);
-}
-
-.lh-body {
-  --lh: var(--lh-body);
-}
-
-.lh-header {
-  --lh: var(--lh-header);
-}
-
-.lh-btn-forms {
-  --lh: var(--lh-btn-forms);
-}
-
-.txt-spacing {
-  letter-spacing: var(--ls);
-  word-spacing: var(--ws);
-}
-
 .fs-body, .fs-xl, .fs-lg, .fs-sm, .fs-xs, .fs-xxs, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-size: var(--fs);
 }
@@ -2020,37 +1999,20 @@ a > :where(code) {
   --fw: 900;
 }
 
-.no-link a, a.no-link {
-  text-decoration: none;
+.lh-body, .lh-header, .lh-forms {
+  line-height: var(--lh);
 }
 
-.text-white {
-  --ico: #fff;
-  color: #fff;
+.lh-body {
+  --lh: var(--lh-body);
 }
 
-.text-black {
-  --ico: #000;
-  color: #000;
+.lh-header {
+  --lh: var(--lh-header);
 }
 
-.text-link a, a.text-link {
-  --color: var(--text);
-  --visited: var(--text);
-}
-
-.link-dark a, a.link-dark {
-  --color: var(--link-dark);
-  --hover: color-mix(in srgb, var(--link-dark) 75%, white);
-  --visited: var(--link-dark);
-  text-decoration-color: color-mix(in srgb, var(--link-dark) 75%, white);
-}
-
-.link-light a, a.link-light {
-  --color: var(--link-light);
-  --hover: color-mix(in srgb, var(--link-light) 75%, white);
-  --visited: var(--link-light);
-  text-decoration-color: color-mix(in srgb, var(--link-light) 75%, white);
+.lh-btn-forms {
+  --lh: var(--lh-btn-forms);
 }
 
 .txt-pretty {
@@ -2073,6 +2035,44 @@ a > :where(code) {
   text-align: left;
 }
 
+.txt-spacing {
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
+}
+
+.no-link a, a.no-link {
+  text-decoration: none;
+}
+
+.text-link a, a.text-link {
+  --color: var(--text);
+  --visited: var(--text);
+}
+
+.link-dark a, a.link-dark {
+  --color: var(--link-dark);
+  --hover: color-mix(in srgb, var(--link-dark) 75%, white);
+  --visited: var(--link-dark);
+  text-decoration-color: color-mix(in srgb, var(--link-dark) 75%, white);
+}
+
+.link-light a, a.link-light {
+  --color: var(--link-light);
+  --hover: color-mix(in srgb, var(--link-light) 75%, white);
+  --visited: var(--link-light);
+  text-decoration-color: color-mix(in srgb, var(--link-light) 75%, white);
+}
+
+.text-white {
+  --ico: #fff;
+  color: #fff;
+}
+
+.text-black {
+  --ico: #000;
+  color: #000;
+}
+
 .ul-none {
   --pl: 0;
   list-style-type: "";
@@ -2084,6 +2084,10 @@ a > :where(code) {
 
 .ul-square {
   list-style-type: square;
+}
+
+.dl-none {
+  --dd-ml: 0;
 }
 
 .block {

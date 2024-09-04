@@ -128,7 +128,7 @@
 // Dialog close buttons
 
 // Essential icons
-:where(dialog :is(header, .dialog-header) [data-close]):before,
+:where(dialog :is(header, .dialog-header) button.close-dialog):before,
 :where(.dialog-img-close):before {
   --ico: var(--dialog-header-txt);
   @if $enable-close-svg {
@@ -137,11 +137,16 @@
   @else {
     --svg: #{$close};
   }
+  @if $enable-icon-mixins or $enable-icon-styles {
+  }
+  @else {
+    --ico-va: -.115em;
+  }
   @extend %icon-mask;
 }
 
 // Header close button style
-:where(dialog :is(header, .dialog-header) [data-close]) {
+:where(dialog :is(header, .dialog-header) button.close-dialog) {
   --btn-bg: transparent;
   --btn-hover: transparent;
   --btn-bd-color: transparent;
@@ -150,13 +155,13 @@
   margin-inline-start: auto;
 }
 
-:where(dialog :is(header, .dialog-header) [data-close]:is(:focus, :active)) {
+:where(dialog :is(header, .dialog-header) button.close-dialog:is(:focus, :active)) {
   outline: none;
   box-shadow: none;
 }
 
 // Image dialog close button style (doesn't apply to header, .dialog-header close button if used)
-.dialog-img > button[data-close] {
+.dialog-img > button.close-dialog {
   --btn-radius: 0;
   position: absolute;
   inset-block-start: 0;

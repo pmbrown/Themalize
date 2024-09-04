@@ -1,0 +1,308 @@
+//  ------------------------------------------------------------
+//  Margin mixins
+//  ------------------------------------------------------------
+
+$margin-utilities: (
+  "m": margin,
+  "mt": margin-block-start,
+  "mb": margin-block-end,
+  "ms": margin-inline-start,
+  "me": margin-inline-end,
+  "my": margin-block,
+  "mx": margin-inline,
+) !default;
+
+@mixin margins {
+
+// Property utilities
+@if $enable-margins-bp {  
+  @each $name, $value in $margin-utilities {
+    .#{$name}-auto, .#{$name}-0, .#{$name}-1, .#{$name}-2, .#{$name}-3, .#{$name}-4, .#{$name}-5,
+    .#{$name}-auto-xl, .#{$name}-0-xl, .#{$name}-1-xl, .#{$name}-2-xl, .#{$name}-3-xl, .#{$name}-4-xl, .#{$name}-5-xl,
+    .#{$name}-auto-lg, .#{$name}-0-lg, .#{$name}-1-lg, .#{$name}-2-lg, .#{$name}-3-lg, .#{$name}-4-lg, .#{$name}-5-lg,
+    .#{$name}-auto-md, .#{$name}-0-md, .#{$name}-1-md, .#{$name}-2-md, .#{$name}-3-md, .#{$name}-4-md, .#{$name}-5-md,
+    .#{$name}-auto-sm, .#{$name}-0-sm, .#{$name}-1-sm, .#{$name}-2-sm, .#{$name}-3-sm, .#{$name}-4-sm, .#{$name}-5-sm,
+    .#{$name}-auto-xs, .#{$name}-0-xs, .#{$name}-1-xs, .#{$name}-2-xs, .#{$name}-3-xs, .#{$name}-4-xs, .#{$name}-5-xs, {
+      #{$value}: var(--#{$name});        
+    }
+  }      
+}
+@else {
+  @each $name, $value in $margin-utilities {
+    .#{$name}-auto, .#{$name}-0, .#{$name}-1, .#{$name}-2, .#{$name}-3, .#{$name}-4, .#{$name}-5 {
+      #{$value}: var(--#{$name});        
+    }
+  }
+} //
+
+// Default classes
+@each $name, $value in $spacing-auto {
+  .m-#{$name} {
+    --m: #{$value};        
+  }
+}  
+
+@each $name, $value in $spacing-auto {
+  .mt-#{$name} {
+    --mt: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing-auto {
+  .mb-#{$name} {
+    --mb: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing-auto {
+  .ms-#{$name} {
+    --ms: #{$value};        
+  }
+}
+
+@each $name, $value in $spacing-auto {
+  .me-#{$name} {
+    --me: #{$value};        
+  }
+}
+  
+@each $name, $value in $spacing-auto {
+  .my-#{$name} {
+    --my: #{$value};        
+  }
+}
+  
+@each $name, $value in $spacing-auto {
+  .mx-#{$name} {
+    --mx: #{$value};        
+  }
+}
+
+} // End - Default classes
+
+// Breakpoints modifiers
+
+// Extra large
+@mixin margins-xl {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-xl {
+      --m: #{$value};        
+    }
+  }  
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-xl {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-xl {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-xl {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-xl {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-xl {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-xl {
+      --mx: #{$value};        
+    }
+  }
+} // End - Extra large
+
+// Large
+@mixin margins-lg {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-lg {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-lg {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-lg {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-lg {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-lg {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-lg {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-lg {
+      --mx: #{$value};        
+    }
+  }
+}  // End - Large
+
+// Medium
+@mixin margins-md {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-md {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-md {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-md {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-md {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-md {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-md {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-md {
+      --mx: #{$value};        
+    }
+  }
+} // End - Medium
+
+// Small
+@mixin margins-sm {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-sm {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-sm {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-sm {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-sm {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-sm {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-sm {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-sm {
+      --mx: #{$value};        
+    }
+  }
+} // End - Small
+
+// Extra small
+@mixin margins-xs {
+  @each $name, $value in $spacing-auto {
+    .m-#{$name}-xs {
+      --m: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mt-#{$name}-xs {
+      --mt: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mb-#{$name}-xs {
+      --mb: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .ms-#{$name}-xs {
+      --ms: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .me-#{$name}-xs {
+      --me: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .my-#{$name}-xs {
+      --my: #{$value};        
+    }
+  }
+  
+  @each $name, $value in $spacing-auto {
+    .mx-#{$name}-xs {
+      --mx: #{$value};        
+    }
+  }  
+} // End - Extra small

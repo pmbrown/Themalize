@@ -1,7 +1,6 @@
 //  ------------------------------------------------------------
-//  Utilities
+//  Extensions
 //  ------------------------------------------------------------
-@import "mixins";
 @import "components/icons";
 @import "components/accordions";
 @import "components/cards";
@@ -16,7 +15,8 @@
 @import "utilities/images";
 @import "utilities/shadows";
 @import "utilities/text";
-@import "utilities/display";
-@import "utilities/containers";
-@import "utilities/grid";
-@import "utilities/spacing";
+@import "layout/mixins";
+@import "layout/display";
+@import "layout/containers";
+@import "layout/grid";
+@import "layout/spacing";
