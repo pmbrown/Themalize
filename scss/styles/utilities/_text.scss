@@ -7,6 +7,7 @@
 // Font sizes
 .fs-body, .fs-xl, .fs-lg, .fs-sm, .fs-xs, .fs-xxs, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-size: var(--fs);
+  line-height: var(--lh);
 }
 
 .fs-body {
@@ -36,7 +37,6 @@
 :where(.h1, .h2, .h3, .h4, .h5, .h6) {
   --lh: var(--lh-header);
   --tw: pretty;
-  line-height: var(--lh);
   text-wrap: var(--tw);
 }
 

@@ -1,7 +1,7 @@
 // ---------------------------------------------------------- 
 // CSS variables
 // ----------------------------------------------------------
-/*! Themalize v1.0.5 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.6 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 
 :where(html) { 
   @each $theme-colors, $value in $theme-colors {
@@ -122,6 +122,12 @@
   @if $enable-dialogs {
     @each $dialogs, $value in $dialogs {
       --#{$dialogs}: #{$value};       
+    }
+  }
+  
+  @if $enable-list-groups {
+    @each $list-groups, $value in $list-groups {
+      --#{$list-groups}: #{$value};       
     }
   }
   

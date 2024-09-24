@@ -1,0 +1,173 @@
+//  ------------------------------------------------------------
+//  List groups
+//  ------------------------------------------------------------
+
+@if $enable-list-groups {
+
+:where(.list-group, .list-links) {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--list-group-txt);
+  }
+  --pl: 0;
+  --dd-ml: 0;
+  color: var(--list-group-txt);
+  list-style-type: "";
+  max-inline-size: var(--list-group-width);
+  border: 1px solid var(--list-group-bd-color);
+  border-radius: var(--list-group-radius);
+  background-color: var(--list-group-bg);
+}
+
+:where(.list-group, .list-links) :is(li, dd):not(:last-child) {
+  border-block-end: 1px solid var(--list-group-bd-color);
+}
+
+:where(.list-group :is(li, dt, dd), .list-links dt) {
+  padding-block: var(--list-group-py);
+  padding-inline: var(--list-group-px);
+}
+
+:where(.list-group, .list-links) dt {
+  border-block-end: 1px solid var(--list-group-bd-color);
+  background-color: var(--list-group-title-bg);
+}
+
+:where(.list-group, .list-links) dt:first-child {
+  border-radius: var(--list-group-hover-radius) var(--list-group-hover-radius) 0 0;
+}
+
+// List links
+:where(.list-links a) {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--list-group-links);
+  }
+  --color: var(--list-group-links);
+  --visited: var(--list-group-links);
+  --hover: var(--list-group-links);
+  text-decoration: none;
+  display: block;
+  padding-block: var(--list-group-py);
+  padding-inline: var(--list-group-px);
+}
+
+:where(.list-links a:is(:hover, :focus)) {
+  background-color: var(--list-group-hover);
+}
+
+:where(.list-links a:focus-visible) {
+  outline: none;
+}
+
+:where(.list-links *:first-child a:is(:hover, :focus)) {
+  border-radius: var(--list-group-hover-radius) var(--list-group-hover-radius) 0 0;
+}
+
+:where(.list-links *:last-child a:is(:hover, :focus)) {
+  border-radius: 0 0 var(--list-group-hover-radius) var(--list-group-hover-radius);
+}
+
+:where(.list-group, .list-links) [aria-current="page"] {
+  font-weight: bold;
+}
+
+// Ordered lists, inserts counter-increment to replace list-style-type.
+:where(.list-group, .list-links) ol {
+  counter-reset: ol-list;
+}
+
+:where(.list-group, .list-links):is(ol) li {
+  counter-increment: ol-list;
+}
+
+:where(.list-group):is(ol) li:before {
+  content: counter(ol-list) ". "; 
+  margin-inline-end: .25rem;
+}
+
+:where(.list-links):is(ol) li a:before {
+  content: counter(ol-list) ". "; 
+  margin-inline-end: .25rem;
+}
+
+// Colors
+.list-surf-1 {
+  --list-group-txt: var(--text);
+  --list-group-links: var(--link);
+  --list-group-bg: var(--surf-1);
+  --list-group-title-bg: var(--surf-2);
+  --list-group-bd-color: var(--surf-3);
+  --list-group-hover: var(--surf-2);
+}
+
+@if $enable-theme-colors {
+
+.list-light {
+  --list-group-txt: #000;
+  --list-group-links: #000;
+  --list-group-bg: var(--surf-1-light);
+  --list-group-title-bg: var(--surf-3-light);
+  --list-group-bd-color: var(--surf-3-light);
+  --list-group-hover: var(--surf-2-light);
+}
+
+.list-dark {
+  --list-group-txt: #fff;
+  --list-group-links: #fff;
+  --list-group-bg: var(--surf-1-dark);
+  --list-group-title-bg: var(--surf-3-dark);
+  --list-group-bd-color: var(--surf-3-dark);
+  --list-group-hover: var(--surf-2-dark);
+}
+
+} // End theme colors
+
+@if $enable-primary-colors {
+
+.list-blue {
+  --list-group-txt: #fff;
+  --list-group-links: #fff;
+  --list-group-bg: var(--blue);
+  --list-group-title-bg: var(--blue);
+  --list-group-bd-color: var(--blue-light);
+  --list-group-hover: var(--blue-dark);
+}
+
+.list-red {
+  --list-group-txt: #fff;
+  --list-group-links: #fff;
+  --list-group-bg: var(--red);
+  --list-group-title-bg: var(--red);
+  --list-group-bd-color: var(--red-light);
+  --list-group-hover: var(--red-dark);
+}
+
+.list-green {
+  --list-group-txt: #fff;
+  --list-group-links: #fff;
+  --list-group-bg: var(--green);
+  --list-group-title-bg: var(--green);
+  --list-group-bd-color: var(--green-light);
+  --list-group-hover: var(--green-dark);
+}
+
+.list-orange {
+  --list-group-txt: #000;
+  --list-group-links: #000;
+  --list-group-bg: var(--orange);
+  --list-group-title-bg: var(--orange);
+  --list-group-bd-color: var(--orange-dark);
+  --list-group-hover: var(--orange-light);
+}
+
+.list-cyan {
+  --list-group-txt: #000;
+  --list-group-links: #000;
+  --list-group-bg: var(--cyan);
+  --list-group-title-bg: var(--cyan);
+  --list-group-bd-color: var(--cyan-dark);
+  --list-group-hover: var(--cyan-dark);
+}
+
+} // End primary-colors
+
+} // End list-groups

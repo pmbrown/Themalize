@@ -230,7 +230,7 @@ a > :where(code) {
 }
 
 :where(details[open] summary) {
-  margin-block-end: .5rem;
+  margin-block-end: 1rem;
 }
 
 :where(hr) {

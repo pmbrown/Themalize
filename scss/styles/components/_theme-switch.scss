@@ -1,9 +1,13 @@
 //  ------------------------------------------------------------
 //  Theme switch button
-//  Requires theme.js [assets/js] loaded prior to CSS in head.
+//  Requires $enable-manual-themes: true; in configuration.scss
+//  and theme.js [assets/js] loaded before CSS in head.
+//  See https://themalize.com/docs/getting-started/theme-switch/
 //  ------------------------------------------------------------
 
 @if $enable-manual-themes and $enable-theme-switch {
+
+// Celestial button
 
 @if $enable-switch-celestial {
   @if $enable-sun-svg and $enable-moon-svg {
@@ -18,24 +22,7 @@
       --switch-on: #{$moon};
     }
   }
-}
 
-@if $enable-switch-radio {
-  @if $enable-radio-off-svg and $enable-radio-on-svg {
-    :where(html) {
-      --switch-off: var(--radio-off);
-      --switch-on: var(--radio-on);
-    }
-  }
-  @else {
-    :where(html) {
-      --switch-off: #{$radio-off};
-      --switch-on: #{$radio-on};
-    }
-  }
-}
-
-@if $enable-switch-celestial {
   #themes {
     --ico: var(--color);
     --svg: var(--switch-ico);
@@ -71,7 +58,22 @@
    
 } // END [if/celestial]
 
+// Radio button
+
 @if $enable-switch-radio {
+  @if $enable-radio-off-svg and $enable-radio-on-svg {
+    :where(html) {
+      --switch-off: var(--radio-off);
+      --switch-on: var(--radio-on);
+    }
+  }
+  @else {
+    :where(html) {
+      --switch-off: #{$radio-off};
+      --switch-on: #{$radio-on};
+    }
+  }
+
   #themes {
     --btn-bg: transparent;
     --btn-hover: transparent;

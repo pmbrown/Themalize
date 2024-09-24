@@ -207,6 +207,19 @@ $dialogs: (
   "dialog-max-width": #{$dialog-max-width},
 ) !default;
 
+$list-groups: (
+  "list-group-txt": #{$list-group-txt},
+  "list-group-links": #{$list-group-links},
+  "list-group-py": #{$list-group-py},
+  "list-group-px": #{$list-group-px},
+  "list-group-bd-color": #{$list-group-bd-color},
+  "list-group-bg": #{$list-group-bg},
+  "list-group-title-bg": #{$list-group-title-bg},
+  "list-group-hover": #{$list-group-hover},
+  "list-group-radius": #{$list-group-radius},
+  "list-group-hover-radius": #{$list-group-hover-radius},
+) !default;
+
 $popovers: (
   "pop-txt": #{$pop-txt},
   "pop-bg": #{$pop-bg},

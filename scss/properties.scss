@@ -144,6 +144,18 @@ $dialog-top:          1rem !default;
 $dialog-width:        calc((100% - 6px) - 2em) !default;
 $dialog-max-width:    30rem !default;
 
+// List groups
+$list-group-txt:            var(--text) !default;
+$list-group-links:          var(--link) !default;
+$list-group-py:             0.5rem !default;
+$list-group-px:             0.75rem !default;
+$list-group-bg:             var(--body-bg) !default;
+$list-group-title-bg:       var(--surf-2) !default;
+$list-group-hover:          var(--surf-1) !default;
+$list-group-bd-color:       var(--surf-3) !default;
+$list-group-radius:         0.125em !default;
+$list-group-hover-radius:   calc(var(--list-group-radius) - 1px) !default;
+
 // Popovers
 $pop-txt:             var(--text) !default;
 $pop-bg:              var(--body-bg) !default;

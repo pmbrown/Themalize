@@ -171,14 +171,14 @@
   border-inline-end: none;
 }
 
-// Dialog backdrop
+// Backdrop
 
 ::backdrop {
   background: #00000099;
 }
 
-// Adding <div class="backdrop" data-close></div> as last child
-// in dialog allows clicking outside element to close dialog.
+// Adding <div class="close-dialog backdrop"></div> as last child inside
+// the dialog allows clicking the page background to close the dialog.
 :where(.backdrop) {
   position: fixed;
   inset: 0;
