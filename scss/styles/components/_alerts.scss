@@ -1,0 +1,123 @@
+//  ------------------------------------------------------------
+//  Alerts
+//  ------------------------------------------------------------
+
+@if $enable-alerts {
+
+.alert {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--alert-txt); 
+  }
+  color: var(--alert-txt);
+  margin-block-end: 1rem;
+  padding-block: .6rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--alert-bd-color);
+  border-radius: var(--alert-radius); 
+  background-color: var(--alert-bg);
+}
+
+.alert * {
+  --mb: 0;
+}
+
+.alert[open] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-inline-size: 100%;  
+  margin: initial;
+  margin-block-end: 1rem;
+  padding-block: .325rem;
+  padding-inline-end: .5rem;
+}
+
+.alert [method="dialog"] {
+  margin-inline-start: auto;
+}
+
+.alert [method="dialog"] button {
+  @if $enable-icon-mixins or $enable-icon-styles {
+    --ico: var(--alert-txt); 
+  }
+  --btn-bg: transparent;
+  --btn-hover: transparent;
+  --btn-bd-color: transparent;
+  --btn-py: .25rem;
+  --btn-px: .5rem;
+  margin-inline-start: auto;
+}
+
+.alert [method="dialog"] button:before {
+  --ico: var(--alert-txt);
+  @if $enable-close-svg {
+    --svg: var(--close);
+  }
+  @else {
+    --svg: #{$close};
+  }
+  @if $enable-icon-mixins or $enable-icon-styles {
+  }
+  @else {
+    --ico-va: -.115em;
+  }
+  @extend %icon-mask;
+}
+
+.alert-outline {
+  --alert-bg: var(--body-bg);
+}
+
+@if $enable-theme-colors {
+
+.alert-light {
+  --alert-txt: #000;
+  --alert-bg: var(--surf-1-light);
+  --alert-bd-color: var(--surf-3-light);
+}
+
+.alert-dark {
+  --alert-txt: #fff;
+  --alert-bg: var(--surf-1-dark);
+  --alert-bd-color: var(--surf-3-dark);
+}
+
+} // End theme-colors
+
+@if $enable-primary-colors {
+
+.alert-blue {
+  --alert-txt: #fff;
+  --alert-bg: var(--blue);
+  --alert-bd-color: var(--blue-light);
+}
+
+.alert-red {
+  --alert-txt: #fff;
+  --alert-bg: var(--red);
+  --alert-bd-color: var(--red-light);
+}
+
+.alert-green {
+  --alert-txt: #fff;
+  --alert-bg: var(--green);
+  --alert-bd-color: var(--green-light);
+}
+
+.alert-orange {
+  --alert-txt: #000;
+  --alert-bg: var(--orange);
+  --alert-bd-color: var(--orange-dark);
+}
+
+.alert-cyan {
+  --alert-txt: #000;
+  --alert-bg: var(--cyan);
+  --alert-bd-color: var(--cyan-dark);
+}
+  
+} // End primary-colors
+
+} // End alerts

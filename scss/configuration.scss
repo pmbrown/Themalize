@@ -18,8 +18,10 @@ $enable-switch-radio:     false;
 
 // Components
 $enable-accordions:       false;
+$enable-alerts:           false;
 $enable-cards:            false;
 $enable-dialogs:          false;
+$enable-list-groups:      false;
 $enable-popovers:         false;
 
 // Utilities
@@ -29,7 +31,7 @@ $enable-borders:          false;
 $enable-buttons:          false; // Requires $enable-forms-buttons: true
 $enable-gradients:        false;
 $enable-images:           false;
-$enable-list-groups:      false;
+$enable-lists:            false;
 $enable-shadows:          false;
 $enable-text:             false;
 
@@ -91,6 +93,7 @@ $enable-close-svg:            false;
 $enable-close-box-svg:        false;
 $enable-close-box-fill-svg:   false;
 $enable-box-svg:              false;
+$enable-pen-box-svg:          false;
 $enable-tick-box-svg:         false;
 $enable-ext-link-svg:         false;
 $enable-pg-link-svg:          false;

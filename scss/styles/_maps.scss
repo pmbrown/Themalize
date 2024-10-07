@@ -175,6 +175,13 @@ $accordions: (
   "details-radius": #{$details-radius},
 ) !default;
 
+$alerts: (
+  "alert-txt": #{$alert-txt},
+  "alert-bg": #{$alert-bg},
+  "alert-bd-color": #{$alert-bd-color},
+  "alert-radius": #{$alert-radius}, 
+) !default;
+
 $cards: (
   "card-px": #{$card-px},
   "card-pt": #{$card-pt},

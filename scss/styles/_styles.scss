@@ -120,6 +120,10 @@
   font-size: var(--fs);
 }
 
+:where(h1, h2, h3, h4, h5, h6) small {
+  --fs: .75em;
+}
+
 :where(bold, strong) {
   --fw: bold;
   font-weight: var(--fw);
@@ -132,8 +136,16 @@
 }
 
 :where(ol, ul) {
-  --pl: 1.75rem;
+  --pl: 2rem;
   padding-inline-start: var(--pl);
+}
+
+:where(ol) {
+  list-style-type: var(--marker, decimal);
+}
+
+:where(ul) {
+  list-style-type: var(--marker, disc);
 }
 
 :where(ol ol, ul ul, ol ul, ul ol, dl dl) {
@@ -147,6 +159,10 @@
 
 :where(dt) {
   font-weight: var(--fw);
+}
+
+:where(dt):not(:first-child) {
+  margin-block-start: var(--dt-mt);
 }
 
 :where(dd) {
@@ -425,7 +441,7 @@ a > :where(code) {
 }
 
 :where([type=radio], [type=checkbox], [type=range], [progress]) {
-  accent-color: var(--link);
+  accent-color: var(--accent, var(--link));
 }
 
 :where([type="checkbox"], [type="radio"]) {

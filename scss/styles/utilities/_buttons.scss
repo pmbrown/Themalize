@@ -6,7 +6,7 @@
 
 .btn-outline {
   --btn-bg: var(--body-bg);
-  --btn-hover: var(--surf-1);
+  --btn-hover: var(--surf-3);
   --btn-bd-color: var(--surf-3);
 }
 
@@ -34,6 +34,32 @@
   --btn-px: 1.25rem;
 }
 
+.btn-group {
+  display: flex;
+}
+
+:where(.btn-group *) {
+  border-radius: 0;
+}
+
+.btn-group *:not(:first-child) {
+  margin-inline-start: calc(var(--btn-bd-width) * -1);
+}
+
+.btn-group *:first-child {
+  border-start-start-radius: var(--btn-radius);
+  border-end-start-radius: var(--btn-radius);
+}
+
+.btn-group *:last-child {
+  border-start-end-radius: var(--btn-radius);
+  border-end-end-radius: var(--btn-radius);
+}
+
+.btn-group *:is(:focus) {
+  box-shadow: none;
+}
+
 @if $enable-theme-colors {
 
 .btn-dark {
@@ -48,7 +74,7 @@
   --color: #000;
   --btn-bg: var(--surf-1-light);
   --btn-hover: var(--surf-2-light);
-  --btn-bd-color: var(--surf-3-light);
+  --btn-bd-color: var(--surf-2-light);
   --input-focus-color: var(--surf-4-light);
 }
 

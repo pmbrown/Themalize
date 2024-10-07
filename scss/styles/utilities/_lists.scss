@@ -1,0 +1,83 @@
+//  ------------------------------------------------------------
+//  List utilities
+//  ------------------------------------------------------------
+
+@if $enable-lists {
+
+:where(.ul-none, .ol-none, .ul-inline, .ol-inline, .list-comma, .list-divider) {
+  --pl: 0;
+  list-style-type: "";
+}
+
+:where(.ul-inline, .ol-inline, .list-comma, .list-divider) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:where(.ul-inline, .ol-inline) {
+  column-gap: var(--gap, .75rem);
+}
+
+:where(.list-comma) {
+  column-gap: var(--gap, .3rem);
+}
+
+.list-comma *:not(:last-child):after {
+  content: ",";
+}
+
+.list-divider *:not(:first-child) {
+  padding-inline-start: var(--divider-px, .5rem);
+}
+
+.list-divider *:not(:last-child):after {
+  content: var(--divider, "|");
+  padding-inline-start: var(--divider-px, .5rem);
+}
+
+.dl-none {
+  --dd-ml: 0;
+}
+
+.dl-meta {
+  --dd-ml: 0;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: var(--dl-meta-gap, .75rem);
+}
+
+:where(.dl-comma, .dl-comma-inline) {
+  --dd-ml: 0;
+  --dt-mt: .25rem;
+  --dt-me: .15rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--gap, .3rem);
+}
+
+.dl-comma-inline dt {
+  margin-inline-end: var(--dt-me);
+}
+
+:where(.dl-meta, .dl-comma-inline) dt:after {
+  font-weight: 400;
+  content: var(--dt-colon, ":");
+}
+
+.dl-comma dt {
+  width: 100%;
+}
+
+:where(.dl-comma) dt:not(:first-child) {
+  margin-block-start: var(--dt-mt);
+}
+
+:where(.dl-comma, .dl-comma-inline) dd:not(:last-child):after {
+  content: ",";
+}
+
+:where(.dl-comma, .dl-comma-inline) dd:not(:last-child):has(+ dt):after {
+  content: "";
+}
+
+} // End lists

@@ -1,7 +1,7 @@
 // ---------------------------------------------------------- 
 // CSS variables
 // ----------------------------------------------------------
-/*! Themalize v1.0.6 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.7 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 
 :where(html) { 
   @each $theme-colors, $value in $theme-colors {
@@ -112,6 +112,12 @@
       --#{$accordions}: #{$value};       
     }
   }
+  
+  @if $enable-alerts {
+    @each $alerts, $value in $alerts {
+      --#{$alerts}: #{$value};       
+    }
+  } 
   
   @if $enable-cards {
     @each $cards, $value in $cards {

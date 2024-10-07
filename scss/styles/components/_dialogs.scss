@@ -191,16 +191,16 @@
 
 @if $enable-theme-colors {
 
-.dialog-dark {
-  --dialog-header-txt: #fff;
-  --dialog-header-bg: var(--surf-2-dark);
-  --dialog-bd-color: var(--surf-3-dark);
-}
-
 .dialog-light {
   --dialog-header-txt: #000;
   --dialog-header-bg: var(--surf-2-light);
   --dialog-bd-color: var(--surf-3-light);
+}
+
+.dialog-dark {
+  --dialog-header-txt: #fff;
+  --dialog-header-bg: var(--surf-2-dark);
+  --dialog-bd-color: var(--surf-3-dark);
 }
 
 } // END [if/theme-colors]

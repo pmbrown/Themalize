@@ -12,7 +12,7 @@ $link-light:          #1c3db5 !default;
 $link-hover-light:    color-mix(in srgb, var(--link) 60%, white) !default;
 $link-visited-light:  color-mix(in srgb, var(--link) 70%, white) !default;
 $brand-light:         color-mix(in srgb, var(--theme-brand) 90%, black) !default; 
-$body-bg-light:       color-mix(in srgb, var(--theme) 8%, white) !default;
+$body-bg-light:       color-mix(in srgb, var(--theme) 6%, white) !default;
 $surf-1-light:        color-mix(in srgb, var(--theme) 21%, white) !default;
 $surf-2-light:        color-mix(in srgb, var(--theme) 29%, white) !default;
 $surf-3-light:        color-mix(in srgb, var(--theme) 43%, white) !default;
@@ -23,7 +23,7 @@ $text-dark:           color-mix(in srgb, var(--theme) 10%, white) !default;
 $link-dark:           #9fbfdf !default;
 $link-hover-dark:     color-mix(in srgb, var(--link) 75%, white) !default;
 $link-visited-dark:   color-mix(in srgb, var(--link) 65%, white) !default;
-$body-bg-dark:        color-mix(in srgb, var(--theme) 25%, black) !default;
+$body-bg-dark:        color-mix(in srgb, var(--theme) 27%, black) !default;
 $brand-dark:          color-mix(in srgb, var(--theme-brand) 90%, white) !default; 
 $surf-1-dark:         color-mix(in srgb, var(--theme) 33%, black) !default;
 $surf-2-dark:         color-mix(in srgb, var(--theme) 40%, black) !default;
@@ -113,6 +113,12 @@ $details-px:          0.75rem !default;
 $details-bd-color:    var(--surf-3) !default;
 $details-bd-width:    1px !default;
 $details-radius:      0.125em !default;
+
+// Alerts
+$alert-txt:         var(--text) !default;
+$alert-bg:          var(--surf-1) !default;
+$alert-bd-color:    var(--surf-3) !default;
+$alert-radius:      0.125em !default; 
 
 // Cards
 $card-px:             1rem !default;
@@ -311,8 +317,9 @@ $caret-down:        url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='curre
 $caret-up:          url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m8 6 4 4-8 7e-7z'/></svg>") !default;
 $caret-left:        url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m6 8 4-4v8z'/></svg>") !default;
 $caret-right:       url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m10 8-4 4-9e-7 -8z'/></svg>");
-$ext-link:          url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m9 1-1 1h5l-6.51 6.51 0.998 0.998 6.51-6.51 0.00195 5 1-1-0.00195-4.99v-0.998zm-8 2 0.00781 12h12v-8h-1v7h-9.99l-0.00781-10h7v-1z'/></svg>") !default;
-$pg-link:           url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m1 2v12h10v-3h-1v2h-8v-10h8v2h1v-3h-10zm11 2 1.88 3.29-7.88 0.041v1.37h7.88l-1.88 3.3h1.67c0.877-1.58 1.56-2.66 2.33-4l-2.45-4h-1.55z'/></svg>") !default;
+$ext-link:          url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m10 0.5a0.5 0.5 0 0 0 0 1h3.79l-8.15 8.15a0.501 0.501 0 1 0 0.709 0.707l8.14-8.15v3.79a0.5 0.5 0 0 0 1 0v-5a0.5 0.5 0 0 0-0.5-0.5zm-7.5 1.5a1.5 1.5 0 0 0-1.5 1.5v10a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-6.64a0.5 0.5 0 0 0-1 0v6.64a0.5 0.5 0 0 1-0.5 0.5h-10a0.5 0.5 0 0 1-0.5-0.5v-10a0.5 0.5 0 0 1 0.5-0.5h6.64a0.5 0.5 0 0 0 0.5-0.5 0.5 0.5 0 0 0-0.5-0.5z'/></svg>") !default;
+$pg-link:           url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m2.5 2c-1.5 0-1.5 1.5-1.5 1.5v9c0 1.5 1.5 1.5 1.5 1.5h7.25c1.5 0 1.5-1.5 1.5-1.5v-1.99s0-0.5-0.5-0.5-0.5 0.5-0.5 0.5v1.99c0 0.5-0.5 0.5-0.5 0.5h-7.25c-0.5 0-0.5-0.5-0.5-0.5v-9c0-0.5 0.5-0.5 0.5-0.5h7.25c0.5 0 0.5 0.5 0.5 0.5v2.03s0 0.5 0.5 0.5 0.5-0.5 0.5-0.5v-2.03c0-1.5-1.5-1.5-1.5-1.5zm10 2.69c-0.384 0.0235-0.699 0.509-0.336 0.859l2.04 1.96h-10c-0.681-1.89e-4 -0.681 1 0 1l10-0.00195-2.01 2c-0.48 0.471 0.241 1.18 0.721 0.707l2.88-2.85c0.198-0.196 0.2-0.513 0-0.707l-2.91-2.82c-0.121-0.117-0.257-0.16-0.385-0.152z'/></svg>") !default;
+$pen-box:           url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m13.9 0.5c-0.128 0-0.256 0.0489-0.354 0.146-2.85 2.85-5.71 5.71-8.56 8.56-0.055 0.055-0.0966 0.121-0.121 0.195l-0.805 2.41c-0.0648 0.195 0.119 0.381 0.314 0.316l2.41-0.805c0.0738-0.0242 0.142-0.0664 0.197-0.121 2.85-2.85 5.71-5.71 8.56-8.56 0.195-0.195 0.195-0.512 0-0.707l-1.29-1.29c-0.0976-0.0976-0.226-0.146-0.354-0.146zm-11.4 0.5a1.5 1.5 0 0 0-1.5 1.5v11a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5v-6a0.5 0.5 0 0 0-1 0v6a0.5 0.5 0 0 1-0.5 0.5h-11a0.5 0.5 0 0 1-0.5-0.5v-11a0.5 0.5 0 0 1 0.5-0.5h6.5a0.5 0.5 0 0 0 0-1z'/></svg>") !default;
 $close:             url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m13 3-10 10zm-10 0 10 10z' fill='none' stroke='currentColor' stroke-width='1.5'/></svg>") !default;
 $box:               url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m1.51 0.0131c-0.911-0.0389-1.61 0.85-1.5 1.73 0.0031 4.3-0.0062 8.6 0.0047 12.9 0.0329 0.888 0.925 1.49 1.77 1.38 4.28-0.0031 8.57 0.0062 12.9-0.0047 0.888-0.0329 1.49-0.925 1.38-1.77-0.0031-4.28 0.0062-8.57-0.0047-12.9-0.0329-0.888-0.925-1.49-1.77-1.38h-12.7zm0 1h13c0.583-0.0209 0.508 0.598 0.5 0.998v12.5c0.0209 0.583-0.598 0.508-0.998 0.5h-12.5c-0.583 0.0209-0.508-0.598-0.5-0.998v-12.5c0.0112-0.281 0.181-0.553 0.5-0.5z'/></svg>") !default;
 $close-box:         url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m4.82 5.53s-0.354-0.354 0-0.707 0.707 0 0.707 0l2.47 2.47 2.47-2.47s0.354-0.354 0.707 0c0.354 0.354 0 0.707 0 0.707l-2.47 2.47 2.47 2.47s0.354 0.354 0 0.707c-0.354 0.354-0.707 0-0.707 0l-2.47-2.47-2.47 2.47s-0.354 0.354-0.707 0c-0.354-0.354 0-0.707 0-0.707l2.47-2.47zm-3.31-5.51c-0.911-0.0389-1.61 0.85-1.5 1.73 0.00311 4.3-0.00623 8.6 0.00467 12.9 0.0329 0.888 0.925 1.49 1.77 1.38 4.28-0.0031 8.57 0.0062 12.9-0.0047 0.888-0.0329 1.49-0.925 1.38-1.77-0.0031-4.28 0.0062-8.57-0.0047-12.9-0.0329-0.888-0.925-1.49-1.77-1.38h-12.7zm0 1h13c0.583-0.0209 0.508 0.598 0.5 0.998v12.5c0.0209 0.583-0.598 0.508-0.998 0.5h-12.5c-0.583 0.0209-0.508-0.598-0.5-0.998v-12.5c0.0112-0.281 0.181-0.553 0.5-0.5z'/></svg>") !default;

@@ -1,4 +1,4 @@
-/*! Themalize v1.0.6 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.7 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --theme-brand: cadetblue;
@@ -10,7 +10,7 @@
   --link: #1c3db5;
   --link-hover: color-mix(in srgb, var(--link) 60%, white);
   --link-visited: color-mix(in srgb, var(--link) 70%, white);
-  --body-bg: color-mix(in srgb, var(--theme) 8%, white);
+  --body-bg: color-mix(in srgb, var(--theme) 6%, white);
   --surf-1: color-mix(in srgb, var(--theme) 21%, white);
   --surf-2: color-mix(in srgb, var(--theme) 29%, white);
   --surf-3: color-mix(in srgb, var(--theme) 43%, white);
@@ -25,7 +25,7 @@
     --link: #9fbfdf;
     --link-hover: color-mix(in srgb, var(--link) 75%, white);
     --link-visited: color-mix(in srgb, var(--link) 65%, white);
-    --body-bg: color-mix(in srgb, var(--theme) 25%, black);
+    --body-bg: color-mix(in srgb, var(--theme) 27%, black);
     --surf-1: color-mix(in srgb, var(--theme) 33%, black);
     --surf-2: color-mix(in srgb, var(--theme) 40%, black);
     --surf-3: color-mix(in srgb, var(--theme) 50%, black);
@@ -178,6 +178,10 @@
   font-size: var(--fs);
 }
 
+:where(h1, h2, h3, h4, h5, h6) small {
+  --fs: .75em;
+}
+
 :where(bold, strong) {
   --fw: bold;
   font-weight: var(--fw);
@@ -190,8 +194,16 @@
 }
 
 :where(ol, ul) {
-  --pl: 1.75rem;
+  --pl: 2rem;
   padding-inline-start: var(--pl);
+}
+
+:where(ol) {
+  list-style-type: var(--marker, decimal);
+}
+
+:where(ul) {
+  list-style-type: var(--marker, disc);
 }
 
 :where(ol ol, ul ul, ol ul, ul ol, dl dl) {
@@ -205,6 +217,10 @@
 
 :where(dt) {
   font-weight: var(--fw);
+}
+
+:where(dt):not(:first-child) {
+  margin-block-start: var(--dt-mt);
 }
 
 :where(dd) {
@@ -453,7 +469,7 @@ a > :where(code) {
 }
 
 :where([type=radio], [type=checkbox], [type=range], [progress]) {
-  accent-color: var(--link);
+  accent-color: var(--accent, var(--link));
 }
 
 :where([type=checkbox], [type=radio]) {

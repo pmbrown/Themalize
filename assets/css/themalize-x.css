@@ -1,4 +1,4 @@
-/*! Themalize v1.0.6 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.7 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --theme-brand: cadetblue;
@@ -6,7 +6,7 @@
   --link-light: #1c3db5;
   --link-hover-light: color-mix(in srgb, var(--link) 60%, white);
   --link-visited-light: color-mix(in srgb, var(--link) 70%, white);
-  --body-bg-light: color-mix(in srgb, var(--theme) 8%, white);
+  --body-bg-light: color-mix(in srgb, var(--theme) 6%, white);
   --surf-1-light: color-mix(in srgb, var(--theme) 21%, white);
   --surf-2-light: color-mix(in srgb, var(--theme) 29%, white);
   --surf-3-light: color-mix(in srgb, var(--theme) 43%, white);
@@ -16,7 +16,7 @@
   --link-dark: #9fbfdf;
   --link-hover-dark: color-mix(in srgb, var(--link) 75%, white);
   --link-visited-dark: color-mix(in srgb, var(--link) 65%, white);
-  --body-bg-dark: color-mix(in srgb, var(--theme) 25%, black);
+  --body-bg-dark: color-mix(in srgb, var(--theme) 27%, black);
   --surf-1-dark: color-mix(in srgb, var(--theme) 33%, black);
   --surf-2-dark: color-mix(in srgb, var(--theme) 40%, black);
   --surf-3-dark: color-mix(in srgb, var(--theme) 50%, black);
@@ -135,6 +135,10 @@
   --details-bd-color: var(--surf-3);
   --details-bd-width: 1px;
   --details-radius: 0.125em;
+  --alert-txt: var(--text);
+  --alert-bg: var(--surf-1);
+  --alert-bd-color: var(--surf-3);
+  --alert-radius: 0.125em;
   --card-px: 1rem;
   --card-pt: 0.75rem;
   --card-pb: 1rem;
@@ -303,6 +307,10 @@
   font-size: var(--fs);
 }
 
+:where(h1, h2, h3, h4, h5, h6) small {
+  --fs: .75em;
+}
+
 :where(bold, strong) {
   --fw: bold;
   font-weight: var(--fw);
@@ -315,8 +323,16 @@
 }
 
 :where(ol, ul) {
-  --pl: 1.75rem;
+  --pl: 2rem;
   padding-inline-start: var(--pl);
+}
+
+:where(ol) {
+  list-style-type: var(--marker, decimal);
+}
+
+:where(ul) {
+  list-style-type: var(--marker, disc);
 }
 
 :where(ol ol, ul ul, ol ul, ul ol, dl dl) {
@@ -330,6 +346,10 @@
 
 :where(dt) {
   font-weight: var(--fw);
+}
+
+:where(dt):not(:first-child) {
+  margin-block-start: var(--dt-mt);
 }
 
 :where(dd) {
@@ -579,7 +599,7 @@ a > :where(code) {
 }
 
 :where([type=radio], [type=checkbox], [type=range], [progress]) {
-  accent-color: var(--link);
+  accent-color: var(--accent, var(--link));
 }
 
 :where([type=checkbox], [type=radio]) {
@@ -698,7 +718,7 @@ a > :where(code) {
 }
 
 #themes:before, :where(dialog :is(header, .dialog-header) button.close-dialog):before,
-:where(.dialog-img-close):before, :where(.details summary, .accordion summary):after, .ico-btn:before, .ico-block:before, .ico-b:before, .ico-a:after, .ico:before {
+:where(.dialog-img-close):before, .alert [method=dialog] button:before, :where(.details summary, .accordion summary):after, .ico-btn:before, .ico-block:before, .ico-b:before, .ico-a:after, .ico:before {
   display: inline-block;
   background-color: var(--ico);
   content: "";
@@ -768,10 +788,11 @@ a > :where(code) {
   --caret-left: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m6 8 4-4v8z'/></svg>");
   --caret-right: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m10 8-4 4-9e-7 -8z'/></svg>");
   --close: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m13 3-10 10zm-10 0 10 10z' fill='none' stroke='currentColor' stroke-width='1.5'/></svg>");
-  --ext-link: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m9 1-1 1h5l-6.51 6.51 0.998 0.998 6.51-6.51 0.00195 5 1-1-0.00195-4.99v-0.998zm-8 2 0.00781 12h12v-8h-1v7h-9.99l-0.00781-10h7v-1z'/></svg>");
-  --pg-link: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m1 2v12h10v-3h-1v2h-8v-10h8v2h1v-3h-10zm11 2 1.88 3.29-7.88 0.041v1.37h7.88l-1.88 3.3h1.67c0.877-1.58 1.56-2.66 2.33-4l-2.45-4h-1.55z'/></svg>");
+  --ext-link: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m10 0.5a0.5 0.5 0 0 0 0 1h3.79l-8.15 8.15a0.501 0.501 0 1 0 0.709 0.707l8.14-8.15v3.79a0.5 0.5 0 0 0 1 0v-5a0.5 0.5 0 0 0-0.5-0.5zm-7.5 1.5a1.5 1.5 0 0 0-1.5 1.5v10a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-6.64a0.5 0.5 0 0 0-1 0v6.64a0.5 0.5 0 0 1-0.5 0.5h-10a0.5 0.5 0 0 1-0.5-0.5v-10a0.5 0.5 0 0 1 0.5-0.5h6.64a0.5 0.5 0 0 0 0.5-0.5 0.5 0.5 0 0 0-0.5-0.5z'/></svg>");
+  --pg-link: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m2.5 2c-1.5 0-1.5 1.5-1.5 1.5v9c0 1.5 1.5 1.5 1.5 1.5h7.25c1.5 0 1.5-1.5 1.5-1.5v-1.99s0-0.5-0.5-0.5-0.5 0.5-0.5 0.5v1.99c0 0.5-0.5 0.5-0.5 0.5h-7.25c-0.5 0-0.5-0.5-0.5-0.5v-9c0-0.5 0.5-0.5 0.5-0.5h7.25c0.5 0 0.5 0.5 0.5 0.5v2.03s0 0.5 0.5 0.5 0.5-0.5 0.5-0.5v-2.03c0-1.5-1.5-1.5-1.5-1.5zm10 2.69c-0.384 0.0235-0.699 0.509-0.336 0.859l2.04 1.96h-10c-0.681-1.89e-4 -0.681 1 0 1l10-0.00195-2.01 2c-0.48 0.471 0.241 1.18 0.721 0.707l2.88-2.85c0.198-0.196 0.2-0.513 0-0.707l-2.91-2.82c-0.121-0.117-0.257-0.16-0.385-0.152z'/></svg>");
   --search: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m11.3 10.1a5.69 5.69 0 1 0-1.22 1.22h-8.75e-4q0.0385 0.0525 0.0858 0.101l3.37 3.37a0.875 0.875 0 0 0 1.24-1.24l-3.37-3.37a0.875 0.875 0 0 0-0.101-0.0875zm0.226-3.36a4.81 4.81 0 1 1-9.62 0 4.81 4.81 0 0 1 9.62 00'/></svg>");
   --box: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m1.51 0.0131c-0.911-0.0389-1.61 0.85-1.5 1.73 0.0031 4.3-0.0062 8.6 0.0047 12.9 0.0329 0.888 0.925 1.49 1.77 1.38 4.28-0.0031 8.57 0.0062 12.9-0.0047 0.888-0.0329 1.49-0.925 1.38-1.77-0.0031-4.28 0.0062-8.57-0.0047-12.9-0.0329-0.888-0.925-1.49-1.77-1.38h-12.7zm0 1h13c0.583-0.0209 0.508 0.598 0.5 0.998v12.5c0.0209 0.583-0.598 0.508-0.998 0.5h-12.5c-0.583 0.0209-0.508-0.598-0.5-0.998v-12.5c0.0112-0.281 0.181-0.553 0.5-0.5z'/></svg>");
+  --pen-box: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m13.9 0.5c-0.128 0-0.256 0.0489-0.354 0.146-2.85 2.85-5.71 5.71-8.56 8.56-0.055 0.055-0.0966 0.121-0.121 0.195l-0.805 2.41c-0.0648 0.195 0.119 0.381 0.314 0.316l2.41-0.805c0.0738-0.0242 0.142-0.0664 0.197-0.121 2.85-2.85 5.71-5.71 8.56-8.56 0.195-0.195 0.195-0.512 0-0.707l-1.29-1.29c-0.0976-0.0976-0.226-0.146-0.354-0.146zm-11.4 0.5a1.5 1.5 0 0 0-1.5 1.5v11a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5v-6a0.5 0.5 0 0 0-1 0v6a0.5 0.5 0 0 1-0.5 0.5h-11a0.5 0.5 0 0 1-0.5-0.5v-11a0.5 0.5 0 0 1 0.5-0.5h6.5a0.5 0.5 0 0 0 0-1z'/></svg>");
   --tick-box: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m11.4 4.6c-0.322-0.0685-0.509 0.216-0.652 0.449l-4.01 5.57c-0.875-0.787-1.74-1.58-2.62-2.36-0.362-0.326-0.976 0.154-0.76 0.583 0.177 0.295 0.485 0.482 0.725 0.726 0.818 0.734 1.63 1.48 2.45 2.21 0.264 0.206 0.64 0.0522 0.769-0.232 1.63-2.39 2.85-3.86 4.48-6.26 0.143-0.282-0.0874-0.618-0.374-0.682zm-9.93-4.59c-0.911-0.0389-1.61 0.85-1.5 1.73 0.00311 4.3-0.00623 8.6 0.00467 12.9 0.0329 0.888 0.925 1.49 1.77 1.38 4.28-0.0031 8.57 0.0062 12.9-0.0047 0.888-0.0329 1.49-0.925 1.38-1.77-0.0031-4.28 0.0062-8.57-0.0047-12.9-0.0329-0.888-0.925-1.49-1.77-1.38h-12.7zm0 1h13c0.583-0.0209 0.508 0.598 0.5 0.998v12.5c0.0209 0.583-0.598 0.508-0.998 0.5h-12.5c-0.583 0.0209-0.508-0.598-0.5-0.998v-12.5c0.0112-0.281 0.181-0.553 0.5-0.5z'/></svg>");
   --close-box: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m4.82 5.53s-0.354-0.354 0-0.707 0.707 0 0.707 0l2.47 2.47 2.47-2.47s0.354-0.354 0.707 0c0.354 0.354 0 0.707 0 0.707l-2.47 2.47 2.47 2.47s0.354 0.354 0 0.707c-0.354 0.354-0.707 0-0.707 0l-2.47-2.47-2.47 2.47s-0.354 0.354-0.707 0c-0.354-0.354 0-0.707 0-0.707l2.47-2.47zm-3.31-5.51c-0.911-0.0389-1.61 0.85-1.5 1.73 0.00311 4.3-0.00623 8.6 0.00467 12.9 0.0329 0.888 0.925 1.49 1.77 1.38 4.28-0.0031 8.57 0.0062 12.9-0.0047 0.888-0.0329 1.49-0.925 1.38-1.77-0.0031-4.28 0.0062-8.57-0.0047-12.9-0.0329-0.888-0.925-1.49-1.77-1.38h-12.7zm0 1h13c0.583-0.0209 0.508 0.598 0.5 0.998v12.5c0.0209 0.583-0.598 0.508-0.998 0.5h-12.5c-0.583 0.0209-0.508-0.598-0.5-0.998v-12.5c0.0112-0.281 0.181-0.553 0.5-0.5z'/></svg>");
   --close-box-fill: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m2 0c-2 0-2 2-2 2v12c0 2 2 2 2 2h12c2 0 2-2 2-2v-12c0-2-2-2-2-2h-12zm3.08 4.67c0.249-0.0497 0.447 0.15 0.447 0.15l2.47 2.47 2.47-2.47s0.353-0.354 0.707 0c0.354 0.354 0 0.707 0 0.707l-2.47 2.47 2.47 2.47s0.354 0.353 0 0.707c-0.354 0.354-0.707 0-0.707 0l-2.47-2.47-2.47 2.47s-0.353 0.354-0.707 0c-0.354-0.354 0-0.707 0-0.707l2.47-2.47-2.47-2.47s-0.354-0.353 0-0.707c0.0884-0.0884 0.177-0.134 0.26-0.15z'/></svg>");
@@ -834,6 +855,10 @@ a > :where(code) {
 
 .box {
   --svg: var(--box);
+}
+
+.pen-box {
+  --svg: var(--pen-box);
 }
 
 .close {
@@ -1036,6 +1061,99 @@ a > :where(code) {
   --summary-ico: #000;
   --summary-bg: var(--cyan);
   --details-bd-color: var(--cyan-darker);
+}
+
+.alert {
+  --ico: var(--alert-txt);
+  color: var(--alert-txt);
+  margin-block-end: 1rem;
+  padding-block: 0.6rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--alert-bd-color);
+  border-radius: var(--alert-radius);
+  background-color: var(--alert-bg);
+}
+
+.alert * {
+  --mb: 0;
+}
+
+.alert[open] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-inline-size: 100%;
+  margin: initial;
+  margin-block-end: 1rem;
+  padding-block: 0.325rem;
+  padding-inline-end: 0.5rem;
+}
+
+.alert [method=dialog] {
+  margin-inline-start: auto;
+}
+
+.alert [method=dialog] button {
+  --ico: var(--alert-txt);
+  --btn-bg: transparent;
+  --btn-hover: transparent;
+  --btn-bd-color: transparent;
+  --btn-py: .25rem;
+  --btn-px: .5rem;
+  margin-inline-start: auto;
+}
+
+.alert [method=dialog] button:before {
+  --ico: var(--alert-txt);
+  --svg: var(--close);
+}
+
+.alert-outline {
+  --alert-bg: var(--body-bg);
+}
+
+.alert-light {
+  --alert-txt: #000;
+  --alert-bg: var(--surf-1-light);
+  --alert-bd-color: var(--surf-3-light);
+}
+
+.alert-dark {
+  --alert-txt: #fff;
+  --alert-bg: var(--surf-1-dark);
+  --alert-bd-color: var(--surf-3-dark);
+}
+
+.alert-blue {
+  --alert-txt: #fff;
+  --alert-bg: var(--blue);
+  --alert-bd-color: var(--blue-light);
+}
+
+.alert-red {
+  --alert-txt: #fff;
+  --alert-bg: var(--red);
+  --alert-bd-color: var(--red-light);
+}
+
+.alert-green {
+  --alert-txt: #fff;
+  --alert-bg: var(--green);
+  --alert-bd-color: var(--green-light);
+}
+
+.alert-orange {
+  --alert-txt: #000;
+  --alert-bg: var(--orange);
+  --alert-bd-color: var(--orange-dark);
+}
+
+.alert-cyan {
+  --alert-txt: #000;
+  --alert-bg: var(--cyan);
+  --alert-bd-color: var(--cyan-dark);
 }
 
 :where(.card-basic, .card-link) {
@@ -1317,16 +1435,16 @@ a > :where(code) {
   content: "";
 }
 
-.dialog-dark {
-  --dialog-header-txt: #fff;
-  --dialog-header-bg: var(--surf-2-dark);
-  --dialog-bd-color: var(--surf-3-dark);
-}
-
 .dialog-light {
   --dialog-header-txt: #000;
   --dialog-header-bg: var(--surf-2-light);
   --dialog-bd-color: var(--surf-3-light);
+}
+
+.dialog-dark {
+  --dialog-header-txt: #fff;
+  --dialog-header-bg: var(--surf-2-dark);
+  --dialog-bd-color: var(--surf-3-dark);
 }
 
 .dialog-blue {
@@ -1867,7 +1985,7 @@ a > :where(code) {
 
 .btn-outline {
   --btn-bg: var(--body-bg);
-  --btn-hover: var(--surf-1);
+  --btn-hover: var(--surf-3);
   --btn-bd-color: var(--surf-3);
 }
 
@@ -1895,6 +2013,32 @@ a > :where(code) {
   --btn-px: 1.25rem;
 }
 
+.btn-group {
+  display: flex;
+}
+
+:where(.btn-group *) {
+  border-radius: 0;
+}
+
+.btn-group *:not(:first-child) {
+  margin-inline-start: calc(var(--btn-bd-width) * -1);
+}
+
+.btn-group *:first-child {
+  border-start-start-radius: var(--btn-radius);
+  border-end-start-radius: var(--btn-radius);
+}
+
+.btn-group *:last-child {
+  border-start-end-radius: var(--btn-radius);
+  border-end-end-radius: var(--btn-radius);
+}
+
+.btn-group *:is(:focus) {
+  box-shadow: none;
+}
+
 .btn-dark {
   --color: #fff;
   --btn-bg: var(--surf-1-dark);
@@ -1907,7 +2051,7 @@ a > :where(code) {
   --color: #000;
   --btn-bg: var(--surf-1-light);
   --btn-hover: var(--surf-2-light);
-  --btn-bd-color: var(--surf-3-light);
+  --btn-bd-color: var(--surf-2-light);
   --input-focus-color: var(--surf-4-light);
 }
 
@@ -2039,6 +2183,82 @@ a > :where(code) {
 
 .portrait-sm {
   --aspect-ratio: 4 / 6;
+}
+
+:where(.ul-none, .ol-none, .ul-inline, .ol-inline, .list-comma, .list-divider) {
+  --pl: 0;
+  list-style-type: "";
+}
+
+:where(.ul-inline, .ol-inline, .list-comma, .list-divider) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:where(.ul-inline, .ol-inline) {
+  column-gap: var(--gap, 0.75rem);
+}
+
+:where(.list-comma) {
+  column-gap: var(--gap, 0.3rem);
+}
+
+.list-comma *:not(:last-child):after {
+  content: ",";
+}
+
+.list-divider *:not(:first-child) {
+  padding-inline-start: var(--divider-px, 0.5rem);
+}
+
+.list-divider *:not(:last-child):after {
+  content: var(--divider, "|");
+  padding-inline-start: var(--divider-px, 0.5rem);
+}
+
+.dl-none {
+  --dd-ml: 0;
+}
+
+.dl-meta {
+  --dd-ml: 0;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: var(--dl-meta-gap, 0.75rem);
+}
+
+:where(.dl-comma, .dl-comma-inline) {
+  --dd-ml: 0;
+  --dt-mt: .25rem;
+  --dt-me: .15rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--gap, 0.3rem);
+}
+
+.dl-comma-inline dt {
+  margin-inline-end: var(--dt-me);
+}
+
+:where(.dl-meta, .dl-comma-inline) dt:after {
+  font-weight: 400;
+  content: var(--dt-colon, ":");
+}
+
+.dl-comma dt {
+  width: 100%;
+}
+
+:where(.dl-comma) dt:not(:first-child) {
+  margin-block-start: var(--dt-mt);
+}
+
+:where(.dl-comma, .dl-comma-inline) dd:not(:last-child):after {
+  content: ",";
+}
+
+:where(.dl-comma, .dl-comma-inline) dd:not(:last-child):has(+ dt):after {
+  content: "";
 }
 
 .shadow {
@@ -2232,23 +2452,6 @@ a > :where(code) {
 .text-black {
   --ico: #000;
   color: #000;
-}
-
-.ul-none {
-  --pl: 0;
-  list-style-type: "";
-}
-
-.ul-circle {
-  list-style-type: circle;
-}
-
-.ul-square {
-  list-style-type: square;
-}
-
-.dl-none {
-  --dd-ml: 0;
 }
 
 .block {

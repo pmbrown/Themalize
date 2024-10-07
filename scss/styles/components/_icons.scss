@@ -84,6 +84,7 @@
 // Icon SVG variables
 
 :where(html) {
+
   @if $enable-logo-svg {
     --logo: #{$logo};
   }
@@ -142,6 +143,10 @@
   
   @if $enable-box-svg {
     --box: #{$box};
+  }
+  
+  @if $enable-pen-box-svg {
+    --pen-box: #{$pen-box};
   }
   
   @if $enable-tick-box-svg {
@@ -262,6 +267,12 @@
 @if $enable-box-svg {
   .box {
     --svg: var(--box);        
+  }
+}
+
+@if $enable-pen-box-svg {
+  .pen-box {
+    --svg: var(--pen-box);        
   }
 }
 
