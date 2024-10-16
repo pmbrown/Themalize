@@ -1,7 +1,7 @@
 // ---------------------------------------------------------- 
 // CSS variables
 // ----------------------------------------------------------
-/*! Themalize v1.0.7 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.8 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 
 :where(html) { 
   @each $theme-colors, $value in $theme-colors {
@@ -146,6 +146,12 @@
   @if $enable-badges {
     @each $badges, $value in $badges {
       --#{$badges}: #{$value};       
+    }
+  }
+  
+  @if $enable-borders {
+    @each $border-radius, $value in $border-radius {
+      --#{$border-radius}: #{$value};       
     }
   }
   

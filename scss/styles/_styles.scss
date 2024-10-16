@@ -18,6 +18,20 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: no-preference) { 
+  @if $enable-smooth-scroll {
+    :where(html) {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  @if $enable-view-transition {
+    @view-transition {
+      navigation: auto;
+    }
+  }
+}
+
 //  ------------------------------------------------------------
 //  2. Typography
 //  ------------------------------------------------------------
@@ -280,22 +294,31 @@ a > :where(code) {
   border: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) { 
-  :where(html) { scroll-behavior: smooth; }
-}
-
-.vis-hidden {
-  position: absolute;
-  width: 1px;
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	white-space: nowrap;
-}
-
 .hidden {
   display: none;
+}
+
+// Accessibility
+@mixin vis-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+@mixin vis-hidden-focus {
+  &:not(:focus):not(:focus-within) {
+    @include vis-hidden;
+  }
+}
+
+@if $enable-vis-hidden {
+  .vis-hidden, .vis-hidden-focus:not(:focus):not(:focus-within) {
+    @include vis-hidden;
+  }
 }
 
 //  ------------------------------------------------------------

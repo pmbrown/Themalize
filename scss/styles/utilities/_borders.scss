@@ -4,7 +4,7 @@
 
 @if $enable-borders {
 
-.bd, .bd-t, .bd-b, .bd-l, .bd-r, .bd-y, .bd-x, .bd-child * {
+.bd, .bd-t, .bd-b, .bd-s, .bd-e, .bd-y, .bd-x, .bd-child * {
   --bd-size: 1px;
   --bd-style: solid;
   --bd-color: var(--surf-3);
@@ -30,47 +30,58 @@
   border-inline: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
-.bd-l {
+.bd-s {
   border-inline-start: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
-.bd-r {
+.bd-e {
   border-inline-end: var(--bd-size) var(--bd-style) var(--bd-color);
 }
-
 
 .bd-child * {
   border: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
-.radius-xs, .radius-sm, .radius-md, .radius-lg, .radius-xl, .radius-circle {
-  border-radius: var(--bd-radius);
+// Radius
+@each $name, $value in $border-radius {
+  .#{$name} {
+    border-radius: var(--#{$name});        
+  }
 }
 
-.radius-xs {
-  --bd-radius: .125em;
+.rd-circle {
+  border-radius: 50%;
 }
 
-.radius-sm {
-  --bd-radius: .25rem;
+@each $name, $value in $border-radius {
+  .#{$name}-top {
+    border-start-start-radius: var(--#{$name});
+    border-start-end-radius: var(--#{$name});     
+  }
 }
 
-.radius-md {
-  --bd-radius: .5rem;
+@each $name, $value in $border-radius {
+  .#{$name}-bottom {
+    border-end-start-radius: var(--#{$name});
+    border-end-end-radius: var(--#{$name});     
+  }
 }
 
-.radius-lg {
-  --bd-radius: .75rem;
+@each $name, $value in $border-radius {
+  .#{$name}-start {
+    border-start-start-radius: var(--#{$name});
+    border-end-start-radius: var(--#{$name});   
+  }
 }
 
-.radius-xl {
-  --bd-radius: 1rem;
+@each $name, $value in $border-radius {
+  .#{$name}-end {
+    border-start-end-radius: var(--#{$name});
+    border-end-end-radius: var(--#{$name});    
+  }
 }
 
-.radius-circle {
-  --bd-radius: 50%;
-}
-
+// Primary colors
 @if $enable-primary-colors {
   .bd-blue {
     --bd-color: var(--blue);

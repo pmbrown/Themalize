@@ -56,13 +56,13 @@ $btn-bg:              var(--surf-1) !default;
 $btn-hover:           var(--surf-2) !default;
 $btn-bd-width:        1px !default;
 $btn-bd-color:        var(--surf-2) !default;
-$btn-radius:          0.125em !default;
+$btn-radius:          0.188rem !default;
 $form-py:             0.313rem !default;
 $form-px:             0.75rem !default;
 $form-bg:             var(--body-bg) !default;
 $form-bd-width:       1px !default;
 $form-bd-color:       var(--surf-3) !default;
-$form-radius:         0.125em !default;
+$form-radius:         0.188rem !default;
 $input-focus:         0 0 0 0.12rem !default;
 $input-focus-color:   var(--surf-4) !default;
 
@@ -112,13 +112,13 @@ $details-py:          0.5rem !default;
 $details-px:          0.75rem !default;
 $details-bd-color:    var(--surf-3) !default;
 $details-bd-width:    1px !default;
-$details-radius:      0.125em !default;
+$details-radius:      0.188rem !default;
 
 // Alerts
 $alert-txt:         var(--text) !default;
 $alert-bg:          var(--surf-1) !default;
 $alert-bd-color:    var(--surf-3) !default;
-$alert-radius:      0.125em !default; 
+$alert-radius:      0.188rem !default; 
 
 // Cards
 $card-px:             1rem !default;
@@ -126,7 +126,7 @@ $card-pt:             0.75rem !default;
 $card-pb:             1rem !default;
 $card-bd-color:       var(--surf-2);
 $card-bd-width:       1px !default;
-$card-radius:         0.125em !default;
+$card-radius:         0.188rem !default;
 $card-bg:             var(--body-bg) !default;
 $card-hover:          color-mix(in srgb, var(--surf-1) 50%, var(--body-bg)) !default;
 $card-focus:          0.188rem solid var(--surf-3) !default;
@@ -145,7 +145,7 @@ $dialog-body-py:      0.75rem !default;
 $dialog-body-px:      1rem !default;
 $dialog-bd-color:     var(--surf-3) !default;
 $dialog-bd-width:     1px !default;
-$dialog-radius:       0.125em !default; 
+$dialog-radius:       0.188rem !default; 
 $dialog-top:          1rem !default;
 $dialog-width:        calc((100% - 6px) - 2em) !default;
 $dialog-max-width:    30rem !default;
@@ -159,7 +159,7 @@ $list-group-bg:             var(--body-bg) !default;
 $list-group-title-bg:       var(--surf-2) !default;
 $list-group-hover:          var(--surf-1) !default;
 $list-group-bd-color:       var(--surf-3) !default;
-$list-group-radius:         0.125em !default;
+$list-group-radius:         0.188rem !default;
 $list-group-hover-radius:   calc(var(--list-group-radius) - 1px) !default;
 
 // Popovers
@@ -167,7 +167,7 @@ $pop-txt:             var(--text) !default;
 $pop-bg:              var(--body-bg) !default;
 $pop-bd-color:        var(--surf-3) !default;
 $pop-bd-width:        1px !default;
-$pop-radius:          0.125rem !default;
+$pop-radius:          0.188rem !default;
 $pop-my:              1rem !default;
 $pop-mx:              auto !default;
 $pop-py:              0.75rem !default;
@@ -181,8 +181,16 @@ $badge-fs:            0.65em !default;
 $badge-fw:            600 !default;
 $badge-py:            0.375em !default;
 $badge-px:            0.65em !default;
-$badge-radius:        0.25em !default;
+$badge-radius:        0.188rem !default;
 $badge-bg:            var(--surf-2);
+
+// Border radius
+$rd-1:                0.188rem !default;
+$rd-2:                0.313rem !default;
+$rd-3:                0.5rem !default;
+$rd-4:                0.75rem !default;
+$rd-5:                1.125rem !default;
+$rd-pill:             50rem !default;
 
 // Shadows
 $shadow:        0 0.25rem 0.75rem rgba(0, 0, 0, 0.15) !default;

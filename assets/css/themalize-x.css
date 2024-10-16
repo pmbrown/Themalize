@@ -1,4 +1,4 @@
-/*! Themalize v1.0.7 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.8 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --theme-brand: cadetblue;
@@ -104,13 +104,13 @@
   --btn-hover: var(--surf-2);
   --btn-bd-width: 1px;
   --btn-bd-color: var(--surf-2);
-  --btn-radius: 0.125em;
+  --btn-radius: 0.188rem;
   --form-py: 0.313rem;
   --form-px: 0.75rem;
   --form-bg: var(--body-bg);
   --form-bd-width: 1px;
   --form-bd-color: var(--surf-3);
-  --form-radius: 0.125em;
+  --form-radius: 0.188rem;
   --input-focus: 0 0 0 0.12rem;
   --input-focus-color: var(--surf-4);
   --table-thead-txt: var(--text);
@@ -134,17 +134,17 @@
   --details-px: 0.75rem;
   --details-bd-color: var(--surf-3);
   --details-bd-width: 1px;
-  --details-radius: 0.125em;
+  --details-radius: 0.188rem;
   --alert-txt: var(--text);
   --alert-bg: var(--surf-1);
   --alert-bd-color: var(--surf-3);
-  --alert-radius: 0.125em;
+  --alert-radius: 0.188rem;
   --card-px: 1rem;
   --card-pt: 0.75rem;
   --card-pb: 1rem;
   --card-bd-color: var(--surf-2);
   --card-bd-width: 1px;
-  --card-radius: 0.125em;
+  --card-radius: 0.188rem;
   --card-bg: var(--body-bg);
   --card-hover: color-mix(in srgb, var(--surf-1) 50%, var(--body-bg));
   --card-focus: 0.188rem solid var(--surf-3);
@@ -161,7 +161,7 @@
   --dialog-body-px: 1rem;
   --dialog-bd-color: var(--surf-3);
   --dialog-bd-width: 1px;
-  --dialog-radius: 0.125em;
+  --dialog-radius: 0.188rem;
   --dialog-top: 1rem;
   --dialog-width: calc(100% - 6px - 2em);
   --dialog-max-width: 30rem;
@@ -173,13 +173,13 @@
   --list-group-bg: var(--body-bg);
   --list-group-title-bg: var(--surf-2);
   --list-group-hover: var(--surf-1);
-  --list-group-radius: 0.125em;
+  --list-group-radius: 0.188rem;
   --list-group-hover-radius: calc(var(--list-group-radius) - 1px);
   --pop-txt: var(--text);
   --pop-bg: var(--body-bg);
   --pop-bd-color: var(--surf-3);
   --pop-bd-width: 1px;
-  --pop-radius: 0.125rem;
+  --pop-radius: 0.188rem;
   --pop-my: 1rem;
   --pop-mx: auto;
   --pop-py: 0.75rem;
@@ -191,8 +191,14 @@
   --badge-fw: 600;
   --badge-py: 0.375em;
   --badge-px: 0.65em;
-  --badge-radius: 0.25em;
+  --badge-radius: 0.188rem;
   --badge-bg: var(--surf-2);
+  --rd-1: 0.188rem;
+  --rd-2: 0.313rem;
+  --rd-3: 0.5rem;
+  --rd-4: 0.75rem;
+  --rd-5: 1.125rem;
+  --rd-pill: 50rem;
   --shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.125);
   --shadow-lg: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
@@ -213,6 +219,14 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  :where(html) {
+    scroll-behavior: smooth;
+  }
+  @view-transition {
+    navigation: auto;
+  }
+}
 :where(html, body, h1, h2, h3, h4, h5, h6) {
   color: var(--color);
   font-size: var(--fs);
@@ -467,12 +481,11 @@ a > :where(code) {
   border: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :where(html) {
-    scroll-behavior: smooth;
-  }
+.hidden {
+  display: none;
 }
-.vis-hidden {
+
+.vis-hidden, .vis-hidden-focus:not(:focus):not(:focus-within) {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -480,10 +493,6 @@ a > :where(code) {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-}
-
-.hidden {
-  display: none;
 }
 
 :where(input, button, select, optgroup, textarea, .btn),
@@ -1157,7 +1166,6 @@ a > :where(code) {
 }
 
 :where(.card-basic, .card-link) {
-  position: relative;
   max-inline-size: var(--card-max-width);
   padding-block-start: var(--card-pt);
   padding-block-end: var(--card-pb);
@@ -1165,6 +1173,10 @@ a > :where(code) {
   border: var(--card-bd-width) solid var(--card-bd-color);
   border-radius: var(--card-radius);
   background-color: var(--card-bg);
+}
+
+:where(.card-link) {
+  position: relative;
 }
 
 :where(.card-basic :last-child, .card-link :last-child) {
@@ -1229,6 +1241,9 @@ a > :where(code) {
   padding-block-start: var(--card-pt);
   padding-block-end: var(--card-pb);
   padding-inline: var(--card-px);
+}
+
+:where(.card-body, .card-list, .card-list-links) {
   border: var(--card-bd-width) solid var(--card-bd-color);
   border-block-start: none;
   border-end-start-radius: var(--card-radius);
@@ -1239,8 +1254,32 @@ a > :where(code) {
   --mb: 0;
 }
 
-:where(.card-list) {
-  --pl: 1rem;
+:where(.card-list, .card-list-links) {
+  --marker: "";
+  --pl: 0;
+  --mb: 0;
+}
+
+:where(.card-list li, .card-list-links li a) {
+  padding-block: var(--card-title-py);
+  padding-inline: var(--card-px);
+}
+
+:where(.card-list, .card-list-links) li:not(:last-child) {
+  border-block-end: 1px solid var(--card-bd-color);
+}
+
+:where(.card-list-links li a) {
+  display: block;
+}
+
+:where(.card-list-links a:is(:hover, :focus)) {
+  background-color: var(--card-hover);
+}
+
+:where(.card-list-links *:last-child a:is(:hover, :focus)) {
+  --card-list-hover: calc(var(--card-radius) - 1px);
+  border-radius: 0 0 var(--card-list-hover) var(--card-list-hover);
 }
 
 .card-light {
@@ -1259,6 +1298,7 @@ a > :where(code) {
   --card-title-txt: #fff;
   --card-title-bg: var(--blue);
   --card-bd-color: var(--card-title-bg);
+  --card-hover: var(--blue-lighter);
 }
 
 .card-red {
@@ -1764,79 +1804,79 @@ a > :where(code) {
 .surf-1-light {
   --bg: var(--surf-1-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-1-light);
+  --bd-color: var(--surf-1-light);
 }
 
 .surf-2-light {
   --bg: var(--surf-2-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-2-light);
+  --bd-color: var(--surf-2-light);
 }
 
 .surf-3-light {
   --bg: var(--surf-3-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-3-light);
+  --bd-color: var(--surf-3-light);
 }
 
 .surf-4-light {
   --bg: var(--surf-4-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-4-light);
+  --bd-color: var(--surf-4-light);
 }
 
 .surf-1-dark {
   --bg: var(--surf-1-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-1-dark);
+  --bd-color: var(--surf-1-dark);
 }
 
 .surf-2-dark {
   --bg: var(--surf-2-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-2-dark);
+  --bd-color: var(--surf-2-dark);
 }
 
 .surf-3-dark {
   --bg: var(--surf-3-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-3-dark);
+  --bd-color: var(--surf-3-dark);
 }
 
 .surf-4-dark {
   --bg: var(--surf-4-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-4-dark);
+  --bd-color: var(--surf-4-dark);
 }
 
 .bg-blue {
   --bg: var(--blue);
   --bg-txt: #fff;
-  --bd-col: var(--blue);
+  --bd-color: var(--blue);
 }
 
 .bg-green {
   --bg: var(--green);
   --bg-txt: #fff;
-  --bd-col: var(--green);
+  --bd-color: var(--green);
 }
 
 .bg-red {
   --bg: var(--red);
   --bg-txt: #fff;
-  --bd-col: var(--red);
+  --bd-color: var(--red);
 }
 
 .bg-orange {
   --bg: var(--orange);
   --bg-txt: #000;
-  --bd-col: var(--orange);
+  --bd-color: var(--orange);
 }
 
 .bg-cyan {
   --bg: var(--cyan);
   --bg-txt: #000;
-  --bd-col: var(--cyan);
+  --bd-color: var(--cyan);
 }
 
 :where(.badge) {
@@ -1897,7 +1937,7 @@ a > :where(code) {
   --badge-bg: var(--cyan);
 }
 
-.bd, .bd-t, .bd-b, .bd-l, .bd-r, .bd-y, .bd-x, .bd-child * {
+.bd, .bd-t, .bd-b, .bd-s, .bd-e, .bd-y, .bd-x, .bd-child * {
   --bd-size: 1px;
   --bd-style: solid;
   --bd-color: var(--surf-3);
@@ -1923,11 +1963,11 @@ a > :where(code) {
   border-inline: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
-.bd-l {
+.bd-s {
   border-inline-start: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
-.bd-r {
+.bd-e {
   border-inline-end: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
@@ -1935,32 +1975,152 @@ a > :where(code) {
   border: var(--bd-size) var(--bd-style) var(--bd-color);
 }
 
-.radius-xs, .radius-sm, .radius-md, .radius-lg, .radius-xl, .radius-circle {
-  border-radius: var(--bd-radius);
+.rd-1 {
+  border-radius: var(--rd-1);
 }
 
-.radius-xs {
-  --bd-radius: .125em;
+.rd-2 {
+  border-radius: var(--rd-2);
 }
 
-.radius-sm {
-  --bd-radius: .25rem;
+.rd-3 {
+  border-radius: var(--rd-3);
 }
 
-.radius-md {
-  --bd-radius: .5rem;
+.rd-4 {
+  border-radius: var(--rd-4);
 }
 
-.radius-lg {
-  --bd-radius: .75rem;
+.rd-5 {
+  border-radius: var(--rd-5);
 }
 
-.radius-xl {
-  --bd-radius: 1rem;
+.rd-pill {
+  border-radius: var(--rd-pill);
 }
 
-.radius-circle {
-  --bd-radius: 50%;
+.rd-circle {
+  border-radius: 50%;
+}
+
+.rd-1-top {
+  border-start-start-radius: var(--rd-1);
+  border-start-end-radius: var(--rd-1);
+}
+
+.rd-2-top {
+  border-start-start-radius: var(--rd-2);
+  border-start-end-radius: var(--rd-2);
+}
+
+.rd-3-top {
+  border-start-start-radius: var(--rd-3);
+  border-start-end-radius: var(--rd-3);
+}
+
+.rd-4-top {
+  border-start-start-radius: var(--rd-4);
+  border-start-end-radius: var(--rd-4);
+}
+
+.rd-5-top {
+  border-start-start-radius: var(--rd-5);
+  border-start-end-radius: var(--rd-5);
+}
+
+.rd-pill-top {
+  border-start-start-radius: var(--rd-pill);
+  border-start-end-radius: var(--rd-pill);
+}
+
+.rd-1-bottom {
+  border-end-start-radius: var(--rd-1);
+  border-end-end-radius: var(--rd-1);
+}
+
+.rd-2-bottom {
+  border-end-start-radius: var(--rd-2);
+  border-end-end-radius: var(--rd-2);
+}
+
+.rd-3-bottom {
+  border-end-start-radius: var(--rd-3);
+  border-end-end-radius: var(--rd-3);
+}
+
+.rd-4-bottom {
+  border-end-start-radius: var(--rd-4);
+  border-end-end-radius: var(--rd-4);
+}
+
+.rd-5-bottom {
+  border-end-start-radius: var(--rd-5);
+  border-end-end-radius: var(--rd-5);
+}
+
+.rd-pill-bottom {
+  border-end-start-radius: var(--rd-pill);
+  border-end-end-radius: var(--rd-pill);
+}
+
+.rd-1-start {
+  border-start-start-radius: var(--rd-1);
+  border-end-start-radius: var(--rd-1);
+}
+
+.rd-2-start {
+  border-start-start-radius: var(--rd-2);
+  border-end-start-radius: var(--rd-2);
+}
+
+.rd-3-start {
+  border-start-start-radius: var(--rd-3);
+  border-end-start-radius: var(--rd-3);
+}
+
+.rd-4-start {
+  border-start-start-radius: var(--rd-4);
+  border-end-start-radius: var(--rd-4);
+}
+
+.rd-5-start {
+  border-start-start-radius: var(--rd-5);
+  border-end-start-radius: var(--rd-5);
+}
+
+.rd-pill-start {
+  border-start-start-radius: var(--rd-pill);
+  border-end-start-radius: var(--rd-pill);
+}
+
+.rd-1-end {
+  border-start-end-radius: var(--rd-1);
+  border-end-end-radius: var(--rd-1);
+}
+
+.rd-2-end {
+  border-start-end-radius: var(--rd-2);
+  border-end-end-radius: var(--rd-2);
+}
+
+.rd-3-end {
+  border-start-end-radius: var(--rd-3);
+  border-end-end-radius: var(--rd-3);
+}
+
+.rd-4-end {
+  border-start-end-radius: var(--rd-4);
+  border-end-end-radius: var(--rd-4);
+}
+
+.rd-5-end {
+  border-start-end-radius: var(--rd-5);
+  border-end-end-radius: var(--rd-5);
+}
+
+.rd-pill-end {
+  border-start-end-radius: var(--rd-pill);
+  border-end-end-radius: var(--rd-pill);
 }
 
 .bd-blue {

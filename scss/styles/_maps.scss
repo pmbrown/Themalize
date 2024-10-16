@@ -251,6 +251,15 @@ $badges: (
   "badge-bg": #{$badge-bg},
 ) !default;
 
+$border-radius: (
+  "rd-1": #{$rd-1},
+  "rd-2": #{$rd-2},
+  "rd-3": #{$rd-3},
+  "rd-4": #{$rd-4},
+  "rd-5": #{$rd-5},
+  "rd-pill": #{$rd-pill},
+) !default;
+
 $shadows: (
   "shadow": #{$shadow},
   "shadow-sm": #{$shadow-sm},

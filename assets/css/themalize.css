@@ -1,4 +1,4 @@
-/*! Themalize v1.0.7 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.0.8 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --theme-brand: cadetblue;
@@ -58,13 +58,13 @@
   --btn-hover: var(--surf-2);
   --btn-bd-width: 1px;
   --btn-bd-color: var(--surf-2);
-  --btn-radius: 0.125em;
+  --btn-radius: 0.188rem;
   --form-py: 0.313rem;
   --form-px: 0.75rem;
   --form-bg: var(--body-bg);
   --form-bd-width: 1px;
   --form-bd-color: var(--surf-3);
-  --form-radius: 0.125em;
+  --form-radius: 0.188rem;
   --input-focus: 0 0 0 0.12rem;
   --input-focus-color: var(--surf-4);
   --table-thead-txt: var(--text);
@@ -336,21 +336,6 @@ a > :where(code) {
 
 :where(iframe) {
   border: 0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :where(html) {
-    scroll-behavior: smooth;
-  }
-}
-.vis-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
 }
 
 .hidden {

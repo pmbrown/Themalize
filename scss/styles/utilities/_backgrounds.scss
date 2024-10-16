@@ -69,49 +69,49 @@
 .surf-1-light {
   --bg: var(--surf-1-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-1-light);
+  --bd-color: var(--surf-1-light);
 }
 
 .surf-2-light {
   --bg: var(--surf-2-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-2-light);
+  --bd-color: var(--surf-2-light);
 }
 
 .surf-3-light {
   --bg: var(--surf-3-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-3-light);
+  --bd-color: var(--surf-3-light);
 }
 
 .surf-4-light {
   --bg: var(--surf-4-light);
   --bg-txt: #000;
-  --bd-col: var(--surf-4-light);
+  --bd-color: var(--surf-4-light);
 }
 
 .surf-1-dark {
   --bg: var(--surf-1-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-1-dark);
+  --bd-color: var(--surf-1-dark);
 }
 
 .surf-2-dark {
   --bg: var(--surf-2-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-2-dark);
+  --bd-color: var(--surf-2-dark);
 }
 
 .surf-3-dark {
   --bg: var(--surf-3-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-3-dark);
+  --bd-color: var(--surf-3-dark);
 }
 
 .surf-4-dark {
   --bg: var(--surf-4-dark);
   --bg-txt: #fff;
-  --bd-col: var(--surf-4-dark);
+  --bd-color: var(--surf-4-dark);
 }
 
 } // END [if/theme-colors]
@@ -121,31 +121,31 @@
   .bg-blue {
     --bg: var(--blue);
     --bg-txt: #fff;
-    --bd-col: var(--blue);
+    --bd-color: var(--blue);
   }
     
   .bg-green {
     --bg: var(--green);
     --bg-txt: #fff;
-    --bd-col: var(--green);
+    --bd-color: var(--green);
   }
 
   .bg-red {
     --bg: var(--red);
     --bg-txt: #fff;
-    --bd-col: var(--red);
+    --bd-color: var(--red);
   }
     
   .bg-orange {
     --bg: var(--orange);
     --bg-txt: #000;
-    --bd-col: var(--orange);
+    --bd-color: var(--orange);
   }
   
   .bg-cyan {
     --bg: var(--cyan);
     --bg-txt: #000;
-    --bd-col: var(--cyan);
+    --bd-color: var(--cyan);
   }
 } // END [if/primary-colors]
 

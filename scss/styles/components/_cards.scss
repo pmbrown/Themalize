@@ -5,7 +5,6 @@
 @if $enable-cards {
 
 :where(.card-basic, .card-link) {
-  position: relative;
   max-inline-size: var(--card-max-width); 
   padding-block-start: var(--card-pt);
   padding-block-end: var(--card-pb);
@@ -13,6 +12,10 @@
   border: var(--card-bd-width) solid var(--card-bd-color);
   border-radius: var(--card-radius);
   background-color: var(--card-bg);
+}
+
+:where(.card-link) {
+  position: relative;
 }
 
 :where(.card-basic :last-child, .card-link :last-child)  {
@@ -81,6 +84,9 @@
   padding-block-start: var(--card-pt);
   padding-block-end: var(--card-pb);
   padding-inline: var(--card-px);
+}
+
+:where(.card-body, .card-list, .card-list-links) {  
   border: var(--card-bd-width) solid var(--card-bd-color);
   border-block-start: none;
   border-end-start-radius: var(--card-radius);
@@ -91,8 +97,32 @@
   --mb: 0;
 }
 
-:where(.card-list) {
-  --pl: 1rem;
+:where(.card-list, .card-list-links) {
+  --marker: '';
+  --pl: 0;
+  --mb: 0;
+}
+
+:where(.card-list li, .card-list-links li a) {
+  padding-block: var(--card-title-py);
+  padding-inline: var(--card-px);
+}
+
+:where(.card-list, .card-list-links) li:not(:last-child) {
+  border-block-end: 1px solid var(--card-bd-color);
+}
+
+:where(.card-list-links li a) {
+  display: block;
+}
+
+:where(.card-list-links a:is(:hover, :focus)) {
+  background-color: var(--card-hover);
+}
+
+:where(.card-list-links *:last-child a:is(:hover, :focus)) {
+  --card-list-hover: calc(var(--card-radius) - 1px);
+  border-radius: 0 0 var(--card-list-hover) var(--card-list-hover);
 }
 
 // Card colors
@@ -118,6 +148,7 @@
   --card-title-txt: #fff;
   --card-title-bg: var(--blue);
   --card-bd-color: var(--card-title-bg);
+  --card-hover: var(--blue-lighter);
 }
 
 .card-red {
