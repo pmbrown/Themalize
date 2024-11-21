@@ -1,38 +1,18 @@
-/*! Themalize v1.0.8 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.0 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
-  --theme-brand: cadetblue;
+  --brand: light-dark(#558e90, #6fa8aa);
+  --text: light-dark(#000, #fff);
+  --link: light-dark(#1c3db5, #9fbfdf);
+  --link-hover: color-mix(in srgb, var(--link) 75%, white);
+  --link-visited: color-mix(in srgb, var(--link) 65%, white);
+  --body-bg: light-dark(color-mix(in srgb, var(--theme) 6%, white), color-mix(in srgb, var(--theme) 27%, black));
+  --surf-1: light-dark(color-mix(in srgb, var(--theme) 21%, white), color-mix(in srgb, var(--theme) 33%, black));
+  --surf-2: light-dark(color-mix(in srgb, var(--theme) 29%, white), color-mix(in srgb, var(--theme) 40%, black));
+  --surf-3: light-dark(color-mix(in srgb, var(--theme) 43%, white), color-mix(in srgb, var(--theme) 50%, black));
+  --surf-4: light-dark(color-mix(in srgb, var(--theme) 60%, white), color-mix(in srgb, var(--theme) 65%, black));
 }
 
-:where(html) {
-  color-scheme: light;
-  --text: color-mix(in srgb, var(--theme) 10%, black);
-  --link: #1c3db5;
-  --link-hover: color-mix(in srgb, var(--link) 60%, white);
-  --link-visited: color-mix(in srgb, var(--link) 70%, white);
-  --body-bg: color-mix(in srgb, var(--theme) 6%, white);
-  --surf-1: color-mix(in srgb, var(--theme) 21%, white);
-  --surf-2: color-mix(in srgb, var(--theme) 29%, white);
-  --surf-3: color-mix(in srgb, var(--theme) 43%, white);
-  --surf-4: color-mix(in srgb, var(--theme) 60%, white);
-  --brand: color-mix(in srgb, var(--theme-brand) 90%, black);
-}
-
-@media (prefers-color-scheme: dark) {
-  :where(html) {
-    color-scheme: dark;
-    --text: color-mix(in srgb, var(--theme) 10%, white);
-    --link: #9fbfdf;
-    --link-hover: color-mix(in srgb, var(--link) 75%, white);
-    --link-visited: color-mix(in srgb, var(--link) 65%, white);
-    --body-bg: color-mix(in srgb, var(--theme) 27%, black);
-    --surf-1: color-mix(in srgb, var(--theme) 33%, black);
-    --surf-2: color-mix(in srgb, var(--theme) 40%, black);
-    --surf-3: color-mix(in srgb, var(--theme) 50%, black);
-    --surf-4: color-mix(in srgb, var(--theme) 65%, black);
-    --brand: color-mix(in srgb, var(--theme-brand) 90%, white);
-  }
-}
 :where(html) {
   --color: var(--text);
   --font: system-ui, -apple-system, Arial, Helvetica, sans-serif;
@@ -94,6 +74,7 @@
 }
 
 :where(html) {
+  color-scheme: light dark;
   font-family: var(--font);
   background-color: var(--body-bg);
   height: 100%;

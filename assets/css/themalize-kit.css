@@ -1,27 +1,26 @@
-/*! Themalize v1.0.8 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.0 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
-  --theme-brand: cadetblue;
-  --text-light: color-mix(in srgb, var(--theme) 10%, black);
-  --link-light: #1c3db5;
-  --link-hover-light: color-mix(in srgb, var(--link) 60%, white);
-  --link-visited-light: color-mix(in srgb, var(--link) 70%, white);
+  --brand: light-dark(#558e90, #6fa8aa);
+  --text: light-dark(#000, #fff);
+  --link: light-dark(#1c3db5, #9fbfdf);
+  --link-hover: color-mix(in srgb, var(--link) 75%, white);
+  --link-visited: color-mix(in srgb, var(--link) 65%, white);
+  --body-bg: light-dark(var(--body-bg-light), var(--body-bg-dark));
+  --surf-1: light-dark(var(--surf-1-light), var(--surf-1-dark));
+  --surf-2: light-dark(var(--surf-2-light), var(--surf-2-dark));
+  --surf-3: light-dark(var(--surf-3-light), var(--surf-3-dark));
+  --surf-4: light-dark(var(--surf-4-light), var(--surf-4-dark));
   --body-bg-light: color-mix(in srgb, var(--theme) 6%, white);
+  --body-bg-dark: color-mix(in srgb, var(--theme) 27%, black);
   --surf-1-light: color-mix(in srgb, var(--theme) 21%, white);
   --surf-2-light: color-mix(in srgb, var(--theme) 29%, white);
   --surf-3-light: color-mix(in srgb, var(--theme) 43%, white);
   --surf-4-light: color-mix(in srgb, var(--theme) 60%, white);
-  --brand-light: color-mix(in srgb, var(--theme-brand) 90%, black);
-  --text-dark: color-mix(in srgb, var(--theme) 10%, white);
-  --link-dark: #9fbfdf;
-  --link-hover-dark: color-mix(in srgb, var(--link) 75%, white);
-  --link-visited-dark: color-mix(in srgb, var(--link) 65%, white);
-  --body-bg-dark: color-mix(in srgb, var(--theme) 27%, black);
   --surf-1-dark: color-mix(in srgb, var(--theme) 33%, black);
   --surf-2-dark: color-mix(in srgb, var(--theme) 40%, black);
   --surf-3-dark: color-mix(in srgb, var(--theme) 50%, black);
   --surf-4-dark: color-mix(in srgb, var(--theme) 65%, black);
-  --brand-dark: color-mix(in srgb, var(--theme-brand) 90%, white);
   --blue: #264d73;
   --blue-light: color-mix(in srgb, var(--blue) 93%, white);
   --blue-lighter: color-mix(in srgb, var(--blue) 85%, white);
@@ -47,36 +46,6 @@
   --cyan-lighter: color-mix(in srgb, var(--cyan) 60%, white);
   --cyan-dark: color-mix(in srgb, var(--cyan) 90%, black);
   --cyan-darker: color-mix(in srgb, var(--cyan) 80%, black);
-}
-
-:where(html) {
-  color-scheme: light;
-  --text: var(--text-light);
-  --link: var(--link-light);
-  --link-hover: var(--link-hover-light);
-  --link-visited: var(--link-visited-light);
-  --body-bg: var(--body-bg-light);
-  --surf-1: var(--surf-1-light);
-  --surf-2: var(--surf-2-light);
-  --surf-3: var(--surf-3-light);
-  --surf-4: var(--surf-4-light);
-  --brand: var(--brand-light);
-  --switch-ico: var(--switch-off);
-}
-
-:where([data-prefers-dark=true]) {
-  color-scheme: dark;
-  --text: var(--text-dark);
-  --link: var(--link-dark);
-  --link-hover: var(--link-hover-dark);
-  --link-visited: var(--link-visited-dark);
-  --body-bg: var(--body-bg-dark);
-  --surf-1: var(--surf-1-dark);
-  --surf-2: var(--surf-2-dark);
-  --surf-3: var(--surf-3-dark);
-  --surf-4: var(--surf-4-dark);
-  --brand: var(--brand-dark);
-  --switch-ico: var(--switch-on);
 }
 
 :where(html) {
@@ -219,14 +188,6 @@
   box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :where(html) {
-    scroll-behavior: smooth;
-  }
-  @view-transition {
-    navigation: auto;
-  }
-}
 :where(html, body, h1, h2, h3, h4, h5, h6) {
   color: var(--color);
   font-size: var(--fs);
@@ -235,6 +196,7 @@
 }
 
 :where(html) {
+  color-scheme: light dark;
   font-family: var(--font);
   background-color: var(--body-bg);
   height: 100%;
@@ -485,6 +447,14 @@ a > :where(code) {
   display: none;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  :where(html) {
+    scroll-behavior: smooth;
+  }
+  @view-transition {
+    navigation: auto;
+  }
+}
 .vis-hidden, .vis-hidden-focus:not(:focus):not(:focus-within) {
   position: absolute;
   width: 1px;
@@ -1743,22 +1713,12 @@ a > :where(code) {
   --ico-va: -.12em;
 }
 
-#themes:after {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+:where(html:is(.light)) #themes {
+  --svg: var(--switch-off);
 }
 
-:where(html) #themes:after {
-  content: "Dark off"/"off";
-}
-
-:where([data-prefers-dark=true]) #themes:after {
-  content: "Dark on"/"on";
+:where(html:is(.dark)) #themes {
+  --svg: var(--switch-on);
 }
 
 :where(.surf-1-light, .surf-2-light, .surf-3-light, .surf-4-light, .surf-1-dark, .surf-2-dark, .surf-3-dark, .surf-4-dark, .bg-blue, .bg-red, .bg-green, .bg-orange, .bg-cyan) {
@@ -1787,18 +1747,39 @@ a > :where(code) {
   background-color: var(--surf-4);
 }
 
+.surf-mono {
+  --color: light-dark(#000, #fff);
+  --ico: var(--color);
+  color: var(--color);
+  background-color: light-dark(#fff, #000);
+}
+
+.surf-white {
+  --color: #000;
+  --ico: var(--color);
+  color: var(--color);
+  background-color: #fff;
+}
+
+.surf-black {
+  --color: #fff;
+  --ico: var(--color);
+  color: var(--color);
+  background-color: #000;
+}
+
 .bg-body-light {
   --color: #000;
-  --ico: #000;
-  color: #000;
-  background-color: var(--body-bg-light);
+  --ico: var(--color);
+  color: var(--color);
+  background-color: color-mix(in srgb, var(--theme) 6%, white);
 }
 
 .bg-body-dark {
   --color: #fff;
-  --ico: #fff;
-  color: #fff;
-  background-color: var(--body-bg-dark);
+  --ico: var(--color);
+  color: var(--color);
+  background-color: color-mix(in srgb, var(--theme) 27%, black);
 }
 
 .surf-1-light {
@@ -2260,7 +2241,7 @@ a > :where(code) {
   background-image: linear-gradient(var(--deg), var(--surf-1), var(--surf-2), var(--surf-3));
 }
 
-:where([data-prefers-dark=true]) .gradient {
+:where(html:is(.dark)) .gradient {
   --deg: 0deg;
 }
 
@@ -2271,37 +2252,37 @@ a > :where(code) {
 }
 
 .gradient-dark {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-dark);
 }
 
 .gradient-light {
-  --grad-txt: var(--text-light);
+  --grad-txt: #000;
   --grad-bg: var(--gradient-light);
 }
 
 .gradient-blue {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-blue);
 }
 
 .gradient-red {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-red);
 }
 
 .gradient-green {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-green);
 }
 
 .gradient-orange {
-  --grad-txt: var(--text-light);
+  --grad-txt: #000;
   --grad-bg: var(--gradient-orange);
 }
 
 .gradient-cyan {
-  --grad-txt: var(--text-light);
+  --grad-txt: #000;
   --grad-bg: var(--gradient-cyan);
 }
 
@@ -2414,7 +2395,7 @@ a > :where(code) {
 }
 
 :where(.dl-comma, .dl-comma-inline) dd:not(:last-child):after {
-  content: ",";
+  content: var(--content, ",");
 }
 
 :where(.dl-comma, .dl-comma-inline) dd:not(:last-child):has(+ dt):after {
@@ -2556,27 +2537,27 @@ a > :where(code) {
   --lh: var(--lh-btn-forms);
 }
 
-.txt-pretty {
+.text-pretty {
   text-wrap: pretty;
 }
 
-.txt-balance {
+.text-balance {
   text-wrap: balance;
 }
 
-.txt-center {
+.text-center {
   text-align: center;
 }
 
-.txt-right {
+.text-right {
   text-align: right;
 }
 
-.txt-left {
+.text-left {
   text-align: left;
 }
 
-.txt-spacing {
+.text-spacing {
   letter-spacing: var(--ls);
   word-spacing: var(--ws);
 }
@@ -2586,22 +2567,22 @@ a > :where(code) {
 }
 
 .text-link a, a.text-link {
-  --color: var(--text);
-  --visited: var(--text);
+  --color: light-dark(#000, #fff);
+  --hover: light-dark(#000, #fff);
+  --visited: light-dark(#000, #fff);
 }
 
-.link-dark a, a.link-dark {
-  --color: var(--link-dark);
-  --hover: color-mix(in srgb, var(--link-dark) 75%, white);
-  --visited: var(--link-dark);
-  text-decoration-color: color-mix(in srgb, var(--link-dark) 75%, white);
+.link-light a, a.link-light, .link-dark a, a.link-dark {
+  --hover: color-mix(in srgb, var(--color) 75%, white);
+  --visited: color-mix(in srgb, var(--color) 65%, white);
 }
 
 .link-light a, a.link-light {
-  --color: var(--link-light);
-  --hover: color-mix(in srgb, var(--link-light) 75%, white);
-  --visited: var(--link-light);
-  text-decoration-color: color-mix(in srgb, var(--link-light) 75%, white);
+  --color: #1c3db5;
+}
+
+.link-dark a, a.link-dark {
+  --color: #9fbfdf;
 }
 
 .text-white {

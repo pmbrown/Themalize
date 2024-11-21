@@ -1,9 +1,9 @@
 //  ------------------------------------------------------------
 //  Themalize
 //  ------------------------------------------------------------
-@import "configuration";
-@import "properties";
-@import "styles/maps";
-@import "styles/variables";
-@import "styles/styles";
-@import "styles/extensions";
+@use "configuration";
+@use "properties";
+@use "styles/maps";
+@use "styles/variables";
+@use "styles/styles";
+@use "styles/extensions";

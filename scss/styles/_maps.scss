@@ -1,88 +1,47 @@
 //  ---------------------------------------------------------- 
 //  Maps
 //  ----------------------------------------------------------
+@use "../properties" as *;
 
-$theme-colors: (
+$color-schemes: (
   "theme": #{$theme},
-  "theme-brand": #{$theme-brand},
+  "brand": #{$brand},
+  "text": #{$text},
+  "link": #{$link},
+  "link-hover": #{$link-hover},
+  "link-visited": #{$link-visited},
+  "body-bg": light-dark(#{$body-bg-light}, #{$body-bg-dark}),
+  "surf-1": light-dark(#{$surf-1-light}, #{$surf-1-dark}),
+  "surf-2": light-dark(#{$surf-2-light}, #{$surf-2-dark}),
+  "surf-3": light-dark(#{$surf-3-light}, #{$surf-3-dark}),
+  "surf-4": light-dark(#{$surf-4-light}, #{$surf-4-dark}),
 ) !default;
 
-$light-scheme-colors: (
-  "text-light": #{$text-light},
-  "link-light": #{$link-light},
-  "link-hover-light": #{$link-hover-light},
-  "link-visited-light": #{$link-visited-light},
+$color-schemes-variables: (
+  "theme": #{$theme},
+  "brand": #{$brand},
+  "text": #{$text},
+  "link": #{$link},
+  "link-hover": #{$link-hover},
+  "link-visited": #{$link-visited},
+  "body-bg": #{$body-bg},
+  "surf-1": #{$surf-1},
+  "surf-2": #{$surf-2},
+  "surf-3": #{$surf-3},
+  "surf-4": #{$surf-4},
+) !default;
+
+$theme-colors: (
   "body-bg-light": #{$body-bg-light},
+  "body-bg-dark": #{$body-bg-dark},
   "surf-1-light": #{$surf-1-light},
   "surf-2-light": #{$surf-2-light},
   "surf-3-light": #{$surf-3-light},
   "surf-4-light": #{$surf-4-light},
-  "brand-light": #{$brand-light},
-) !default;
-
-$light-scheme: (
-  "text": var(--text-light),
-  "link": var(--link-light),
-  "link-hover": var(--link-hover-light),
-  "link-visited": var(--link-visited-light),
-  "body-bg": var(--body-bg-light),
-  "surf-1": var(--surf-1-light),
-  "surf-2": var(--surf-2-light),
-  "surf-3": var(--surf-3-light),
-  "surf-4": var(--surf-4-light),
-  "brand": var(--brand-light),
-) !default;
-
-$light-scheme-only: (
-  "text": #{$text-light},
-  "link": #{$link-light},
-  "link-hover": #{$link-hover-light},
-  "link-visited": #{$link-visited-light},
-  "body-bg": #{$body-bg-light},
-  "surf-1": #{$surf-1-light},
-  "surf-2": #{$surf-2-light},
-  "surf-3": #{$surf-3-light},
-  "surf-4": #{$surf-4-light},
-  "brand": #{$brand-light},
-) !default;
-
-$dark-scheme-colors: (
-  "text-dark": #{$text-dark},
-  "link-dark": #{$link-dark},
-  "link-hover-dark": #{$link-hover-dark},
-  "link-visited-dark": #{$link-visited-dark},
-  "body-bg-dark": #{$body-bg-dark},
   "surf-1-dark": #{$surf-1-dark},
   "surf-2-dark": #{$surf-2-dark},
   "surf-3-dark": #{$surf-3-dark},
   "surf-4-dark": #{$surf-4-dark},
-  "brand-dark": #{$brand-dark},
-) !default;
-
-$dark-scheme: (
-  "text": var(--text-dark),
-  "link": var(--link-dark),
-  "link-hover": var(--link-hover-dark),
-  "link-visited": var(--link-visited-dark),
-  "body-bg": var(--body-bg-dark),
-  "surf-1": var(--surf-1-dark),
-  "surf-2": var(--surf-2-dark),
-  "surf-3": var(--surf-3-dark),
-  "surf-4": var(--surf-4-dark),
-  "brand": var(--brand-dark),
-) !default;
-
-$dark-scheme-only: (
-  "text": #{$text-dark},
-  "link": #{$link-dark},
-  "link-hover": #{$link-hover-dark},
-  "link-visited": #{$link-visited-dark},
-  "body-bg": #{$body-bg-dark},
-  "surf-1": #{$surf-1-dark},
-  "surf-2": #{$surf-2-dark},
-  "surf-3": #{$surf-3-dark},
-  "surf-4": #{$surf-4-dark},
-  "brand": #{$brand-dark},
 ) !default;
 
 $primary-colors: (

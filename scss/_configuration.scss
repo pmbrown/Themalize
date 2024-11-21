@@ -1,0 +1,109 @@
+// ------------------------------------------------------------
+// Configuration
+// ------------------------------------------------------------
+
+// Styles
+$enable-forms-buttons:    true;
+$enable-tables:           true;
+$enable-vis-hidden:       true; // Accessibility utility
+$enable-smooth-scroll:    true; // If user prefers-reduced-motion: no-preference
+$enable-view-transition:  true; // As above
+
+// Theme switch
+$enable-theme-switch:     true; // Requires theme-switch.js
+$enable-switch-button:    true;
+
+// Colors
+$enable-theme-colors:     true;
+$enable-primary-colors:   true;
+
+// Components
+$enable-accordions:       true;
+$enable-alerts:           true;
+$enable-cards:            true;
+$enable-dialogs:          true; // Requires dialogs.js
+$enable-list-groups:      true;
+$enable-popovers:         true;
+
+// Utility modifiers
+$enable-backgrounds:      true;
+$enable-badges:           true;
+$enable-borders:          true;
+$enable-buttons:          true; // Requires $enable-forms-buttons: true
+$enable-gradients:        true;
+$enable-images:           true;
+$enable-lists:            true;
+$enable-shadows:          true;
+$enable-text:             true;
+
+// Layout utilities
+// Breakpoints
+$enable-breakpoint-xl:    true; // 1601px
+$enable-breakpoint-lg:    true; // 1281px
+$enable-breakpoint-md:    true; // 1025px
+$enable-breakpoint-sm:    true; // 769px
+$enable-breakpoint-xs:    true; // 481px
+
+// Grids and containers
+$enable-grid-auto:        true;
+$enable-grid-columns:     true;
+$enable-containers:       true;
+
+// Spacing
+$enable-gaps:             true;
+$enable-margins:          true;
+$enable-padding:          true;
+
+// Spacing breakpoints
+$enable-margins-bp:       true;
+$enable-padding-bp:       true;
+
+// Display
+$enable-block:            true;
+$enable-flex:             true;
+$enable-alignment:        true;
+$enable-sizing:           true;
+$enable-order:            true;
+$enable-position:         true;
+$enable-overflow:         true;
+
+// Display breakpoints
+$enable-block-bp:         true;
+$enable-flex-bp:          true;
+$enable-alignment-bp:     true;
+$enable-sizing-bp:        true;
+$enable-order-bp:         true;
+$enable-position-bp:      true;
+$enable-overflow-bp:      true;
+
+// Icon utilities
+$enable-icon-mixins:      true;
+$enable-icon-styles:      true;
+
+// Icons SVG
+$enable-logo-svg:             true;
+$enable-house-svg:            true;
+$enable-email-svg:            true;
+$enable-plus-svg:             true;
+$enable-minus-svg:            true;
+$enable-bars-svg:             true;
+$enable-caret-down-svg:       true;
+$enable-caret-up-svg:         true;
+$enable-caret-right-svg:      true;
+$enable-caret-left-svg:       true;
+$enable-close-svg:            true;
+$enable-close-box-svg:        true;
+$enable-close-box-fill-svg:   true;
+$enable-box-svg:              true;
+$enable-pen-box-svg:          true;
+$enable-tick-box-svg:         true;
+$enable-ext-link-svg:         true;
+$enable-pg-link-svg:          true;
+$enable-search-svg:           true;
+$enable-download-svg:         true;
+$enable-user-svg:             true;
+$enable-question-svg:         true;
+$enable-sun-svg:              true;
+$enable-moon-svg:             true;
+$enable-radio-on-svg:         true;
+$enable-radio-off-svg:        true;

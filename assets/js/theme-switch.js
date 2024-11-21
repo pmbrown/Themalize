@@ -1,15 +1,15 @@
 //  ------------------------------------------------------------
-//  Adapted from Adam Argyle's theme-switch script to use true
-//  and false values with [aria-pressed] attribute.
-//  https://gui-challenges.web.app/theme-switch/dist/
-//  - IMPORTANT: Load script prior to CSS in head of document.
+//  Theme switch
+//  Adapted from Adam Argyle's theme-switch script, see original
+//  at https://gui-challenges.web.app/theme-switch/dist/
+//  IMPORTANT: Load script in <head> prior to CSS for no FOUC.
 //  ------------------------------------------------------------
 const storageKey = 'theme-preference'
 
 const onClick = () => {
-  theme.value = theme.value === 'false'
-  ? 'true'
-  : 'false'
+  theme.value = theme.value === 'light'
+  ? 'dark'
+  : 'light'
   setPreference()
 }
 
@@ -18,8 +18,8 @@ const getColorPreference = () => {
   return localStorage.getItem(storageKey)
   else
   return window.matchMedia('(prefers-color-scheme: dark)').matches
-  ? 'true'
-  : 'false'
+  ? 'dark'
+  : 'light'
 }
 
 const setPreference = () => {
@@ -29,11 +29,14 @@ const setPreference = () => {
 
 const reflectPreference = () => {
   document.firstElementChild
-  .setAttribute('data-prefers-dark', theme.value)
-
+  .style.setProperty('color-scheme', theme.value)
+  
+  document.firstElementChild
+  .setAttribute('class', theme.value)
+  
   document
   .querySelector('#themes')
-  ?.setAttribute('aria-pressed', theme.value)
+  ?.setAttribute('aria-label', theme.value)
 }
 
 const theme = {

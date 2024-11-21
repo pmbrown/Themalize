@@ -1,6 +1,9 @@
 //  ------------------------------------------------------------
 //  Spacing
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
+@use "../../properties" as *;
+@use "mixins" as *;
 
 @if $enable-gaps {@include gaps;}
 @if $enable-margins {@include margins;}

@@ -1,6 +1,8 @@
 //  ------------------------------------------------------------
 //  Backgrounds
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
+@use "../../properties" as *;
 
 @mixin background-props {
   @if $enable-icon-mixins or $enable-icon-styles {
@@ -50,21 +52,42 @@
   background-color: var(--surf-4);
 }
 
-@if $enable-theme-colors {
+.surf-mono {
+  --color: light-dark(#000, #fff);
+  --ico: var(--color);
+  color: var(--color);
+  background-color: light-dark(#fff, #000);
+}
+
+.surf-white {
+  --color: #000;
+  --ico: var(--color);
+  color: var(--color);
+  background-color: #fff;
+}
+
+.surf-black {
+  --color: #fff;
+  --ico: var(--color);
+  color: var(--color);
+  background-color: #000;
+}
 
 .bg-body-light {
   --color: #000;
-  --ico: #000;
-  color: #000;
-  background-color: var(--body-bg-light);
+  --ico: var(--color);
+  color: var(--color);
+  background-color: #{$body-bg-light};
 }
 
 .bg-body-dark {
   --color: #fff;
-  --ico: #fff;
-  color: #fff;
-  background-color: var(--body-bg-dark);
+  --ico: var(--color);
+  color: var(--color);
+  background-color: #{$body-bg-dark};
 }
+
+@if $enable-theme-colors {
 
 .surf-1-light {
   --bg: var(--surf-1-light);

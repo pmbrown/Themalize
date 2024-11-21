@@ -1,6 +1,8 @@
 //  ------------------------------------------------------------
 //  Text
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
+@use "../../properties" as *;
 
 @if $enable-text {
 
@@ -131,28 +133,28 @@
 }
 
 // Wrap and alignment
-.txt-pretty {
+.text-pretty {
   text-wrap: pretty;
 }
 
-.txt-balance {
+.text-balance {
   text-wrap: balance;
 }
 
-.txt-center {
+.text-center {
   text-align: center;
 }
 
-.txt-right {
+.text-right {
   text-align: right;
 }
 
-.txt-left {
+.text-left {
   text-align: left;
 }
 
 // Letter/word spacing - no preset values provided, use variable to customize inline.
-.txt-spacing {
+.text-spacing {
   letter-spacing: var(--ls);
   word-spacing: var(--ws);
 }
@@ -163,22 +165,22 @@
 }
 
 .text-link a, a.text-link {
-  --color: var(--text);
-  --visited: var(--text);
+  --color: light-dark(#000, #fff);
+  --hover: light-dark(#000, #fff);
+  --visited: light-dark(#000, #fff);
 }
 
-.link-dark a, a.link-dark {
-  --color: var(--link-dark);
-  --hover: color-mix(in srgb, var(--link-dark) 75%, white);
-  --visited: var(--link-dark);
-  text-decoration-color: color-mix(in srgb, var(--link-dark) 75%, white);
+.link-light a, a.link-light, .link-dark a, a.link-dark {
+  --hover: color-mix(in srgb, var(--color) 75%, white);
+  --visited: color-mix(in srgb, var(--color) 65%, white);
 }
 
 .link-light a, a.link-light {
-  --color: var(--link-light);
-  --hover: color-mix(in srgb, var(--link-light) 75%, white);
-  --visited: var(--link-light);
-  text-decoration-color: color-mix(in srgb, var(--link-light) 75%, white);
+  --color: #{$link-light};
+}
+
+.link-dark a, a.link-dark {
+  --color: #{$link-dark};
 }
 
 // Mono text

@@ -1,121 +1,45 @@
 //  ------------------------------------------------------------
 //  Theme switch button
-//  Requires $enable-manual-themes: true; in configuration.scss
+//  Requires $enable-theme-switch: true; in configuration.scss
 //  and theme.js [assets/js] loaded before CSS in head.
 //  See https://themalize.com/docs/getting-started/theme-switch/
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
+@use "../../properties" as *;
+@use "icons" as *;
 
-@if $enable-manual-themes and $enable-theme-switch {
+@if $enable-theme-switch and $enable-switch-button {
 
-// Celestial button
-
-@if $enable-switch-celestial {
-  @if $enable-sun-svg and $enable-moon-svg {
-    :where(html) {
-      --switch-off: var(--sun);
-      --switch-on: var(--moon);
-    }
-  }
-  @else {
-    :where(html) {
-      --switch-off: #{$sun};
-      --switch-on: #{$moon};
-    }
-  }
-
-  #themes {
-    --ico: var(--color);
-    --svg: var(--switch-ico);
-    --btn-px: .5rem;
-    --ico-va: -.12em;
-  }
-  
-  #themes:before {
-    @extend %icon-mask;
-  }
-  
-  #themes:after {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-  }  
-  
+@if $enable-sun-svg and $enable-moon-svg {
   :where(html) {
-    #themes:after {
-      content: "Dark off" / "off";
-    }
+    --switch-off: var(--sun);
+    --switch-on: var(--moon);
   }
-  
-  :where([data-prefers-dark=true]) {
-    #themes:after {
-      content: "Dark on" / "on";
-    }  
-  }
-   
-} // END [if/celestial]
-
-// Radio button
-
-@if $enable-switch-radio {
-  @if $enable-radio-off-svg and $enable-radio-on-svg {
-    :where(html) {
-      --switch-off: var(--radio-off);
-      --switch-on: var(--radio-on);
-    }
-  }
-  @else {
-    :where(html) {
-      --switch-off: #{$radio-off};
-      --switch-on: #{$radio-on};
-    }
-  }
-
-  #themes {
-    --btn-bg: transparent;
-    --btn-hover: transparent;
-    --btn-bd-color: transparent;
-    --btn-py: 0;
-    --btn-px: 0;
-    --ico: var(--color);
-    --svg: var(--switch-ico);
-    --ico-va: -.12em;
-  }
-  
-  #themes:before {
-    @extend %icon-mask;
-  }
-  
-  #themes:hover {
-    --color: var(--link-hover);
-  }
-  
-  #themes:hover:after {
-    color: var(--text);
-  }
-  
-  #themes:after {
-    margin-inline-start: .075rem;
-    word-spacing: -.16em;
-  }
-  
+}
+@else {
   :where(html) {
-    #themes:after {
-      content: "Dark off"; // Firefox fallback
-      content: "Dark off" / "off";
-    }
+    --switch-off: #{$sun};
+    --switch-on: #{$moon};
   }
+}
+
+#themes {
+  --ico: var(--color);
+  --svg: var(--switch-ico);
+  --btn-px: .5rem;
+  --ico-va: -.12em;
+}
   
-  :where([data-prefers-dark=true]) {
-    #themes:after {
-      content: "Dark on"; // Firefox fallback
-      content: "Dark on" / "on";
-      word-spacing: -.1em;
-    }
-  }  
-} // END [if/radio]
+#themes:before {
+  @extend %icon-mask;
+}
+
+:where(html:is(.light)) #themes {
+  --svg: var(--switch-off);
+}
+
+:where(html:is(.dark)) #themes {
+  --svg: var(--switch-on);
+}
 
 } // END [if/theme-switch]

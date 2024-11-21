@@ -1,10 +1,12 @@
-//  ------------------------------------------------------------
-//  Alerts
-//  ------------------------------------------------------------
+// ---------------------------------------------------------- 
+// Alerts
+// ----------------------------------------------------------
+@use "../../configuration" as *;
+@use "../../properties" as *;
+@use "icons" as *;
 
 @if $enable-alerts {
-
-.alert {
+  .alert {
   @if $enable-icon-mixins or $enable-icon-styles {
     --ico: var(--alert-txt); 
   }
@@ -38,6 +40,7 @@
   margin-inline-start: auto;
 }
 
+// Fix button styles for use without forms-buttons enabled(?)
 .alert [method="dialog"] button {
   @if $enable-icon-mixins or $enable-icon-styles {
     --ico: var(--alert-txt); 
@@ -84,7 +87,7 @@
   --alert-bd-color: var(--surf-3-dark);
 }
 
-} // End theme-colors
+} // END [if/theme-colors]
 
 @if $enable-primary-colors {
 

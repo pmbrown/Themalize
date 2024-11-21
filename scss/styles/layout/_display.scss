@@ -1,6 +1,9 @@
 //  ------------------------------------------------------------
 //  Display
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
+@use "../../properties" as *;
+@use "mixins" as *;
 
 @if $enable-block {@include block;}
 @if $enable-flex {@include flex;}

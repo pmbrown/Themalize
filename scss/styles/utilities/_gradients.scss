@@ -1,6 +1,7 @@
 //  ------------------------------------------------------------
 //  Gradients
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
 
 @mixin colored-gradients {
   @if $enable-icon-mixins or $enable-icon-styles {
@@ -17,12 +18,9 @@
   background-image: linear-gradient(var(--deg), var(--surf-1), var(--surf-2), var(--surf-3));
 }
 
-// Reverse degree to keep .gradient direction consistent with alternating surface colors.
-@if $enable-manual-themes {
-  :where([data-prefers-dark=true]) {
-    .gradient {
-      --deg: 0deg;
-    }    
+@if $enable-theme-switch {
+  :where(html:is(.dark)) .gradient {
+    --deg: 0deg;
   }
 }
 @else {
@@ -53,15 +51,15 @@
   }
 }
 
-@if $enable-theme-colors { 
+@if $enable-theme-colors {
 
 .gradient-dark {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-dark);
 }
 
 .gradient-light {
-  --grad-txt: var(--text-light);
+  --grad-txt: #000;
   --grad-bg: var(--gradient-light);
 }
 
@@ -70,27 +68,27 @@
 @if $enable-primary-colors { 
 
 .gradient-blue {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-blue);    
 }
 
 .gradient-red {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-red);
 }
 
 .gradient-green {
-  --grad-txt: var(--text-dark);
+  --grad-txt: #fff;
   --grad-bg: var(--gradient-green);
 }
 
 .gradient-orange {
-  --grad-txt: var(--text-light);
+  --grad-txt: #000;
   --grad-bg: var(--gradient-orange);
 }
 
 .gradient-cyan {
-  --grad-txt: var(--text-light);
+  --grad-txt: #000;
   --grad-bg: var(--gradient-cyan);
 }
   

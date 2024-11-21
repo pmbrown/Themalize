@@ -1,10 +1,14 @@
 //  ------------------------------------------------------------
 //  Styles
-//  1. Resets
-//  2. Typography
-//  3. Forms and buttons (if enabled)
-//  4. Tables (if enabled)
+//   1. Resets 
+//   2. Typography
+//   3. Smooth scroll and view-transition (if enabled)
+//   4. Accessibility (if enabled)
+//   5. Forms and buttons (if enabled)
+//   6. Tables (if enabled)
 //  ------------------------------------------------------------
+@use "../configuration" as *;
+@use "../properties" as *;
 
 //  ------------------------------------------------------------
 //  1. Resets
@@ -16,20 +20,6 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-}
-
-@media (prefers-reduced-motion: no-preference) { 
-  @if $enable-smooth-scroll {
-    :where(html) {
-      scroll-behavior: smooth;
-    }
-  }
-  
-  @if $enable-view-transition {
-    @view-transition {
-      navigation: auto;
-    }
-  }
 }
 
 //  ------------------------------------------------------------
@@ -44,6 +34,7 @@
 }
 
 :where(html) {
+  color-scheme: light dark;
   font-family: var(--font);
   background-color: var(--body-bg);
   height: 100%;
@@ -298,7 +289,29 @@ a > :where(code) {
   display: none;
 }
 
-// Accessibility
+
+//  ------------------------------------------------------------
+//  3. Smooth scroll and view-transition (if enabled)
+//  ------------------------------------------------------------
+
+@media (prefers-reduced-motion: no-preference) { 
+  @if $enable-smooth-scroll {
+    :where(html) {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  @if $enable-view-transition {
+    @view-transition {
+      navigation: auto;
+    }
+  }
+}
+
+//  ------------------------------------------------------------
+//  4. Accessibility (if enabled)
+//  ------------------------------------------------------------
+
 @mixin vis-hidden {
   position: absolute;
   width: 1px;
@@ -322,7 +335,7 @@ a > :where(code) {
 }
 
 //  ------------------------------------------------------------
-//  3. Forms and buttons (if enabled)
+//  5. Forms and buttons (if enabled)
 //  ------------------------------------------------------------
 
 @if $enable-forms-buttons {
@@ -521,7 +534,7 @@ a > :where(code) {
 } // END [if/forms-buttons]
 
 //  ------------------------------------------------------------
-//  4. Tables (if enabled)
+//  6. Tables (if enabled)
 //  ------------------------------------------------------------
 
 @if $enable-tables {

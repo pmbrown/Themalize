@@ -1,84 +1,28 @@
 // ---------------------------------------------------------- 
 // CSS variables
 // ----------------------------------------------------------
-/*! Themalize v1.0.8 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.0 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+@use "../configuration" as *;
+@use "maps" as *;
 
 :where(html) { 
-  @each $theme-colors, $value in $theme-colors {
-    --#{$theme-colors}: #{$value};       
-  }
-
   @if $enable-theme-colors {
-    @each $light-scheme-colors, $value in $light-scheme-colors {
-      --#{$light-scheme-colors}: #{$value};       
+    @each $color-schemes-variables, $value in $color-schemes-variables {
+      --#{$color-schemes-variables}: #{$value};       
     }
-    
-    @each $dark-scheme-colors, $value in $dark-scheme-colors {
-      --#{$dark-scheme-colors}: #{$value};       
-    }
-  }  
-   
-  @if $enable-primary-colors {
-  @each $primary-colors, $value in $primary-colors {
-      --#{$primary-colors}: #{$value};       
-    }
-  }
-}
-
-:where(html) {
-  color-scheme: light;
-    
-  @if $enable-theme-colors {
-    @each $light-scheme, $value in $light-scheme {
-      --#{$light-scheme}: #{$value};       
+    @each $theme-colors, $value in $theme-colors {
+      --#{$theme-colors}: #{$value};       
     }
   }
   @else {
-    @each $light-scheme-only, $value in $light-scheme-only {
-      --#{$light-scheme-only}: #{$value};       
-    }
+    @each $color-schemes, $value in $color-schemes {
+      --#{$color-schemes}: #{$value};       
+    }  
   }
   
-  @if $enable-manual-themes and $enable-theme-switch {
-    --switch-ico: var(--switch-off);
-  }
-}
-
-@if $enable-manual-themes {
-  :where([data-prefers-dark=true]) {
-    color-scheme: dark;
-    
-    @if $enable-theme-colors {
-      @each $dark-scheme, $value in $dark-scheme {
-        --#{$dark-scheme}: #{$value};       
-      }
-    }
-    @else {
-      @each $dark-scheme-only, $value in $dark-scheme-only {
-        --#{$dark-scheme-only}: #{$value};       
-      }
-    }
-    
-    @if $enable-theme-switch {
-      --switch-ico: var(--switch-on);
-    }   
-  } 
-}
-@else {
-  @media (prefers-color-scheme: dark) {
-    :where(html) {
-      color-scheme: dark;
-      
-      @if $enable-theme-colors {
-        @each $dark-scheme, $value in $dark-scheme {
-          --#{$dark-scheme}: #{$value};       
-        }
-      }
-      @else {
-        @each $dark-scheme-only, $value in $dark-scheme-only {
-          --#{$dark-scheme-only}: #{$value};       
-        }
-      }
+  @if $enable-primary-colors {
+    @each $primary-colors, $value in $primary-colors {
+      --#{$primary-colors}: #{$value};       
     }
   }
 }

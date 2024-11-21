@@ -1,10 +1,9 @@
 //  ------------------------------------------------------------
 //  Position mixins
 //  ------------------------------------------------------------
-
+@use "../../maps" as *;
 
 @mixin position {
-
   @each $name, $value in $position {
     .#{$name} {
       position: #{$value};

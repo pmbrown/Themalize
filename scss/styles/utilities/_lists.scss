@@ -1,6 +1,7 @@
 //  ------------------------------------------------------------
 //  List utilities
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
 
 @if $enable-lists {
 
@@ -73,7 +74,7 @@
 }
 
 :where(.dl-comma, .dl-comma-inline) dd:not(:last-child):after {
-  content: ",";
+  content: var(--content,  ",");
 }
 
 :where(.dl-comma, .dl-comma-inline) dd:not(:last-child):has(+ dt):after {

@@ -1,6 +1,7 @@
 //  ------------------------------------------------------------
 //  Button utilities
 //  ------------------------------------------------------------
+@use "../../configuration" as *;
 
 @if $enable-forms-buttons and $enable-buttons {
 
