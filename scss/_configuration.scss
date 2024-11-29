@@ -5,105 +5,105 @@
 // Styles
 $enable-forms-buttons:    true;
 $enable-tables:           true;
-$enable-vis-hidden:       true; // Accessibility utility
-$enable-smooth-scroll:    true; // If user prefers-reduced-motion: no-preference
-$enable-view-transition:  true; // As above
+$enable-vis-hidden:       false; // Accessibility utility
+$enable-smooth-scroll:    false; // If user prefers-reduced-motion: no-preference
+$enable-view-transition:  false; // As above
 
 // Theme switch
-$enable-theme-switch:     true; // Requires theme-switch.js
-$enable-switch-button:    true;
+$enable-theme-switch:     false; // Requires theme-switch.js
+$enable-switch-button:    false;
 
 // Colors
-$enable-theme-colors:     true;
-$enable-primary-colors:   true;
+$enable-theme-colors:     false;
+$enable-primary-colors:   false;
 
 // Components
-$enable-accordions:       true;
-$enable-alerts:           true;
-$enable-cards:            true;
-$enable-dialogs:          true; // Requires dialogs.js
-$enable-list-groups:      true;
-$enable-popovers:         true;
+$enable-accordions:       false;
+$enable-alerts:           false;
+$enable-cards:            false;
+$enable-dialogs:          false; // Requires dialogs.js
+$enable-list-groups:      false;
+$enable-popovers:         false;
 
 // Utility modifiers
-$enable-backgrounds:      true;
-$enable-badges:           true;
-$enable-borders:          true;
-$enable-buttons:          true; // Requires $enable-forms-buttons: true
-$enable-gradients:        true;
-$enable-images:           true;
-$enable-lists:            true;
-$enable-shadows:          true;
-$enable-text:             true;
+$enable-backgrounds:      false;
+$enable-badges:           false;
+$enable-borders:          false;
+$enable-buttons:          false; // Requires $enable-forms-buttons: true
+$enable-gradients:        false;
+$enable-images:           false;
+$enable-lists:            false;
+$enable-shadows:          false;
+$enable-text:             false;
 
 // Layout utilities
 // Breakpoints
-$enable-breakpoint-xl:    true; // 1601px
-$enable-breakpoint-lg:    true; // 1281px
-$enable-breakpoint-md:    true; // 1025px
-$enable-breakpoint-sm:    true; // 769px
-$enable-breakpoint-xs:    true; // 481px
+$enable-breakpoint-xl:    false; // 1601px
+$enable-breakpoint-lg:    false; // 1281px
+$enable-breakpoint-md:    false; // 1025px
+$enable-breakpoint-sm:    false; // 769px
+$enable-breakpoint-xs:    false; // 481px
 
 // Grids and containers
-$enable-grid-auto:        true;
-$enable-grid-columns:     true;
-$enable-containers:       true;
+$enable-grid-auto:        false;
+$enable-grid-columns:     false;
+$enable-containers:       false;
 
 // Spacing
-$enable-gaps:             true;
-$enable-margins:          true;
-$enable-padding:          true;
+$enable-gaps:             false;
+$enable-margins:          false;
+$enable-padding:          false;
 
 // Spacing breakpoints
-$enable-margins-bp:       true;
-$enable-padding-bp:       true;
+$enable-margins-bp:       false;
+$enable-padding-bp:       false;
 
 // Display
-$enable-block:            true;
-$enable-flex:             true;
-$enable-alignment:        true;
-$enable-sizing:           true;
-$enable-order:            true;
-$enable-position:         true;
-$enable-overflow:         true;
+$enable-block:            false;
+$enable-flex:             false;
+$enable-alignment:        false;
+$enable-sizing:           false;
+$enable-order:            false;
+$enable-position:         false;
+$enable-overflow:         false;
 
 // Display breakpoints
-$enable-block-bp:         true;
-$enable-flex-bp:          true;
-$enable-alignment-bp:     true;
-$enable-sizing-bp:        true;
-$enable-order-bp:         true;
-$enable-position-bp:      true;
-$enable-overflow-bp:      true;
+$enable-block-bp:         false;
+$enable-flex-bp:          false;
+$enable-alignment-bp:     false;
+$enable-sizing-bp:        false;
+$enable-order-bp:         false;
+$enable-position-bp:      false;
+$enable-overflow-bp:      false;
 
 // Icon utilities
-$enable-icon-mixins:      true;
-$enable-icon-styles:      true;
+$enable-icon-mixins:      false;
+$enable-icon-styles:      false;
 
 // Icons SVG
-$enable-logo-svg:             true;
-$enable-house-svg:            true;
-$enable-email-svg:            true;
-$enable-plus-svg:             true;
-$enable-minus-svg:            true;
-$enable-bars-svg:             true;
-$enable-caret-down-svg:       true;
-$enable-caret-up-svg:         true;
-$enable-caret-right-svg:      true;
-$enable-caret-left-svg:       true;
-$enable-close-svg:            true;
-$enable-close-box-svg:        true;
-$enable-close-box-fill-svg:   true;
-$enable-box-svg:              true;
-$enable-pen-box-svg:          true;
-$enable-tick-box-svg:         true;
-$enable-ext-link-svg:         true;
-$enable-pg-link-svg:          true;
-$enable-search-svg:           true;
-$enable-download-svg:         true;
-$enable-user-svg:             true;
-$enable-question-svg:         true;
-$enable-sun-svg:              true;
-$enable-moon-svg:             true;
-$enable-radio-on-svg:         true;
-$enable-radio-off-svg:        true;
+$enable-logo-svg:             false;
+$enable-house-svg:            false;
+$enable-email-svg:            false;
+$enable-plus-svg:             false;
+$enable-minus-svg:            false;
+$enable-bars-svg:             false;
+$enable-caret-down-svg:       false;
+$enable-caret-up-svg:         false;
+$enable-caret-right-svg:      false;
+$enable-caret-left-svg:       false;
+$enable-close-svg:            false;
+$enable-close-box-svg:        false;
+$enable-close-box-fill-svg:   false;
+$enable-box-svg:              false;
+$enable-pen-box-svg:          false;
+$enable-tick-box-svg:         false;
+$enable-ext-link-svg:         false;
+$enable-pg-link-svg:          false;
+$enable-search-svg:           false;
+$enable-download-svg:         false;
+$enable-user-svg:             false;
+$enable-question-svg:         false;
+$enable-sun-svg:              false;
+$enable-moon-svg:             false;
+$enable-radio-on-svg:         false;
+$enable-radio-off-svg:        false;
