@@ -1,4 +1,4 @@
-/*! Themalize v1.1.0 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.1 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --brand: light-dark(#558e90, #6fa8aa);
@@ -316,7 +316,6 @@
 }
 
 :where(dl) {
-  --fw: bold;
   --dd-ml: 1rem;
 }
 
@@ -400,16 +399,18 @@ a > :where(code) {
 }
 
 :where(details) {
+  --fw: bold;
+  --mb-open: 1rem;
   margin-block-end: 1rem;
 }
 
 :where(summary) {
-  font-weight: bold;
+  font-weight: var(--fw);
   cursor: pointer;
 }
 
 :where(details[open] summary) {
-  margin-block-end: 1rem;
+  margin-block-end: var(--mb-open);
 }
 
 :where(hr) {
@@ -475,7 +476,6 @@ a > :where(code) {
   font-size: var(--fs);
   font-family: inherit;
   line-height: var(--lh);
-  vertical-align: middle;
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn),
@@ -722,6 +722,7 @@ a > :where(code) {
 
 .ico-block:before {
   --ico-mb: .25rem;
+  --ico-va: initial;
   display: block;
   margin-inline: auto;
   margin-block-end: var(--ico-mb);
@@ -901,6 +902,7 @@ a > :where(code) {
 :where(.details summary, .accordion summary):after {
   --ico: var(--summary-ico);
   --svg: var(--details-open);
+  --ico-va: initial;
   float: right;
   margin-block-start: calc(var(--fs) / 4);
   margin-inline-start: 1rem;
@@ -1713,11 +1715,11 @@ a > :where(code) {
   --ico-va: -.12em;
 }
 
-:where(html:is(.light)) #themes {
+[style="color-scheme: light;"] #themes {
   --svg: var(--switch-off);
 }
 
-:where(html:is(.dark)) #themes {
+[style="color-scheme: dark;"] #themes {
   --svg: var(--switch-on);
 }
 
@@ -2241,7 +2243,7 @@ a > :where(code) {
   background-image: linear-gradient(var(--deg), var(--surf-1), var(--surf-2), var(--surf-3));
 }
 
-:where(html:is(.dark)) .gradient {
+[style="color-scheme: dark;"] .gradient {
   --deg: 0deg;
 }
 
@@ -2780,51 +2782,51 @@ a > :where(code) {
 }
 
 .w-auto {
-  width: auto;
+  inline-size: auto;
 }
 
 .w-100 {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .w-100-min {
-  min-width: 100%;
+  min-inline-size: 100%;
 }
 
 .w-100-max {
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 .w-100vw {
-  width: 100vw;
+  inline-size: 100vw;
 }
 
 .w-calc {
-  width: calc(100vw - var(--width));
+  inline-size: calc(100vw - var(--width));
 }
 
 .h-auto {
-  height: auto;
+  block-size: auto;
 }
 
 .h-100 {
-  height: 100%;
+  block-size: 100%;
 }
 
 .h-100-min {
-  min-height: 100%;
+  min-block-size: 100%;
 }
 
 .h-100-max {
-  max-height: 100%;
+  max-block-size: 100%;
 }
 
 .h-100vh {
-  height: 100vh;
+  block-size: 100vh;
 }
 
 .h-calc {
-  height: calc(100vh - var(--height));
+  block-size: calc(100vh - var(--height));
 }
 
 .order-0 {
@@ -3111,40 +3113,40 @@ a > :where(code) {
     align-self: center;
   }
   .w-auto-xl {
-    width: auto;
+    inline-size: auto;
   }
   .w-100-xl {
-    width: 100%;
+    inline-size: 100%;
   }
   .w-100-min-xl {
-    min-width: 100%;
+    min-inline-size: 100%;
   }
   .w-100-max-xl {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   .w-100vw-xl {
-    width: 100vw;
+    inline-size: 100vw;
   }
   .w-calc-xl {
-    width: calc(100vw - var(--width));
+    inline-size: calc(100vw - var(--width));
   }
   .h-auto-xl {
-    height: auto;
+    block-size: auto;
   }
   .h-100-xl {
-    height: 100%;
+    block-size: 100%;
   }
   .h-100-min-xl {
-    min-height: 100%;
+    min-block-size: 100%;
   }
   .h-100-max-xl {
-    max-height: 100%;
+    max-block-size: 100%;
   }
   .h-100vh-xl {
-    height: 100vh;
+    block-size: 100vh;
   }
   .h-calc-xl {
-    height: calc(100vh - var(--height));
+    block-size: calc(100vh - var(--height));
   }
   .order-0-xl {
     order: 0;
@@ -3390,40 +3392,40 @@ a > :where(code) {
     align-self: center;
   }
   .w-auto-lg {
-    width: auto;
+    inline-size: auto;
   }
   .w-100-lg {
-    width: 100%;
+    inline-size: 100%;
   }
   .w-100-min-lg {
-    min-width: 100%;
+    min-inline-size: 100%;
   }
   .w-100-max-lg {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   .w-100vw-lg {
-    width: 100vw;
+    inline-size: 100vw;
   }
   .w-calc-lg {
-    width: calc(100vw - var(--width));
+    inline-size: calc(100vw - var(--width));
   }
   .h-auto-lg {
-    height: auto;
+    block-size: auto;
   }
   .h-100-lg {
-    height: 100%;
+    block-size: 100%;
   }
   .h-100-min-lg {
-    min-height: 100%;
+    min-block-size: 100%;
   }
   .h-100-max-lg {
-    max-height: 100%;
+    max-block-size: 100%;
   }
   .h-100vh-lg {
-    height: 100vh;
+    block-size: 100vh;
   }
   .h-calc-lg {
-    height: calc(100vh - var(--height));
+    block-size: calc(100vh - var(--height));
   }
   .order-0-lg {
     order: 0;
@@ -3669,40 +3671,40 @@ a > :where(code) {
     align-self: center;
   }
   .w-auto-md {
-    width: auto;
+    inline-size: auto;
   }
   .w-100-md {
-    width: 100%;
+    inline-size: 100%;
   }
   .w-100-min-md {
-    min-width: 100%;
+    min-inline-size: 100%;
   }
   .w-100-max-md {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   .w-100vw-md {
-    width: 100vw;
+    inline-size: 100vw;
   }
   .w-calc-md {
-    width: calc(100vw - var(--width));
+    inline-size: calc(100vw - var(--width));
   }
   .h-auto-md {
-    height: auto;
+    block-size: auto;
   }
   .h-100-md {
-    height: 100%;
+    block-size: 100%;
   }
   .h-100-min-md {
-    min-height: 100%;
+    min-block-size: 100%;
   }
   .h-100-max-md {
-    max-height: 100%;
+    max-block-size: 100%;
   }
   .h-100vh-md {
-    height: 100vh;
+    block-size: 100vh;
   }
   .h-calc-md {
-    height: calc(100vh - var(--height));
+    block-size: calc(100vh - var(--height));
   }
   .order-0-md {
     order: 0;
@@ -3948,40 +3950,40 @@ a > :where(code) {
     align-self: center;
   }
   .w-auto-sm {
-    width: auto;
+    inline-size: auto;
   }
   .w-100-sm {
-    width: 100%;
+    inline-size: 100%;
   }
   .w-100-min-sm {
-    min-width: 100%;
+    min-inline-size: 100%;
   }
   .w-100-max-sm {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   .w-100vw-sm {
-    width: 100vw;
+    inline-size: 100vw;
   }
   .w-calc-sm {
-    width: calc(100vw - var(--width));
+    inline-size: calc(100vw - var(--width));
   }
   .h-auto-sm {
-    height: auto;
+    block-size: auto;
   }
   .h-100-sm {
-    height: 100%;
+    block-size: 100%;
   }
   .h-100-min-sm {
-    min-height: 100%;
+    min-block-size: 100%;
   }
   .h-100-max-sm {
-    max-height: 100%;
+    max-block-size: 100%;
   }
   .h-100vh-sm {
-    height: 100vh;
+    block-size: 100vh;
   }
   .h-calc-sm {
-    height: calc(100vh - var(--height));
+    block-size: calc(100vh - var(--height));
   }
   .order-0-sm {
     order: 0;
@@ -4227,40 +4229,40 @@ a > :where(code) {
     align-self: center;
   }
   .w-auto-xs {
-    width: auto;
+    inline-size: auto;
   }
   .w-100-xs {
-    width: 100%;
+    inline-size: 100%;
   }
   .w-100-min-xs {
-    min-width: 100%;
+    min-inline-size: 100%;
   }
   .w-100-max-xs {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   .w-100vw-xs {
-    width: 100vw;
+    inline-size: 100vw;
   }
   .w-calc-xs {
-    width: calc(100vw - var(--width));
+    inline-size: calc(100vw - var(--width));
   }
   .h-auto-xs {
-    height: auto;
+    block-size: auto;
   }
   .h-100-xs {
-    height: 100%;
+    block-size: 100%;
   }
   .h-100-min-xs {
-    min-height: 100%;
+    min-block-size: 100%;
   }
   .h-100-max-xs {
-    max-height: 100%;
+    max-block-size: 100%;
   }
   .h-100vh-xs {
-    height: 100vh;
+    block-size: 100vh;
   }
   .h-calc-xs {
-    height: calc(100vh - var(--height));
+    block-size: calc(100vh - var(--height));
   }
   .order-0-xs {
     order: 0;

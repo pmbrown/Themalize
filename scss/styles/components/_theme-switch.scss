@@ -34,11 +34,11 @@
   @extend %icon-mask;
 }
 
-:where(html:is(.light)) #themes {
+[style="color-scheme: light;"] #themes {
   --svg: var(--switch-off);
 }
 
-:where(html:is(.dark)) #themes {
+[style="color-scheme: dark;"] #themes {
   --svg: var(--switch-on);
 }
 

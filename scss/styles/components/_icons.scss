@@ -41,6 +41,7 @@
 
 .ico-block:before {
   --ico-mb: .25rem;
+  --ico-va: initial;
   @extend %icon-mask;
   display: block;
   margin-inline: auto;

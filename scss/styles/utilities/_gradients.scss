@@ -19,7 +19,7 @@
 }
 
 @if $enable-theme-switch {
-  :where(html:is(.dark)) .gradient {
+  [style="color-scheme: dark;"] .gradient {
     --deg: 0deg;
   }
 }

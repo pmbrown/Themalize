@@ -1,4 +1,4 @@
-/*! Themalize v1.1.0 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.1 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --brand: light-dark(#558e90, #6fa8aa);
@@ -192,7 +192,6 @@
 }
 
 :where(dl) {
-  --fw: bold;
   --dd-ml: 1rem;
 }
 
@@ -276,16 +275,18 @@ a > :where(code) {
 }
 
 :where(details) {
+  --fw: bold;
+  --mb-open: 1rem;
   margin-block-end: 1rem;
 }
 
 :where(summary) {
-  font-weight: bold;
+  font-weight: var(--fw);
   cursor: pointer;
 }
 
 :where(details[open] summary) {
-  margin-block-end: 1rem;
+  margin-block-end: var(--mb-open);
 }
 
 :where(hr) {
@@ -332,7 +333,6 @@ a > :where(code) {
   font-size: var(--fs);
   font-family: inherit;
   line-height: var(--lh);
-  vertical-align: middle;
 }
 
 :where(button, [type=button], [type=submit], [type=reset], .btn),

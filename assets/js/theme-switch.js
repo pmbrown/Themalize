@@ -31,9 +31,6 @@ const reflectPreference = () => {
   document.firstElementChild
   .style.setProperty('color-scheme', theme.value)
   
-  document.firstElementChild
-  .setAttribute('class', theme.value)
-  
   document
   .querySelector('#themes')
   ?.setAttribute('aria-label', theme.value)

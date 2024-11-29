@@ -27,6 +27,7 @@
 :where(.details summary, .accordion summary):after {
   --ico: var(--summary-ico);
   --svg: var(--details-open);
+  --ico-va: initial;
   @extend %icon-mask;
   float: right;
   margin-block-start: calc(var(--fs) / 4);
