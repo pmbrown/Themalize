@@ -9,18 +9,18 @@
   @if $enable-icon-mixins or $enable-icon-styles {
   --ico: var(--pop-txt);
   }
-  width: var(--pop-width);
-  max-inline-size: var(--pop-max-width); 
-  height: fit-content;
   color: var(--pop-txt);
-  background-color: var(--pop-bg);
+  block-size: fit-content;
+  inline-size: var(--pop-width);
+  max-inline-size: var(--pop-max-width); 
   margin-block: var(--pop-my);
   margin-inline: var(--pop-mx);
   padding-block: var(--pop-py);
   padding-inline: var(--pop-px);
   border-width: var(--pop-bd-width);
   border-color: var(--pop-bd-color);
-  border-radius: var(--pop-radius);   
+  border-radius: var(--pop-radius); 
+  background-color: var(--pop-bg);  
   overflow: auto;
 }
 

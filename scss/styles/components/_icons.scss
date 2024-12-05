@@ -6,11 +6,11 @@
 
 @mixin icon-mask {
   display: inline-block;
-  background-color: var(--ico);
   content: "";
-  width: var(--fs);
-  height: var(--fs);
+  inline-size: var(--fs);
+  block-size: var(--fs);
   vertical-align: var(--ico-va);
+  background-color: var(--ico);
   mask-image: var(--svg);
   mask-repeat: no-repeat;
   -webkit-mask-image: var(--svg);

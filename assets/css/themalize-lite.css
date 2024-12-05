@@ -1,4 +1,4 @@
-/*! Themalize v1.1.1 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.2 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --brand: light-dark(#558e90, #6fa8aa);

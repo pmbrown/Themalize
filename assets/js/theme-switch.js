@@ -1,57 +1,40 @@
 //  ------------------------------------------------------------
 //  Theme switch
-//  Adapted from Adam Argyle's theme-switch script, see original
-//  at https://gui-challenges.web.app/theme-switch/dist/
+//  Adapted from https://gui-challenges.web.app/theme-switch/dist/
 //  IMPORTANT: Load script in <head> prior to CSS for no FOUC.
 //  ------------------------------------------------------------
-const storageKey = 'theme-preference'
+const storageKey = "theme-preference",
 
-const onClick = () => {
-  theme.value = theme.value === 'light'
-  ? 'dark'
-  : 'light'
-  setPreference()
-}
+onClick = () => {
+  (theme.value = "light" === theme.value ? "dark" : "light"), 
+  setPreference();
+},
 
-const getColorPreference = () => {
-  if (localStorage.getItem(storageKey))
-  return localStorage.getItem(storageKey)
-  else
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-  ? 'dark'
-  : 'light'
-}
+getColorPreference = () => (localStorage.getItem(storageKey) 
+  ? localStorage.getItem(storageKey) 
+  : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
 
-const setPreference = () => {
-  localStorage.setItem(storageKey, theme.value)
-  reflectPreference()
-}
+setPreference = () => {
+  localStorage.setItem(storageKey, theme.value),
+  reflectPreference();
+},
 
-const reflectPreference = () => {
-  document.firstElementChild
-  .style.setProperty('color-scheme', theme.value)
-  
-  document
-  .querySelector('#themes')
-  ?.setAttribute('aria-label', theme.value)
-}
+reflectPreference = () => {
+  document.firstElementChild.style.setProperty("color-scheme", theme.value);
+},
 
-const theme = {
-  value: getColorPreference(),
-}
+theme = {
+  value: getColorPreference()
+};
 
-reflectPreference()
+reflectPreference(),
 
-window.onload = () => {
-  reflectPreference()
-  document
-  .querySelector('#themes')
-  .addEventListener('click', onClick)
-}
+(window.onload = () => {
+  reflectPreference(), 
+  document.querySelector("#themes").addEventListener("click", onClick);
+}),
 
-window
-  .matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', ({matches:isDark}) => {
-  theme.value = isDark ? 'true' : 'false'
-  setPreference()
-})
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({matches: e}) => {
+  (theme.value = e ? "dark" : "light"),
+  setPreference();
+});

@@ -1,4 +1,4 @@
-/*! Themalize v1.1.1 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+/*! Themalize v1.1.2 - Copyright (c) 2024 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
 :where(html) {
   --theme: slategray;
   --brand: light-dark(#558e90, #6fa8aa);
@@ -699,11 +699,11 @@ a > :where(code) {
 #themes:before, :where(dialog :is(header, .dialog-header) button.close-dialog):before,
 :where(.dialog-img-close):before, .alert [method=dialog] button:before, :where(.details summary, .accordion summary):after, .ico-btn:before, .ico-block:before, .ico-b:before, .ico-a:after, .ico:before {
   display: inline-block;
-  background-color: var(--ico);
   content: "";
-  width: var(--fs);
-  height: var(--fs);
+  inline-size: var(--fs);
+  block-size: var(--fs);
   vertical-align: var(--ico-va);
+  background-color: var(--ico);
   mask-image: var(--svg);
   mask-repeat: no-repeat;
   -webkit-mask-image: var(--svg);
@@ -1064,7 +1064,7 @@ a > :where(code) {
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  width: 100%;
+  inline-size: 100%;
   max-inline-size: 100%;
   margin: initial;
   margin-block-end: 1rem;
@@ -1159,10 +1159,7 @@ a > :where(code) {
   content: "";
   display: block;
   position: absolute;
-  inset-block-start: 0;
-  inset-block-end: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
+  inset: 0;
 }
 
 :where(.card-link :focus-visible) {
@@ -1299,11 +1296,11 @@ a > :where(code) {
 
 :where(dialog) {
   color: var(--dialog-txt);
+  inline-size: var(--dialog-width);
+  max-inline-size: var(--dialog-max-width);
   margin: auto;
   margin-block-start: var(--dialog-top);
   padding: 0;
-  width: var(--dialog-width);
-  max-inline-size: var(--dialog-max-width);
   border-width: var(--dialog-bd-width);
   border-color: var(--dialog-bd-color);
   border-radius: var(--dialog-radius);
@@ -1316,16 +1313,16 @@ a > :where(code) {
   color: var(--dialog-header-txt);
   position: sticky;
   align-self: start;
-  top: 0;
+  inset-block-start: 0;
   display: flex;
   align-items: center;
   column-gap: 1rem;
-  border-block-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
-  background-color: var(--dialog-header-bg);
   padding-block: 0.5rem;
   padding-inline-start: 1rem;
   padding-inline-end: 0.75rem;
+  border-block-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
   border-start-start-radius: 0;
+  background-color: var(--dialog-header-bg);
 }
 
 :where(dialog :is(header, .dialog-header) *) {
@@ -1642,11 +1639,10 @@ a > :where(code) {
 
 :where([popover]) {
   --ico: var(--pop-txt);
-  width: var(--pop-width);
-  max-inline-size: var(--pop-max-width);
-  height: fit-content;
   color: var(--pop-txt);
-  background-color: var(--pop-bg);
+  block-size: fit-content;
+  inline-size: var(--pop-width);
+  max-inline-size: var(--pop-max-width);
   margin-block: var(--pop-my);
   margin-inline: var(--pop-mx);
   padding-block: var(--pop-py);
@@ -1654,6 +1650,7 @@ a > :where(code) {
   border-width: var(--pop-bd-width);
   border-color: var(--pop-bd-color);
   border-radius: var(--pop-radius);
+  background-color: var(--pop-bg);
   overflow: auto;
 }
 
@@ -1703,24 +1700,18 @@ a > :where(code) {
   --pop-bd-color: var(--cyan);
 }
 
-:where(html) {
-  --switch-off: var(--sun);
-  --switch-on: var(--moon);
+[style="color-scheme: light;"] #themes {
+  --svg: var(--sun);
+}
+
+[style="color-scheme: dark;"] #themes {
+  --svg: var(--moon);
 }
 
 #themes {
   --ico: var(--color);
-  --svg: var(--switch-ico);
-  --btn-px: .5rem;
   --ico-va: -.12em;
-}
-
-[style="color-scheme: light;"] #themes {
-  --svg: var(--switch-off);
-}
-
-[style="color-scheme: dark;"] #themes {
-  --svg: var(--switch-on);
+  --btn-px: .5rem;
 }
 
 :where(.surf-1-light, .surf-2-light, .surf-3-light, .surf-4-light, .surf-1-dark, .surf-2-dark, .surf-3-dark, .surf-4-dark, .bg-blue, .bg-red, .bg-green, .bg-orange, .bg-cyan) {
@@ -2523,20 +2514,21 @@ a > :where(code) {
   --fw: 900;
 }
 
-.lh-body, .lh-header, .lh-forms {
-  line-height: var(--lh);
-}
-
 .lh-body {
   --lh: var(--lh-body);
 }
 
-.lh-header {
+.lh-heading {
   --lh: var(--lh-header);
 }
 
 .lh-btn-forms {
   --lh: var(--lh-btn-forms);
+}
+
+.text-spacing {
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
 }
 
 .text-pretty {
@@ -2559,12 +2551,14 @@ a > :where(code) {
   text-align: left;
 }
 
-.text-spacing {
-  letter-spacing: var(--ls);
-  word-spacing: var(--ws);
+.no-decoration a, a.no-decoration {
+  text-decoration: none;
 }
 
 .no-link a, a.no-link {
+  --color: light-dark(#000, #fff);
+  --hover: light-dark(#000, #fff);
+  --visited: light-dark(#000, #fff);
   text-decoration: none;
 }
 
@@ -4370,7 +4364,7 @@ a > :where(code) {
 }
 .container, .container-xl, .container-lg, .container-md, .container-sm, .container-xs {
   --container-mx: auto;
-  width: 100%;
+  inline-size: 100%;
   max-inline-size: var(--container-size);
   margin-inline: var(--container-mx);
   padding-inline: var(--container-px);

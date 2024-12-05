@@ -8,7 +8,7 @@
 
 .container, .container-xl, .container-lg, .container-md, .container-sm, .container-xs {
   --container-mx: auto;
-  width: 100%;
+  inline-size: 100%;
   max-inline-size: var(--container-size);
   margin-inline: var(--container-mx);
   padding-inline: var(--container-px);

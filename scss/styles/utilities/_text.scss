@@ -116,20 +116,22 @@
 }
 
 // Line heights
-.lh-body, .lh-header, .lh-forms {
-  line-height: var(--lh);
-}
-
 .lh-body {
   --lh: var(--lh-body);
 }
 
-.lh-header {
+.lh-heading {
   --lh: var(--lh-header);
 }
 
 .lh-btn-forms {
   --lh: var(--lh-btn-forms);
+}
+
+// Letter/word spacing - no preset values provided, use variable to customize inline.
+.text-spacing {
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
 }
 
 // Wrap and alignment
@@ -153,14 +155,15 @@
   text-align: left;
 }
 
-// Letter/word spacing - no preset values provided, use variable to customize inline.
-.text-spacing {
-  letter-spacing: var(--ls);
-  word-spacing: var(--ws);
+// Links
+.no-decoration a, a.no-decoration {
+  text-decoration: none;
 }
 
-// Links
 .no-link a, a.no-link {
+  --color: light-dark(#000, #fff);
+  --hover: light-dark(#000, #fff);
+  --visited: light-dark(#000, #fff);
   text-decoration: none;
 }
 

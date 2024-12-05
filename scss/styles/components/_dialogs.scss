@@ -10,14 +10,14 @@
 // Dialog
 :where(dialog) {
   color: var(--dialog-txt);
+  inline-size: var(--dialog-width);
+  max-inline-size: var(--dialog-max-width);
   margin: auto;
-  margin-block-start: var(--dialog-top);  
+  margin-block-start: var(--dialog-top);
   padding: 0;
-  width: var(--dialog-width);
-  max-inline-size: var(--dialog-max-width); 
   border-width: var(--dialog-bd-width);
   border-color: var(--dialog-bd-color);
-  border-radius: var(--dialog-radius); 
+  border-radius: var(--dialog-radius);
   background-color: var(--dialog-bg);
   overscroll-behavior: contain;
 }
@@ -30,16 +30,16 @@
   color: var(--dialog-header-txt);
   position: sticky;
   align-self: start;
-  top: 0;
+  inset-block-start: 0;
   display: flex;
   align-items: center;
   column-gap: 1rem;
-  border-block-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
-  background-color: var(--dialog-header-bg);
   padding-block: .5rem;
   padding-inline-start: 1rem;
   padding-inline-end: .75rem;
+  border-block-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
   border-start-start-radius: 0;
+  background-color: var(--dialog-header-bg);
 }
 
 :where(dialog :is(header, .dialog-header) *) {

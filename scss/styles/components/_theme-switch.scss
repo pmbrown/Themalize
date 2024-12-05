@@ -11,35 +11,32 @@
 @if $enable-theme-switch and $enable-switch-button {
 
 @if $enable-sun-svg and $enable-moon-svg {
-  :where(html) {
-    --switch-off: var(--sun);
-    --switch-on: var(--moon);
+  [style="color-scheme: light;"] #themes {
+    --svg: var(--sun);
   }
+  
+  [style="color-scheme: dark;"] #themes {
+    --svg: var(--moon);
+  }   
 }
 @else {
-  :where(html) {
-    --switch-off: #{$sun};
-    --switch-on: #{$moon};
+  [style="color-scheme: light;"] #themes {
+    --svg: #{$sun};
   }
+  
+  [style="color-scheme: dark;"] #themes {
+    --svg: #{$moon};
+  } 
 }
 
 #themes {
   --ico: var(--color);
-  --svg: var(--switch-ico);
-  --btn-px: .5rem;
   --ico-va: -.12em;
+  --btn-px: .5rem;
 }
   
 #themes:before {
   @extend %icon-mask;
-}
-
-[style="color-scheme: light;"] #themes {
-  --svg: var(--switch-off);
-}
-
-[style="color-scheme: dark;"] #themes {
-  --svg: var(--switch-on);
 }
 
 } // END [if/theme-switch]
