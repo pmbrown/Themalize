@@ -158,6 +158,8 @@ $dialog-radius:       0.188rem !default;
 $dialog-top:          1rem !default;
 $dialog-width:        calc((100% - 6px) - 2em) !default;
 $dialog-max-width:    30rem !default;
+$dialog-transition:   0.25s !default;
+$dialog-offcanvas:    -30rem !default;
 
 // List groups
 $list-group-txt:            var(--text) !default;

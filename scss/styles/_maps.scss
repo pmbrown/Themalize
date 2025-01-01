@@ -171,6 +171,8 @@ $dialogs: (
   "dialog-top": #{$dialog-top},
   "dialog-width": #{$dialog-width},
   "dialog-max-width": #{$dialog-max-width},
+  "dialog-transition": #{$dialog-transition},
+  "dialog-offcanvas": #{$dialog-offcanvas},
 ) !default;
 
 $list-groups: (

@@ -122,6 +122,8 @@
   margin-block-end: 0;
 }
 
+// Colors
+
 @if $enable-theme-colors {
 
 .details-light, .accordion-light {
@@ -179,4 +181,4 @@
 
 } // END [@if/primary-colors]
 
-}
+} // END [@if/accordions]

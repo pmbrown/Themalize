@@ -14,7 +14,7 @@
 :where(.auto, .passport, .landscape, .landscape-sm, .landscape-xs, .portrait, .portrait-sm) img {
   object-fit: cover;
   aspect-ratio: var(--aspect-ratio);
-  height: 100%;
+  block-size: 100%;
 }
 
 .auto {

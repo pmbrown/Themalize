@@ -127,6 +127,55 @@
   padding-inline: 1rem;
 }
 
+// Offcanvas
+.dialog-offcanvas-start, .dialog-offcanvas-end {
+  --dialog-radius: 0;
+  margin: 0;
+  block-size: 100dvh;
+  max-block-size: 100%;
+  border: none;
+}
+
+.dialog-offcanvas-start {
+  margin-inline-end: auto;
+  border-inline-end: var(--dialog-bd-width) solid var(--dialog-bd-color);
+}
+
+.dialog-offcanvas-end {
+  margin-inline-start: auto;
+  border-inline-start: var(--dialog-bd-width) solid var(--dialog-bd-color);
+}
+
+// Dialog animation (if enabled)
+@if $enable-dialog-animate {
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  dialog {
+    transition: var(--dialog-transition);
+    opacity: 0; 
+  }
+}
+
+dialog[open] {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;    
+  }
+  
+  .dialog-offcanvas-start {
+    margin-inline-start: var(--dialog-offcanvas);
+  }
+  
+  .dialog-offcanvas-end {
+    margin-inline-end: var(--dialog-offcanvas);
+  }
+}
+
+}
+
 // Dialog close buttons
 
 // Essential icons

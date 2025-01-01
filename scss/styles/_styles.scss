@@ -37,7 +37,7 @@
   color-scheme: light dark;
   font-family: var(--font);
   background-color: var(--body-bg);
-  height: 100%;
+  block-size: 100%;
 }
 
 :where(body) {
@@ -257,7 +257,7 @@ a > :where(code) {
 
 :where(hr) {
   box-sizing: content-box;
-  height: 0;
+  block-size: 0;
   overflow: visible;
   border: none;
   border-block-start: 1px solid var(--surf-2);
@@ -279,7 +279,7 @@ a > :where(code) {
 }
 
 :where(img, svg) { 
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 :where(iframe) {
@@ -315,8 +315,8 @@ a > :where(code) {
 
 @mixin vis-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  block-size: 1px;
+  inline-size: 1px;
   margin: -1px;
   overflow: hidden;
   clip: rect(0,0,0,0);
@@ -542,7 +542,7 @@ a > :where(code) {
 :where(table) {
   caption-side: top;
   border-collapse: collapse;
-  width: 100%;
+  inline-size: 100%;
   margin-block-end: var(--table-mb);
   font-variant-numeric: tabular-nums;
 }
