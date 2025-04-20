@@ -1,6 +1,6 @@
 <h1>Update 17 Feb 2025</h1>
 
-After discovering the flexibility of using Sass modules I've discontinued updating Themalize in favour of updating and maintaining SassMods (https://github.com/pmbrown/Sassmods). Whilst I'd originally planned to convert Themalize over to modules after making the last update as a hobbyist it was more practical for me to learn about Sass modules starting with a blank slate than re-engineer something that worked ok as-is. 
+After discovering the flexibility of using Sass modules I've discontinued updating Themalize in favour of updating and maintaining StyleMods (https://github.com/pmbrown/StyleMods). Whilst I'd originally planned to convert Themalize over to modules after making the last update as a hobbyist it was more practical for me to learn about Sass modules starting with a blank slate than re-engineer something that worked ok as-is. 
 
 The repository will stay public for anyone still interested in using Themalize as is described below, but the documentation website has now been disabled. My profile shares my contact information so please feel free to email if you have any questions.
 
