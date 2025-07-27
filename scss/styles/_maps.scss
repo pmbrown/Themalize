@@ -1,6 +1,7 @@
 //  ---------------------------------------------------------- 
 //  Maps
 //  ----------------------------------------------------------
+$version: '1.1.4';
 @use "../properties" as *;
 
 $color-schemes: (
@@ -288,7 +289,7 @@ $grid-row: (
 ) !default;
 
 $grid-start: (
-  "start-0": #{$start-0},
+  "start-auto": #{$start-auto},
   "start-1": #{$start-1},
   "start-2": #{$start-2},
   "start-3": #{$start-3},
@@ -375,3 +376,7 @@ $scroll-gutter: (
   "scroll-stable-unset": #{$unset},
   "scroll-stable": #{$scroll-stable},
 ) !default;
+
+@mixin license {
+  /*! Themalize v#{$version} - Copyright (c) 2024-2025 Phil Brown. Licensed under MIT (https://github.com/pmbrown/Themalize/blob/main/LICENSE) */
+}

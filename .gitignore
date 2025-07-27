@@ -1,4 +1,8 @@
+# Files
+.gitignore
 desktop.ini
-build.txt
-/_content/
-/_docs/
+
+# Folders
+/_aaa/
+/_hugo/
+

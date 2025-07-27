@@ -1,7 +1,6 @@
 // ---------------------------------------------------------- 
 // Properties
 // ----------------------------------------------------------
-
 // Theme base
 $theme:               slategray !default;
 
@@ -67,7 +66,7 @@ $cyan-dark:       color-mix(in srgb, var(--cyan) 90%, black) !default;
 $cyan-darker:     color-mix(in srgb, var(--cyan) 80%, black) !default;
 
 // Typography
-$font-family:         system-ui, -apple-system, Arial, Helvetica, sans-serif !default;
+$font-family:         'system-ui, -apple-system, Arial, Helvetica, sans-serif' !default;
 $font-size:           clamp(100%, 40% + 0.666vw, 140%) !default;
 $body:                1rem !default;
 $fs-xl:               1.25rem !default;
@@ -263,19 +262,19 @@ $span-11:  auto / span 11;
 $span-12:  auto / span 12;
 
 // Grid start position
-$start-0:   0;
-$start-1:   1;
-$start-2:   2;
-$start-3:   3;
-$start-4:   4;
-$start-5:   5;
-$start-6:   6;
-$start-7:   7;
-$start-8:   8;
-$start-9:   9;
-$start-10:  10;
-$start-11:  11;
-$start-12:  12;
+$start-auto:  auto;
+$start-1:     1;
+$start-2:     2;
+$start-3:     3;
+$start-4:     4;
+$start-5:     5;
+$start-6:     6;
+$start-7:     7;
+$start-8:     8;
+$start-9:     9;
+$start-10:    10;
+$start-11:    11;
+$start-12:    12;
 
 // Alignment
 $flex-start:      flex-start;

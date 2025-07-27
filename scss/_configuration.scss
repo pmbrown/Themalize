@@ -1,110 +1,109 @@
 // ------------------------------------------------------------
 // Configuration
 // ------------------------------------------------------------
-
 // Styles
-$enable-forms-buttons:    true;
-$enable-tables:           true;
-$enable-vis-hidden:       false; // Accessibility utility
-$enable-smooth-scroll:    false; // If user prefers-reduced-motion: no-preference
-$enable-view-transition:  false; // As above
+$enable-forms-buttons:        false !default;
+$enable-tables:               false !default;
+$enable-vis-hidden:           false !default;
+$enable-smooth-scroll:        false !default; // Included with prefers-reduced-motion: no-preference
+$enable-view-transition:      false !default; // As above
 
 // Theme switch
-$enable-theme-switch:     false; // Requires theme-switch.js
-$enable-switch-button:    false;
+$enable-theme-switch:         false !default; // Requires theme-switch.js
+$enable-switch-button:        false !default;
 
 // Colors
-$enable-theme-colors:     false;
-$enable-primary-colors:   false;
+$enable-theme-colors:         false !default;
+$enable-primary-colors:       false !default;
 
 // Components
-$enable-accordions:       false;
-$enable-alerts:           false;
-$enable-cards:            false;
-$enable-dialogs:          false; // Requires dialogs.js
-$enable-dialog-animate:   false;
-$enable-list-groups:      false;
-$enable-popovers:         false;
+$enable-accordions:           false !default;
+$enable-alerts:               false !default;
+$enable-cards:                false !default;
+$enable-dialogs:              false !default; // Requires dialogs.js
+$enable-dialog-animate:       false !default;
+$enable-list-groups:          false !default;
+$enable-popovers:             false !default;
 
 // Utility modifiers
-$enable-backgrounds:      false;
-$enable-badges:           false;
-$enable-borders:          false;
-$enable-buttons:          false; // Requires $enable-forms-buttons: true
-$enable-gradients:        false;
-$enable-images:           false;
-$enable-lists:            false;
-$enable-shadows:          false;
-$enable-text:             false;
+$enable-backgrounds:          false !default;
+$enable-badges:               false !default;
+$enable-borders:              false !default;
+$enable-buttons:              false !default; // Requires $enable-forms-buttons: true
+$enable-gradients:            false !default;
+$enable-images:               false !default;
+$enable-lists:                false !default;
+$enable-shadows:              false !default;
+$enable-text:                 false !default;
 
 // Layout utilities
 // Breakpoints
-$enable-breakpoint-xl:    false; // 1601px
-$enable-breakpoint-lg:    false; // 1281px
-$enable-breakpoint-md:    false; // 1025px
-$enable-breakpoint-sm:    false; // 769px
-$enable-breakpoint-xs:    false; // 481px
+$enable-breakpoint-xl:        false !default; // 1601px
+$enable-breakpoint-lg:        false !default; // 1281px
+$enable-breakpoint-md:        false !default; // 1025px
+$enable-breakpoint-sm:        false !default; // 769px
+$enable-breakpoint-xs:        false !default; // 481px
 
 // Grids and containers
-$enable-grid-auto:        false;
-$enable-grid-columns:     false;
-$enable-containers:       false;
+$enable-grid-auto:            false !default;
+$enable-grid-columns:         false !default;
+$enable-containers:           false !default;
 
 // Spacing
-$enable-gaps:             false;
-$enable-margins:          false;
-$enable-padding:          false;
+$enable-gaps:                 false !default;
+$enable-margins:              false !default;
+$enable-padding:              false !default;
 
 // Spacing breakpoints
-$enable-margins-bp:       false;
-$enable-padding-bp:       false;
+$enable-margins-bp:           false !default;
+$enable-padding-bp:           false !default;
 
 // Display
-$enable-block:            false;
-$enable-flex:             false;
-$enable-alignment:        false;
-$enable-sizing:           false;
-$enable-order:            false;
-$enable-position:         false;
-$enable-overflow:         false;
+$enable-block:                false !default;
+$enable-flex:                 false !default;
+$enable-alignment:            false !default;
+$enable-sizing:               false !default;
+$enable-order:                false !default;
+$enable-position:             false !default;
+$enable-overflow:             false !default;
 
 // Display breakpoints
-$enable-block-bp:         false;
-$enable-flex-bp:          false;
-$enable-alignment-bp:     false;
-$enable-sizing-bp:        false;
-$enable-order-bp:         false;
-$enable-position-bp:      false;
-$enable-overflow-bp:      false;
+$enable-block-bp:             false !default;
+$enable-flex-bp:              false !default;
+$enable-alignment-bp:         false !default;
+$enable-sizing-bp:            false !default;
+$enable-order-bp:             false !default;
+$enable-position-bp:          false !default;
+$enable-overflow-bp:          false !default;
 
 // Icon utilities
-$enable-icon-mixins:      false;
-$enable-icon-styles:      false;
+$enable-icon-mixins:          false !default;
+$enable-icon-styles:          false !default;
 
 // Icons SVG
-$enable-logo-svg:             false;
-$enable-house-svg:            false;
-$enable-email-svg:            false;
-$enable-plus-svg:             false;
-$enable-minus-svg:            false;
-$enable-bars-svg:             false;
-$enable-caret-down-svg:       false;
-$enable-caret-up-svg:         false;
-$enable-caret-right-svg:      false;
-$enable-caret-left-svg:       false;
-$enable-close-svg:            false;
-$enable-close-box-svg:        false;
-$enable-close-box-fill-svg:   false;
-$enable-box-svg:              false;
-$enable-pen-box-svg:          false;
-$enable-tick-box-svg:         false;
-$enable-ext-link-svg:         false;
-$enable-pg-link-svg:          false;
-$enable-search-svg:           false;
-$enable-download-svg:         false;
-$enable-user-svg:             false;
-$enable-question-svg:         false;
-$enable-sun-svg:              false;
-$enable-moon-svg:             false;
-$enable-radio-on-svg:         false;
-$enable-radio-off-svg:        false;
+$enable-logo-svg:             false !default;
+$enable-house-svg:            false !default;
+$enable-email-svg:            false !default;
+$enable-plus-svg:             false !default;
+$enable-minus-svg:            false !default;
+$enable-bars-svg:             false !default;
+$enable-caret-down-svg:       false !default;
+$enable-caret-up-svg:         false !default;
+$enable-caret-right-svg:      false !default;
+$enable-caret-left-svg:       false !default;
+$enable-close-svg:            false !default;
+$enable-close-box-svg:        false !default;
+$enable-close-box-fill-svg:   false !default;
+$enable-box-svg:              false !default;
+$enable-pen-box-svg:          false !default;
+$enable-tick-box-svg:         false !default;
+$enable-ext-link-svg:         false !default;
+$enable-pg-link-svg:          false !default;
+$enable-search-svg:           false !default;
+$enable-download-svg:         false !default;
+$enable-user-svg:             false !default;
+$enable-question-svg:         false !default;
+$enable-sun-svg:              false !default;
+$enable-moon-svg:             false !default;
+$enable-radio-on-svg:         false !default;
+$enable-radio-off-svg:        false !default;
