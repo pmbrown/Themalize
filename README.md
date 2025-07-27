@@ -4,7 +4,7 @@ Themalize provides consistent styles for typography, forms, buttons and tables d
 
 ---
 
-Despite this project having no stars, no documentation and development 'officially' discontinued in February 2025, the repository gets a consistent flow of traffic and is still being cloned on a regular basis so I've made some minor updates (27 July 2025) to correct some redundant code and improve the Sass structure.
+Despite this project having no stars, no documentation and development being discontinued in February 2025, the repository gets a consistent flow of traffic and is still being cloned on a regular basis so I've made some minor updates (27 July 2025) to correct some redundant code and improve the Sass structure.
 
 I might re-write some of the styles in the future to make use of knowledge gained in both CSS and Sass whilst developing StyleMods (see below), that's me in a roundabout way saying there's a lot about Themalize's code that could be streamlined and improved.
 
